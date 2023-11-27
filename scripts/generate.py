@@ -43,8 +43,9 @@ if __name__ == '__main__':
     with open(dest_file, 'w') as fp:
         json.dump(crss, fp, indent=2, default=lambda o: str(o).replace('PJType.', ''))
 
+    shutil.copy(f'{templates}/sr_logo.jpg', dest_dir)
     for literal in ['base.js', 'base.css']:
-        shutil.copy(templates + '/' + literal, dest_dir)
+        shutil.copy(f'{templates}/{literal}', dest_dir)
     
     dic = {'version': os.getenv('PROJ_VERSION', '.')}
     substitute(f'{templates}/index.tmpl', f'{dest_dir}', dic)

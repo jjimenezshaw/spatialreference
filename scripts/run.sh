@@ -12,6 +12,7 @@ TAG="crs-explorer:$PROJ_VERSION"
 DIRNAME=`dirname $(readlink -f $0)`
 mkdir -p $DIRNAME/dist
 test "$(ls -A $DIRNAME/dist/)" && rm -r $DIRNAME/dist/*
+mkdir -p $DIRNAME/../docs
 
 # build container
 docker build --pull --build-arg VERSION=$PROJ_VERSION --build-arg PYPROJ_VERSION=$PYPROJ_VERSION --tag $TAG $DIRNAME
@@ -19,6 +20,5 @@ docker build --pull --build-arg VERSION=$PROJ_VERSION --build-arg PYPROJ_VERSION
 # execute container
 docker run --user $(id -u):$(id -g) -e PROJ_VERSION=$PROJ_VERSION --rm -v "$DIRNAME/dist:/home/dist" $TAG
 
-DEST=$DIRNAME/..
-# copy to root location
-cp -r $DIRNAME/dist/* $DEST
+# copy to docs location
+cp -r $DIRNAME/dist/* $DIRNAME/../docs
