@@ -18,6 +18,15 @@ def substitute(src_filename, dst_folder, dic):
         result = txt.substitute(dic)
         dst.write(result)
 
+
+def dump(dst_folder, txt):
+    Path(dst_folder).mkdir(parents=True, exist_ok=True)
+    dst_folder += '/index.html'
+    
+    with open(dst_folder, 'w') as dst:
+        dst.write(txt)
+
+
 if __name__ == '__main__':
     dest_dir = os.getenv('DEST_DIR', '.')
     dest_file = f'{dest_dir}/crslist.json'
@@ -86,6 +95,50 @@ if __name__ == '__main__':
                'next_url': url(crss[id+1]),
         }
         substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', dic)
+
+        try:
+            output_axis_rule = True if crs.is_projected else None
+            pretty = crs.to_wkt(version='WKT1_GDAL', pretty=True, output_axis_rule=output_axis_rule)
+            ogcwkt = crs.to_wkt(version='WKT1_GDAL', pretty=False, output_axis_rule=output_axis_rule)
+        except:
+            pretty = 'This CRS cannot be written as WKT1_GDAL'
+            ogcwkt = 'This CRS cannot be written as WKT1_GDAL'
+
+        pretty2 = crs.to_wkt(version='WKT2_2019', pretty=True, output_axis_rule=output_axis_rule)
+        ogcwkt2 = crs.to_wkt(version='WKT2_2019', pretty=False, output_axis_rule=output_axis_rule)
+
+        dic = {'home_dir': '../../../..',
+               'authority': auth_name,
+               'code': code,
+               'syntax_html': pretty,
+        }
+        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/html', dic)
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt', pretty)
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/ogcwkt', ogcwkt)
+
+        dic = {'home_dir': '../../../..',
+               'authority': auth_name,
+               'code': code,
+               'syntax_html': pretty2,
+        }
+        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', dic)
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt2', pretty2)
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/ogcwkt2', ogcwkt2)
+
+        try:
+            esri = crs.to_wkt(version='WKT1_ESRI')
+        except:
+            esri = 'This CRS cannot be written as WKT1_ESRI'
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/esriwkt', esri)
+
+        json = crs.to_json(pretty=True)
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/json', json)
+
+        try:
+            proj4 = crs.to_proj4()
+        except:
+            proj4 = ''
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/proj4', proj4)
 
     exit(0)
 
