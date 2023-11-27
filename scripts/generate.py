@@ -2,6 +2,7 @@
 
 import json
 import os, shutil
+import re
 from pathlib import Path
 from string import Template 
 
@@ -53,6 +54,38 @@ if __name__ == '__main__':
     dic['home_dir'] = '..'
     substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', dic)
     substitute(f'{templates}/ref.tmpl', f'{dest_dir}/ref', dic)
+
+    count = 0
+    for id, c in enumerate(crss):
+        count += 1
+        if count > 10:
+            break
+        code=c["code"]
+        auth_name=c["auth_name"]
+        name = c["name"]
+        auth_lowercase = auth_name.lower()
+        crs = pyproj.CRS.from_authority(auth_name=auth_name, code=code)
+        epsg_a = ''
+        if auth_name == "EPSG":
+            scapedName = re.sub(r'[^0-9a-zA-Z]+', '-', name);
+            epsg_a = f'<a href="https://epsg.org/crs_{code}/{scapedName}.html">epsg.org</a>'
+        bounds = ', '.join([str(x) for x in c["area_of_use"][:4]])
+        full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
+        url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
+        dic = {'home_dir': '../../..',
+               'authority': auth_name,
+               'code': code,
+               'name': name,
+               'area_name': c["area_of_use"][4],
+               'epsg_a': epsg_a,
+               'bounds': bounds,
+               'scope': crs.scope,
+               'prev_full_name': full_name(crss[id-1]),
+               'prev_url': url(crss[id-1]),
+               'next_full_name': full_name(crss[id+1]),
+               'next_url': url(crss[id+1]),
+        }
+        substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', dic)
 
     exit(0)
 
