@@ -2,9 +2,20 @@
 
 import json
 import os, shutil
+from pathlib import Path
+from string import Template 
 
 import pyproj
-from contextlib import redirect_stdout
+#from contextlib import redirect_stdout
+
+def substitute(src_filename, dst_folder, dic):
+    Path(dst_folder).mkdir(parents=True, exist_ok=True)
+    dst_folder += '/index.html'
+    
+    with open(src_filename, 'r') as src, open(dst_folder, 'w') as dst:
+        txt = Template(src.read())
+        result = txt.substitute(dic)
+        dst.write(result)
 
 if __name__ == '__main__':
     dest_dir = os.getenv('DEST_DIR', '.')
@@ -34,6 +45,11 @@ if __name__ == '__main__':
 
     for literal in ['base.js', 'base.css']:
         shutil.copy(templates + '/' + literal, dest_dir)
+    
+    dic = {'version': os.getenv('PROJ_VERSION', '.')}
+    substitute(f'{templates}/index.tmpl', f'{dest_dir}', dic)
+    substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', dic)
+    substitute(f'{templates}/ref.tmpl', f'{dest_dir}/ref', dic)
 
     exit(0)
 

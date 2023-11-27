@@ -17,8 +17,8 @@ test "$(ls -A $DIRNAME/dist/)" && rm -r $DIRNAME/dist/*
 docker build --pull --build-arg VERSION=$PROJ_VERSION --build-arg PYPROJ_VERSION=$PYPROJ_VERSION --tag $TAG $DIRNAME
 
 # execute container
-docker run --user $(id -u):$(id -g) --rm -v "$DIRNAME/dist:/home/dist" $TAG
+docker run --user $(id -u):$(id -g) -e PROJ_VERSION=$PROJ_VERSION --rm -v "$DIRNAME/dist:/home/dist" $TAG
 
 DEST=$DIRNAME/..
 # copy to root location
-cp $DIRNAME/dist/* $DEST
+cp -r $DIRNAME/dist/* $DEST
