@@ -17,7 +17,7 @@
             <a href="/"><img src="${home_dir}/sr_logo.jpg" border=0></a>
         </div>
         <div id="header_title">
-            ${name}
+            ${authority}:&hairsp;${code}
         </div>
     </div>
     <div id="searchbox"> <!--TODO XXX-->
@@ -29,8 +29,6 @@
     <div id="navbar"> <!--TODO XXX-->
         <div id="navlinks">
             <a href="${home_dir}/">Home</a> | 
-            <a href="/ref/upload/">Upload Your Own</a> | 
-            <a href="/ref/sr-org/">List user-contributed references</a> | 
             <a href="/ref/">List all references</a>
         </div>
     </div>
@@ -39,8 +37,8 @@
         Previous: <a href="${prev_url}">${prev_full_name}</a> | Next: <a href="${next_url}">${next_full_name}</a> 
 
         <h1>${authority}:${code}</h1>
-
-        <p>${name} - ${epsg_a}</p>
+        <h2>${name}</h2>
+        <p>${epsg_a}</p>
         <p style="font-size:0.8em"></p>
         <ul>
         
@@ -72,14 +70,8 @@
         </div>
         
         <div id="map" style="width:512px; height:256px; max-width: 90%; margin:10px; padding: -5px 15px 0px 0px; border: 2px solid darkblue;"></div>
-        
-        <script defer='defer'> 
-           
-        </script>
-        
     </div>
     
-    <br style="clear:both" /> 
     <div id="footer">
         <a href="${home_dir}/about/">About</a>
     </div>

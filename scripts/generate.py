@@ -77,7 +77,7 @@ if __name__ == '__main__':
         epsg_a = ''
         if auth_name == "EPSG":
             scapedName = re.sub(r'[^0-9a-zA-Z]+', '-', name);
-            epsg_a = f'<a href="https://epsg.org/crs_{code}/{scapedName}.html">epsg.org</a>'
+            epsg_a = f'Watch it at <a href="https://epsg.org/crs_{code}/{scapedName}.html">epsg.org</a>'
         bounds = ', '.join([str(x) for x in c["area_of_use"][:4]])
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
