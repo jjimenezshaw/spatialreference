@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPSG:2006 St. Lucia 1955 / British West Indies Grid -- Spatial Reference</title>
+    <link rel="stylesheet" href="../../../base.css"/>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_logo">
+            <a href="/"><img src="../../../sr_logo.jpg" border=0></a>
+        </div>
+        <div id="header_title">
+            St. Lucia 1955 / British West Indies Grid
+        </div>
+    </div>
+    <div id="searchbox"> <!--TODO XXX-->
+        <form action="/ref/">
+        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>  
+    </div>
+
+    <div id="navbar"> <!--TODO XXX-->
+        <div id="navlinks">
+            <a href="../../../">Home</a> | 
+            <a href="/ref/upload/">Upload Your Own</a> | 
+            <a href="/ref/sr-org/">List user-contributed references</a> | 
+            <a href="/ref/">List all references</a>
+        </div>
+    </div>
+
+    <div id="content">
+        Previous: <a href="../../../ref/epsg/2005">EPSG:2005 : St. Kitts 1955 / British West Indies Grid</a> | Next: <a href="../../../ref/epsg/2007">EPSG:2007 : St. Vincent 45 / British West Indies Grid</a> 
+
+        <h1>EPSG:2006</h1>
+
+        <p>St. Lucia 1955 / British West Indies Grid - <a href="https://epsg.org/crs_2006/St-Lucia-1955-British-West-Indies-Grid.html">epsg.org</a></p>
+        <p style="font-size:0.8em"></p>
+        <ul>
+        
+          <li><b>WGS84 Bounds</b>: -61.13, 13.66, -60.82, 14.16
+          </li>
+          <li><b>Scope</b>: Engineering survey, topographic mapping.</li>
+          <li><b>Area</b>: St Lucia - onshore.</li>
+          
+        </ul>
+        
+        <div style="margin:10px; padding: -5px 15px 0px 0px; background:lightgrey; border: 2px solid black; width:350px">
+        <ul>
+          <li><a href="html/">Well Known Text as HTML</a></li>
+          <li><a href="prettywkt/">Human-Readable OGC WKT</a></li>
+          <li><a href="proj4/">Proj4</a></li>
+          <li><a href="ogcwkt/">OGC WKT</a></li>
+          <li><a href="json/">JSON</a></li>
+          <li><a href="gml/">GML</a></li>
+          <li><a href="esriwkt/">ESRI WKT</a></li>
+          <li><a href="prj/">.PRJ File</a></li>
+          <li><a href="usgs/">USGS</a></li>
+          <li><a href="mapfile/">MapServer Mapfile</a> | <a href="mapserverpython">Python</a></li>
+          <li><a href="mapnik/">Mapnik XML</a> | <a href="mapnikpython/">Python</a></li>
+          <li><a href="geoserver/">GeoServer</a></li>
+          <li><a href="postgis/">PostGIS spatial_ref_sys INSERT statement</a></li>
+          <li><a href="proj4js/">Proj4js format</a></li>
+        </ul>  
+        </div>
+        
+        <div id="map" style="width:512px; height:256px"></div>
+        
+        <script defer='defer'> 
+           
+        </script>
+        
+    </div>
+    
+    <br style="clear:both" /> 
+    <div id="footer">
+        <a href="../../../about/">About</a>
+    </div>
+    <script src="../../../base.js"></script>
+    <script>
+        init_map([-61.13, 13.66, -60.82, 14.16])
+    </script>     
+       
+</body>
+</html>
+    
