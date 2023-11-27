@@ -47,8 +47,10 @@ if __name__ == '__main__':
     for literal in ['base.js', 'base.css']:
         shutil.copy(f'{templates}/{literal}', dest_dir)
     
-    dic = {'version': os.getenv('PROJ_VERSION', '.')}
+    dic = {'version': os.getenv('PROJ_VERSION', '.'),
+           'home_dir': '.'}
     substitute(f'{templates}/index.tmpl', f'{dest_dir}', dic)
+    dic['home_dir'] = '..'
     substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', dic)
     substitute(f'{templates}/ref.tmpl', f'{dest_dir}/ref', dic)
 
