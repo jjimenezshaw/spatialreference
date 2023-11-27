@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About -- Spatial Reference</title>
+    <link rel="stylesheet" href="../base.css"/>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_logo">
+            <a href="/"><img src="../sr_logo.jpg" border=0></a>
+        </div>
+        <div id="header_title">
+            About spatial reference
+        </div>
+    </div>
+    <div id="searchbox"> <!--TODO XXX-->
+        <form action="/ref/">
+        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>  
+    </div>
+
+    <div id="navbar"> <!--TODO XXX-->
+        <div id="navlinks">
+            <a href="/">Home</a> | 
+            <a href="/ref/upload/">Upload Your Own</a> | 
+            <a href="/ref/sr-org/">List user-contributed references</a> | 
+            <a href="/ref/">List all references</a>
+        </div>
+    </div>
+
+    <div id="content">
+            
+        <h3>Who</h3>
+        <p>spatialreference.org is a website by <a href="https://hobu.co/">Howard Butler</a>, 
+        <a href="https://crschmidt.net/">Christopher Schmidt</a>,  <a href="http://dbsgeo.com/">Dane Springmeyer</a>, 
+        <a href="http://porcupinealley.com/">Josh Livni</a>, and <a href="https://javier.jimenezshaw.com/">Javier Jimenez Shaw</a>
+        that helps assist others in their understanding, recording, and usage of spatial reference systems.  </p>
+        
+        <h3>Why</h3>
+        
+        <p>While this site is coincidentally somewhat educational and fun to surf around in :), its real purpose is to allow 
+        you to use URL/URI-based references to spatial reference systems.  You might think of it as a neogeo 
+        approach to a very oldgeo problem -- universally describing coordinate systems.  However, rather than 
+        attempting to come up with yet another description and encoding scheme that few would use and would 
+        incompletely solve the problem, we've taken a slightly different approach.  Instead, the expectation of 
+        spatialreference.org is to attempt to provide spatial reference descriptions in as many formats as possible, a
+        sort of  web-based <a href="http://www.gdal.org">GDAL</a> for spatial references (by the way, GDAL 
+        and <a href="http://proj.maptools.org/">Proj.4</a> are the backbone of this website).  
+        </p>
+        <p>
+        This approach allows you to refer to a URL that can produce a spatial reference in a format that your 
+        software can use.  
+        </p>
+        
+        <h3>What</h3>
+        <p>
+        There are currently three distinct catalogs of spatial reference systems on this website -- EPSG, ESRI, and 
+        User-defined (called sr-org).  Others, like Oracle and ICU should be forthcoming.
+        </p>
+        
+        <h3>Press</h3>
+        <ul>
+        <li><a href="http://3liz.com/blog/rldhont/index.php/2007/07/26/71-un-site-pour-les-systemes-de-references-spatials">Un site pour les Systèmes de Références Spatials</a> -- Link back to SpatialReference.org</li>
+        </ul>
+    
+    </div>
+    
+    <br style="clear:both" /> 
+    <div id="footer">
+        <a href="/about/">About</a>
+    </div>
+</body>
+</html>
+    
