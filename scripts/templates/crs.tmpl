@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${authority}:${code} ${name} -- Spatial Reference</title>
     <link rel="stylesheet" href="${home_dir}/base.css"/>
+    <link rel="icon" type="image/x-icon" href="${home_dir}/favicon.ico"/>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -42,10 +43,10 @@
         <p style="font-size:0.8em"></p>
         <ul>
         
-          <li><b>WGS84 Bounds</b>: ${bounds}
-          </li>
-          <li><b>Scope</b>: ${scope}</li>
-          <li><b>Area</b>: ${area_name}</li>
+            <li><b>Type</b>: ${crs_type}</li>
+            <li><b>WGS84 Bounds</b>: ${bounds}</li>
+            <li><b>Scope</b>: ${scope}</li>
+            <li><b>Area</b>: ${area_name}</li>
           
         </ul>
         

@@ -53,8 +53,10 @@ if __name__ == '__main__':
     with open(dest_file, 'w') as fp:
         json.dump(crss, fp, indent=2, default=lambda o: str(o).replace('PJType.', ''))
 
-    shutil.copy(f'{templates}/sr_logo.jpg', dest_dir)
-    for literal in ['base.js', 'base.css']:
+    with open(dest_file, 'r') as fp:
+        crss = json.load(fp)
+
+    for literal in ['base.js', 'base.css', 'sr_logo.jpg', 'favicon.ico']:
         shutil.copy(f'{templates}/{literal}', dest_dir)
     
     dic = {'version': os.getenv('PROJ_VERSION', '.'),
@@ -87,6 +89,7 @@ if __name__ == '__main__':
                'name': name,
                'area_name': c["area_of_use"][4],
                'epsg_a': epsg_a,
+               'crs_type': c["type"],
                'bounds': bounds,
                'scope': crs.scope,
                'prev_full_name': full_name(crss[id-1]),
