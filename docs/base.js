@@ -33,7 +33,8 @@ function generate_entries(data, home_dir, from, number, container) {
         a.href = `${home_dir}/ref/${crs.auth_name.toLowerCase()}/${crs.code}/`;
         a.innerText = `${crs.auth_name}:${crs.code}`;
         li.appendChild(a);
-        li.innerHTML += `: ${crs.name}`;
+        name_broken = crs.name.replaceAll('_', '<wbr />_')
+        li.innerHTML += `: ${name_broken}`;
         container.appendChild(li);
     }
 }
