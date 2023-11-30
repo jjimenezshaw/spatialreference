@@ -73,9 +73,8 @@ function filter_data(data, search) {
     }
     let s = search.toLowerCase().split(' ');
     let r = data.filter(d => {
-        let valid = false;
         let name = d.name.toLowerCase();
-        s.forEach(token => { if(name.includes(token)) valid = true;});
+        let valid = s.reduce((accum, current) => accum && name.includes(current), true);
 
         if (!isNaN(s[0]) && d.code === s[0]) {
             valid = true
