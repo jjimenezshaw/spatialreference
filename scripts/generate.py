@@ -70,7 +70,7 @@ if __name__ == '__main__':
     for id, c in enumerate(crss):
         count += 1
         if count > 10:
-            break
+            pass #break
         code=c["code"]
         auth_name=c["auth_name"]
         name = c["name"]
@@ -94,8 +94,8 @@ if __name__ == '__main__':
                'scope': crs.scope,
                'prev_full_name': full_name(crss[id-1]),
                'prev_url': url(crss[id-1]),
-               'next_full_name': full_name(crss[id+1]),
-               'next_url': url(crss[id+1]),
+               'next_full_name': full_name(crss[(id+1)%len(crss)]),
+               'next_url': url(crss[(id+1)%len(crss)]),
         }
         substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', dic)
 
