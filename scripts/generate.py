@@ -110,7 +110,7 @@ if __name__ == '__main__':
     for id, c in enumerate(crss):
         count += 1
         if count > 3000:
-            break
+            pass #break
         code=c["code"]
         auth_name=c["auth_name"]
         name = c["name"]
@@ -187,31 +187,3 @@ if __name__ == '__main__':
         dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/proj4', proj4)
 
     exit(0)
-
-    types = ({'path': 'wkt1', 'version': 'WKT1_GDAL'},
-             {'path': 'wkt2', 'version': 'WKT2_2019'})
-
-    urls = []
-    for c in crss:
-        crs = pyproj.CRS.from_authority(auth_name=c["auth_name"], code=c["code"])
-        for t in types:
-            url = f'{t["path"]}/{c["auth_name"]}/{c["code"]}.txt'
-            if not url in urls:
-                urls.append(url)
-            wtk_file = f'{dest_dir}/{url}'
-            if not os.path.exists(os.path.dirname(wtk_file)):
-                os.makedirs(os.path.dirname(wtk_file))
-
-            try:
-                output_axis_rule = True if crs.is_projected else None
-                wkt = crs.to_wkt(version=t["version"], pretty=True, output_axis_rule=output_axis_rule)
-            except:
-                wkt = None
-            if not wkt:
-                type = str(c["type"]).replace('PJType.', '')
-                wkt = (f'Error: {c["auth_name"]}:{c["code"]} cannot be written as {t["version"]}\n'
-                        f' type: {type}\n'
-                        f' name: {c["name"]}')
-            with open(wtk_file, 'w') as fp:
-                fp.write(wkt)
-                fp.write('\n')
