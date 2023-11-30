@@ -4,15 +4,55 @@ import json
 import os, shutil
 import re
 from pathlib import Path
-from string import Template 
+from string import Template
+
+from pygments.lexer import RegexLexer
+from pygments.token import *
+from pygments import highlight
+from pygments.formatters import HtmlFormatter
 
 import pyproj
 #from contextlib import redirect_stdout
 
+class WKTLexer(RegexLexer):
+    name = 'wkt'
+    aliases = ['wkt']
+    filenames = ['*.wkt']
+
+    tokens = {
+        'root': [
+            (r'^This CRS cannot be written.*', Error),
+            (r'\s+', Text),
+            (r'[{}\[\]();,-.]+', Punctuation),
+            (r'^(PROJCS|GEOGCS|GEOCCS|VERT_CS|COMPD_CS)\b', Generic.Heading),
+            (r'^(PROJCRS|GEOGCRS|GEODCRS|VERTCRS|COMPOUNDCRS)\b', Generic.Heading),
+            (r'(PROJCS|GEOGCS|GEOCCS|VERT_CS)\b', Keyword.Declaration),
+            (r'(PROJCRS|GEOGCRS|GEODCRS|VERTCRS)\b', Keyword.Declaration),
+            (r'(PARAMETER|PROJECTION|SPHEROID|DATUM|GEOGCS|AXIS|VERT_DATUM)\b', Keyword),
+            (r'(ELLIPSOID)\b', Keyword),
+            (r'(METHOD)\b', Keyword),
+            (r'(PRIMEM|UNIT|TOWGS84)\b', Keyword.Constant),
+            (r'([A-Z]+UNIT)\b', Name.Class),
+            (r'(east|west|north|south|up|down|geocentric[XYZ])\b', Literal.String),
+            (r'(EAST|WEST|NORTH|SOUTH|UP|DOWN)\b', Literal.String),
+            (r'(ORDER|SCOPE|AREA|BBOX)\b', Keyword.Constant),
+            (r'(BASEGEOGCRS|CONVERSION|CS|USAGE|VDATUM)\b', Keyword.Declaration),
+            (r'([Cc]artesian|[Ee]llipsoidal|[Vv]ertical)\b', Literal.String),
+            (r'(AUTHORITY)\b', Name.Builtin),
+            (r'(ID)\b', Name.Builtin),
+            (r'[$a-zA-Z_][a-zA-Z0-9_]*', Name.Other),
+            (r'[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
+            (r'0x[0-9a-fA-F]+', Number.Hex),
+            (r'[0-9]+', Number.Integer),
+            (r'"(\\\\|\\"|[^"])*"', String.Double),
+            (r"'(\\\\|\\'|[^'])*'", String.Single),
+        ]
+    }
+
 def substitute(src_filename, dst_folder, dic):
     Path(dst_folder).mkdir(parents=True, exist_ok=True)
     dst_folder += '/index.html'
-    
+
     with open(src_filename, 'r') as src, open(dst_folder, 'w') as dst:
         txt = Template(src.read())
         result = txt.substitute(dic)
@@ -22,7 +62,7 @@ def substitute(src_filename, dst_folder, dic):
 def dump(dst_folder, txt):
     Path(dst_folder).mkdir(parents=True, exist_ok=True)
     dst_folder += '/index.html'
-    
+
     with open(dst_folder, 'w') as dst:
         dst.write(txt)
 
@@ -58,7 +98,7 @@ if __name__ == '__main__':
 
     for literal in ['base.js', 'base.css', 'sr_logo.jpg', 'favicon.ico']:
         shutil.copy(f'{templates}/{literal}', dest_dir)
-    
+
     dic = {'version': os.getenv('PROJ_VERSION', '.'),
            'home_dir': '.'}
     substitute(f'{templates}/index.tmpl', f'{dest_dir}', dic)
@@ -69,8 +109,8 @@ if __name__ == '__main__':
     count = 0
     for id, c in enumerate(crss):
         count += 1
-        if count > 10:
-            pass #break
+        if count > 3000:
+            break
         code=c["code"]
         auth_name=c["auth_name"]
         name = c["name"]
@@ -110,10 +150,13 @@ if __name__ == '__main__':
         pretty2 = crs.to_wkt(version='WKT2_2019', pretty=True, output_axis_rule=output_axis_rule)
         ogcwkt2 = crs.to_wkt(version='WKT2_2019', pretty=False, output_axis_rule=output_axis_rule)
 
+        syntax_pretty = highlight(pretty, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
+        syntax_pretty2 = highlight(pretty2, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
+
         dic = {'home_dir': '../../../..',
                'authority': auth_name,
                'code': code,
-               'syntax_html': pretty,
+               'syntax_html': syntax_pretty,
         }
         substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/html', dic)
         dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt', pretty)
@@ -122,7 +165,7 @@ if __name__ == '__main__':
         dic = {'home_dir': '../../../..',
                'authority': auth_name,
                'code': code,
-               'syntax_html': pretty2,
+               'syntax_html': syntax_pretty2,
         }
         substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', dic)
         dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt2', pretty2)
