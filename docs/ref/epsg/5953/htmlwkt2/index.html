@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPSG:5953 -- Spatial Reference</title>
+    <link rel="stylesheet" href="../../../../base.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_logo">
+            <a href="/"><img src="../../../../sr_logo.jpg" border=0></a>
+        </div>
+        <div id="header_title">
+            EPSG:5953
+        </div>
+    </div>
+    <div id="searchbox"> <!--TODO XXX-->
+        <form action="/ref/">
+        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>  
+    </div>
+
+    <div id="navbar"> <!--TODO XXX-->
+        <div id="navlinks">
+            <a href="../../../../">Home</a> | 
+            <a href="/ref/">List all references</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="syntax">
+            <pre class="nicewkt">COMPOUNDCRS["ETRS89 / NTM zone 13 + NN2000 height",
+    PROJCRS["ETRS89 / NTM zone 13",
+        BASEGEOGCRS["ETRS89",
+            ENSEMBLE["European Terrestrial Reference System 1989 ensemble",
+                MEMBER["European Terrestrial Reference Frame 1989"],
+                MEMBER["European Terrestrial Reference Frame 1990"],
+                MEMBER["European Terrestrial Reference Frame 1991"],
+                MEMBER["European Terrestrial Reference Frame 1992"],
+                MEMBER["European Terrestrial Reference Frame 1993"],
+                MEMBER["European Terrestrial Reference Frame 1994"],
+                MEMBER["European Terrestrial Reference Frame 1996"],
+                MEMBER["European Terrestrial Reference Frame 1997"],
+                MEMBER["European Terrestrial Reference Frame 2000"],
+                MEMBER["European Terrestrial Reference Frame 2005"],
+                MEMBER["European Terrestrial Reference Frame 2014"],
+                ELLIPSOID["GRS 1980",6378137,298.257222101,
+                    LENGTHUNIT["metre",1]],
+                ENSEMBLEACCURACY[0.1]],
+            PRIMEM["Greenwich",0,
+                ANGLEUNIT["degree",0.0174532925199433]],
+            ID["EPSG",4258]],
+        CONVERSION["Norway TM zone 13",
+            METHOD["Transverse Mercator",
+                ID["EPSG",9807]],
+            PARAMETER["Latitude of natural origin",58,
+                ANGLEUNIT["degree",0.0174532925199433],
+                ID["EPSG",8801]],
+            PARAMETER["Longitude of natural origin",13.5,
+                ANGLEUNIT["degree",0.0174532925199433],
+                ID["EPSG",8802]],
+            PARAMETER["Scale factor at natural origin",1,
+                SCALEUNIT["unity",1],
+                ID["EPSG",8805]],
+            PARAMETER["False easting",100000,
+                LENGTHUNIT["metre",1],
+                ID["EPSG",8806]],
+            PARAMETER["False northing",1000000,
+                LENGTHUNIT["metre",1],
+                ID["EPSG",8807]]],
+        CS[Cartesian,2],
+            AXIS["northing (N)",north,
+                ORDER[1],
+                LENGTHUNIT["metre",1]],
+            AXIS["easting (E)",east,
+                ORDER[2],
+                LENGTHUNIT["metre",1]]],
+    VERTCRS["NN2000 height",
+        DYNAMIC[
+            FRAMEEPOCH[2000]],
+        VDATUM["Norway Normal Null 2000"],
+        CS[vertical,1],
+            AXIS["gravity-related height (H)",up,
+                LENGTHUNIT["metre",1]]],
+    USAGE[
+        SCOPE["Engineering survey."],
+        AREA["Norway - onshore - between 13°E and 14°E."],
+        BBOX[64.01,13,68.4,14.01]],
+    ID["EPSG",5953]]</pre>
+        </div>
+        <a href="../">More formats</a>
+    </div>
+    
+    <div id="footer">
+        <a href="../../../../about/">About</a>
+    </div>
+</body>
+</html>
+    

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPSG:11115 -- Spatial Reference</title>
+    <link rel="stylesheet" href="../../../../base.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_logo">
+            <a href="/"><img src="../../../../sr_logo.jpg" border=0></a>
+        </div>
+        <div id="header_title">
+            EPSG:11115
+        </div>
+    </div>
+    <div id="searchbox"> <!--TODO XXX-->
+        <form action="/ref/">
+        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>  
+    </div>
+
+    <div id="navbar"> <!--TODO XXX-->
+        <div id="navlinks">
+            <a href="../../../../">Home</a> | 
+            <a href="/ref/">List all references</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="syntax">
+            <pre class="nicewkt">PROJCRS["MAGNA-SIRGAS 2018 / Colombia West zone",
+    BASEGEOGCRS["MAGNA-SIRGAS 2018",
+        DATUM["Marco Geocentrico Nacional de Referencia 2018",
+            ELLIPSOID["GRS 1980",6378137,298.257222101,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",20046]],
+    CONVERSION["Colombia MAGNA 2018 West zone",
+        METHOD["Transverse Mercator",
+            ID["EPSG",9807]],
+        PARAMETER["Latitude of natural origin",4.59620322222222,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8801]],
+        PARAMETER["Longitude of natural origin",-77.0775077694444,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8802]],
+        PARAMETER["Scale factor at natural origin",1,
+            SCALEUNIT["unity",1],
+            ID["EPSG",8805]],
+        PARAMETER["False easting",1000000,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8806]],
+        PARAMETER["False northing",1000000,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8807]]],
+    CS[Cartesian,2],
+        AXIS["northing (N)",north,
+            ORDER[1],
+            LENGTHUNIT["metre",1]],
+        AXIS["easting (E)",east,
+            ORDER[2],
+            LENGTHUNIT["metre",1]],
+    USAGE[
+        SCOPE["Engineering survey, topographic mapping."],
+        AREA["Colombia - onshore between 4°30'W and 1°30'W of Bogota (approximately 78°35'W and 75°35'W of Greenwich)."],
+        BBOX[0.03,-78.59,10.21,-75.58]],
+    ID["EPSG",11115]]</pre>
+        </div>
+        <a href="../">More formats</a>
+    </div>
+    
+    <div id="footer">
+        <a href="../../../../about/">About</a>
+    </div>
+</body>
+</html>
+    

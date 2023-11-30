@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPSG:4396 -- Spatial Reference</title>
+    <link rel="stylesheet" href="../../../../base.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_logo">
+            <a href="/"><img src="../../../../sr_logo.jpg" border=0></a>
+        </div>
+        <div id="header_title">
+            EPSG:4396
+        </div>
+    </div>
+    <div id="searchbox"> <!--TODO XXX-->
+        <form action="/ref/">
+        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>  
+    </div>
+
+    <div id="navbar"> <!--TODO XXX-->
+        <div id="navlinks">
+            <a href="../../../../">Home</a> | 
+            <a href="/ref/">List all references</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="syntax">
+            <pre class="nicewkt">PROJCRS["Kertau 1968 / Kedah and Perlis Grid",
+    BASEGEOGCRS["Kertau 1968",
+        DATUM["Kertau 1968",
+            ELLIPSOID["Everest 1830 Modified",6377304.063,300.8017,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",4245]],
+    CONVERSION["Kedah and Perlis Cassini Grid",
+        METHOD["Cassini-Soldner",
+            ID["EPSG",9806]],
+        PARAMETER["Latitude of natural origin",5.96514722222222,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8801]],
+        PARAMETER["Longitude of natural origin",100.637594444444,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8802]],
+        PARAMETER["False easting",0,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8806]],
+        PARAMETER["False northing",0,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8807]]],
+    CS[Cartesian,2],
+        AXIS["(E)",east,
+            ORDER[1],
+            LENGTHUNIT["metre",1]],
+        AXIS["(N)",north,
+            ORDER[2],
+            LENGTHUNIT["metre",1]],
+    USAGE[
+        SCOPE["Cadastre."],
+        AREA["Malaysia - West Malaysia - Kedah and Perlis."],
+        BBOX[5.08,99.59,6.72,101.12]],
+    ID["EPSG",4396]]</pre>
+        </div>
+        <a href="../">More formats</a>
+    </div>
+    
+    <div id="footer">
+        <a href="../../../../about/">About</a>
+    </div>
+</body>
+</html>
+    

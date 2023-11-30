@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPSG:7991 -- Spatial Reference</title>
+    <link rel="stylesheet" href="../../../../base.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_logo">
+            <a href="/"><img src="../../../../sr_logo.jpg" border=0></a>
+        </div>
+        <div id="header_title">
+            EPSG:7991
+        </div>
+    </div>
+    <div id="searchbox"> <!--TODO XXX-->
+        <form action="/ref/">
+        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>  
+    </div>
+
+    <div id="navbar"> <!--TODO XXX-->
+        <div id="navlinks">
+            <a href="../../../../">Home</a> | 
+            <a href="/ref/">List all references</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="syntax">
+            <pre class="nicewkt">PROJCRS["NAD27 / MTM zone 10",
+    BASEGEOGCRS["NAD27",
+        DATUM["North American Datum 1927",
+            ELLIPSOID["Clarke 1866",6378206.4,294.978698213898,
+                LENGTHUNIT["metre",1]]],
+        PRIMEM["Greenwich",0,
+            ANGLEUNIT["degree",0.0174532925199433]],
+        ID["EPSG",4267]],
+    CONVERSION["MTM zone 10",
+        METHOD["Transverse Mercator",
+            ID["EPSG",9807]],
+        PARAMETER["Latitude of natural origin",0,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8801]],
+        PARAMETER["Longitude of natural origin",-79.5,
+            ANGLEUNIT["degree",0.0174532925199433],
+            ID["EPSG",8802]],
+        PARAMETER["Scale factor at natural origin",0.9999,
+            SCALEUNIT["unity",1],
+            ID["EPSG",8805]],
+        PARAMETER["False easting",304800,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8806]],
+        PARAMETER["False northing",0,
+            LENGTHUNIT["metre",1],
+            ID["EPSG",8807]]],
+    CS[Cartesian,2],
+        AXIS["easting (X)",east,
+            ORDER[1],
+            LENGTHUNIT["metre",1]],
+        AXIS["northing (Y)",north,
+            ORDER[2],
+            LENGTHUNIT["metre",1]],
+    USAGE[
+        SCOPE["Engineering survey, topographic mapping."],
+        AREA["Canada - Ontario - between 81°W and 78°W: south of 46°N in area to west of 80°15'W, south of 47°N in area between 80°15'W and 79°30'W, entire province between 79°30'W and 78°W."],
+        BBOX[42.26,-81,47.33,-77.99]],
+    ID["EPSG",7991]]</pre>
+        </div>
+        <a href="../">More formats</a>
+    </div>
+    
+    <div id="footer">
+        <a href="../../../../about/">About</a>
+    </div>
+</body>
+</html>
+    

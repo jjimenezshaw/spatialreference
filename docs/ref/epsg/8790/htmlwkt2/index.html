@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EPSG:8790 -- Spatial Reference</title>
+    <link rel="stylesheet" href="../../../../base.css"/>
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header_logo">
+            <a href="/"><img src="../../../../sr_logo.jpg" border=0></a>
+        </div>
+        <div id="header_title">
+            EPSG:8790
+        </div>
+    </div>
+    <div id="searchbox"> <!--TODO XXX-->
+        <form action="/ref/">
+        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>  
+    </div>
+
+    <div id="navbar"> <!--TODO XXX-->
+        <div id="navlinks">
+            <a href="../../../../">Home</a> | 
+            <a href="/ref/">List all references</a>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="syntax">
+            <pre class="nicewkt">COMPOUNDCRS["NAD83 / Washington North (ftUS) + NAVD88 height (ftUS)",
+    PROJCRS["NAD83 / Washington North (ftUS)",
+        BASEGEOGCRS["NAD83",
+            DATUM["North American Datum 1983",
+                ELLIPSOID["GRS 1980",6378137,298.257222101,
+                    LENGTHUNIT["metre",1]]],
+            PRIMEM["Greenwich",0,
+                ANGLEUNIT["degree",0.0174532925199433]],
+            ID["EPSG",4269]],
+        CONVERSION["SPCS83 Washington North zone (US Survey feet)",
+            METHOD["Lambert Conic Conformal (2SP)",
+                ID["EPSG",9802]],
+            PARAMETER["Latitude of false origin",47,
+                ANGLEUNIT["degree",0.0174532925199433],
+                ID["EPSG",8821]],
+            PARAMETER["Longitude of false origin",-120.833333333333,
+                ANGLEUNIT["degree",0.0174532925199433],
+                ID["EPSG",8822]],
+            PARAMETER["Latitude of 1st standard parallel",48.7333333333333,
+                ANGLEUNIT["degree",0.0174532925199433],
+                ID["EPSG",8823]],
+            PARAMETER["Latitude of 2nd standard parallel",47.5,
+                ANGLEUNIT["degree",0.0174532925199433],
+                ID["EPSG",8824]],
+            PARAMETER["Easting at false origin",1640416.667,
+                LENGTHUNIT["US survey foot",0.304800609601219],
+                ID["EPSG",8826]],
+            PARAMETER["Northing at false origin",0,
+                LENGTHUNIT["US survey foot",0.304800609601219],
+                ID["EPSG",8827]]],
+        CS[Cartesian,2],
+            AXIS["easting (X)",east,
+                ORDER[1],
+                LENGTHUNIT["US survey foot",0.304800609601219]],
+            AXIS["northing (Y)",north,
+                ORDER[2],
+                LENGTHUNIT["US survey foot",0.304800609601219]]],
+    VERTCRS["NAVD88 height (ftUS)",
+        VDATUM["North American Vertical Datum 1988"],
+        CS[vertical,1],
+            AXIS["gravity-related height (H)",up,
+                LENGTHUNIT["US survey foot",0.304800609601219]]],
+    USAGE[
+        SCOPE["Engineering survey, topographic mapping."],
+        AREA["United States (USA) - Washington - counties of Chelan; Clallam; Douglas; Ferry; Grant north of approximately 47°30'N; Island; Jefferson; King; Kitsap; Lincoln; Okanogan; Pend Oreille; San Juan; Skagit; Snohomish; Spokane; Stevens; Whatcom."],
+        BBOX[47.08,-124.79,49.05,-117.02]],
+    ID["EPSG",8790]]</pre>
+        </div>
+        <a href="../">More formats</a>
+    </div>
+    
+    <div id="footer">
+        <a href="../../../../about/">About</a>
+    </div>
+</body>
+</html>
+    
