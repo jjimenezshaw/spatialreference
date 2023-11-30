@@ -32,43 +32,43 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">PROJCRS["Saint-Pierre-et-Miquelon Geoportail",
-    BASEGEOGCRS["RGSPM06 geographiques (dms)",
-        DATUM["Reseau Geodesique de Saint Pierre et Miquelon 2006",
-            ELLIPSOID["GRS 1980",6378137,298.257222101,
-                LENGTHUNIT["metre",1]]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["degree",0.0174532925199433]],
-        ID["IGNF","RGSPM06G"]],
-    CONVERSION["EQUIRECTANGULAIRE SPM",
-        METHOD["Equidistant Cylindrical",
-            ID["EPSG",1028]],
-        PARAMETER["Latitude of 1st standard parallel",47,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8823]],
-        PARAMETER["Longitude of natural origin",0,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8802]],
-        PARAMETER["False easting",0,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8806]],
-        PARAMETER["False northing",0,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8807]]],
-    CS[Cartesian,2],
-        AXIS["easting (X)",east,
-            ORDER[1],
-            LENGTHUNIT["metre",1]],
-        AXIS["northing (Y)",north,
-            ORDER[2],
-            LENGTHUNIT["metre",1]],
-    USAGE[
-        SCOPE["LOCALE"],
-        AREA["SAINT-PIERRE-ET-MIQUELON"],
-        BBOX[46.7,-56.49,47.2,-56.1]],
-    ID["IGNF","RGSPM06EQGP"]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;Saint-Pierre-et-Miquelon Geoportail&quot;</span><span class="p">,</span>
+    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;RGSPM06 geographiques (dms)&quot;</span><span class="p">,</span>
+        <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;Reseau Geodesique de Saint Pierre et Miquelon 2006&quot;</span><span class="p">,</span>
+            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+        <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+        <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;IGNF&quot;</span><span class="p">,</span><span class="s2">&quot;RGSPM06G&quot;</span><span class="p">]],</span>
+    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;EQUIRECTANGULAIRE SPM&quot;</span><span class="p">,</span>
+        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Equidistant Cylindrical&quot;</span><span class="p">,</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">1028</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 1st standard parallel&quot;</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8823</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of natural origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8802</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False easting&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8806</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False northing&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8807</span><span class="p">]]],</span>
+    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;easting (X)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;northing (Y)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;LOCALE&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;SAINT-PIERRE-ET-MIQUELON&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[</span><span class="mf">46.7</span><span class="p">,-</span><span class="mf">56.49</span><span class="p">,</span><span class="mf">47.2</span><span class="p">,-</span><span class="mf">56.1</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;IGNF&quot;</span><span class="p">,</span><span class="s2">&quot;RGSPM06EQGP&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     

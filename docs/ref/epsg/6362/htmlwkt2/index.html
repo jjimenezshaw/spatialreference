@@ -32,49 +32,49 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">PROJCRS["Mexico ITRF92 / LCC",
-    BASEGEOGCRS["Mexico ITRF92",
-        DATUM["Mexico ITRF92",
-            ELLIPSOID["GRS 1980",6378137,298.257222101,
-                LENGTHUNIT["metre",1]]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["degree",0.0174532925199433]],
-        ID["EPSG",4483]],
-    CONVERSION["Mexico LCC",
-        METHOD["Lambert Conic Conformal (2SP)",
-            ID["EPSG",9802]],
-        PARAMETER["Latitude of false origin",12,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8821]],
-        PARAMETER["Longitude of false origin",-102,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8822]],
-        PARAMETER["Latitude of 1st standard parallel",17.5,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8823]],
-        PARAMETER["Latitude of 2nd standard parallel",29.5,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8824]],
-        PARAMETER["Easting at false origin",2500000,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8826]],
-        PARAMETER["Northing at false origin",0,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8827]]],
-    CS[Cartesian,2],
-        AXIS["northing (N)",north,
-            ORDER[1],
-            LENGTHUNIT["metre",1]],
-        AXIS["easting (E)",east,
-            ORDER[2],
-            LENGTHUNIT["metre",1]],
-    USAGE[
-        SCOPE["Topographic mapping (small scale)."],
-        AREA["Mexico - onshore and offshore."],
-        BBOX[12.1,-122.19,32.72,-84.64]],
-    ID["EPSG",6362]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;Mexico ITRF92 / LCC&quot;</span><span class="p">,</span>
+    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;Mexico ITRF92&quot;</span><span class="p">,</span>
+        <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;Mexico ITRF92&quot;</span><span class="p">,</span>
+            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+        <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+        <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">4483</span><span class="p">]],</span>
+    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;Mexico LCC&quot;</span><span class="p">,</span>
+        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Lambert Conic Conformal (2SP)&quot;</span><span class="p">,</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9802</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of false origin&quot;</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8821</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of false origin&quot;</span><span class="p">,-</span><span class="mi">102</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8822</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 1st standard parallel&quot;</span><span class="p">,</span><span class="mf">17.5</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8823</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 2nd standard parallel&quot;</span><span class="p">,</span><span class="mf">29.5</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8824</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Easting at false origin&quot;</span><span class="p">,</span><span class="mi">2500000</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8826</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Northing at false origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8827</span><span class="p">]]],</span>
+    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;northing (N)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;easting (E)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Topographic mapping (small scale).&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;Mexico - onshore and offshore.&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[</span><span class="mf">12.1</span><span class="p">,-</span><span class="mf">122.19</span><span class="p">,</span><span class="mf">32.72</span><span class="p">,-</span><span class="mf">84.64</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">6362</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     

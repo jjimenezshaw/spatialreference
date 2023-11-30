@@ -32,40 +32,40 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">COMPOUNDCRS["WGS84 geographiques (dms) et NGF-IGN 1969",
-    GEOGCRS["WGS84 geographiques (dms)",
-        ENSEMBLE["World Geodetic System 1984 ensemble",
-            MEMBER["World Geodetic System 1984 (Transit)"],
-            MEMBER["World Geodetic System 1984 (G730)"],
-            MEMBER["World Geodetic System 1984 (G873)"],
-            MEMBER["World Geodetic System 1984 (G1150)"],
-            MEMBER["World Geodetic System 1984 (G1674)"],
-            MEMBER["World Geodetic System 1984 (G1762)"],
-            MEMBER["World Geodetic System 1984 (G2139)"],
-            ELLIPSOID["WGS 84",6378137,298.257223563,
-                LENGTHUNIT["metre",1]],
-            ENSEMBLEACCURACY[2.0]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["degree",0.0174532925199433]],
-        CS[ellipsoidal,2],
-            AXIS["geodetic longitude (Lon)",east,
-                ORDER[1],
-                ANGLEUNIT["degree",0.0174532925199433]],
-            AXIS["geodetic latitude (Lat)",north,
-                ORDER[2],
-                ANGLEUNIT["degree",0.0174532925199433]]],
-    VERTCRS["NGF-IGN 1969",
-        VDATUM["NGF-IGN 1969"],
-        CS[vertical,1],
-            AXIS["gravity-related height (H)",up,
-                LENGTHUNIT["metre",1]]],
-    USAGE[
-        SCOPE["NATIONALE"],
-        AREA["FRANCE CONTINENTALE (CORSE EXCLUE)"],
-        BBOX[42,-5.5,51.5,8.5]],
-    ID["IGNF","WGS84G.IGN69"]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">COMPOUNDCRS</span><span class="p">[</span><span class="s2">&quot;WGS84 geographiques (dms) et NGF-IGN 1969&quot;</span><span class="p">,</span>
+    <span class="kd">GEOGCRS</span><span class="p">[</span><span class="s2">&quot;WGS84 geographiques (dms)&quot;</span><span class="p">,</span>
+        <span class="nx">ENSEMBLE</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 ensemble&quot;</span><span class="p">,</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (Transit)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G730)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G873)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1150)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1674)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1762)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G2139)&quot;</span><span class="p">],</span>
+            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257223563</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+            <span class="nx">ENSEMBLEACCURACY</span><span class="p">[</span><span class="mf">2.0</span><span class="p">]],</span>
+        <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+        <span class="kd">CS</span><span class="p">[</span><span class="s">ellipsoidal</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;geodetic longitude (Lon)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
+                <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+            <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;geodetic latitude (Lat)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+                <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]]],</span>
+    <span class="kd">VERTCRS</span><span class="p">[</span><span class="s2">&quot;NGF-IGN 1969&quot;</span><span class="p">,</span>
+        <span class="kd">VDATUM</span><span class="p">[</span><span class="s2">&quot;NGF-IGN 1969&quot;</span><span class="p">],</span>
+        <span class="kd">CS</span><span class="p">[</span><span class="s">vertical</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;gravity-related height (H)&quot;</span><span class="p">,</span><span class="s">up</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;NATIONALE&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;FRANCE CONTINENTALE (CORSE EXCLUE)&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[</span><span class="mi">42</span><span class="p">,-</span><span class="mf">5.5</span><span class="p">,</span><span class="mf">51.5</span><span class="p">,</span><span class="mf">8.5</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;IGNF&quot;</span><span class="p">,</span><span class="s2">&quot;WGS84G.IGN69&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     

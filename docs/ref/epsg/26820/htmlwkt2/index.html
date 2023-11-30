@@ -32,49 +32,49 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">PROJCRS["NAD83 / Minnesota Central (ftUS)",
-    BASEGEOGCRS["NAD83",
-        DATUM["North American Datum 1983",
-            ELLIPSOID["GRS 1980",6378137,298.257222101,
-                LENGTHUNIT["metre",1]]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["degree",0.0174532925199433]],
-        ID["EPSG",4269]],
-    CONVERSION["SPCS83 Minnesota Central zone (US Survey feet)",
-        METHOD["Lambert Conic Conformal (2SP)",
-            ID["EPSG",9802]],
-        PARAMETER["Latitude of false origin",45,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8821]],
-        PARAMETER["Longitude of false origin",-94.25,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8822]],
-        PARAMETER["Latitude of 1st standard parallel",47.05,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8823]],
-        PARAMETER["Latitude of 2nd standard parallel",45.6166666666667,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8824]],
-        PARAMETER["Easting at false origin",2624666.6667,
-            LENGTHUNIT["US survey foot",0.304800609601219],
-            ID["EPSG",8826]],
-        PARAMETER["Northing at false origin",328083.3333,
-            LENGTHUNIT["US survey foot",0.304800609601219],
-            ID["EPSG",8827]]],
-    CS[Cartesian,2],
-        AXIS["easting (X)",east,
-            ORDER[1],
-            LENGTHUNIT["metre",1]],
-        AXIS["northing (Y)",north,
-            ORDER[2],
-            LENGTHUNIT["metre",1]],
-    USAGE[
-        SCOPE["Engineering survey, topographic mapping."],
-        AREA["United States (USA) - Minnesota - counties of Aitkin; Becker; Benton; Carlton; Cass; Chisago; Clay; Crow Wing; Douglas; Grant; Hubbard; Isanti; Kanabec; Mille Lacs; Morrison; Otter Tail; Pine; Pope; Stearns; Stevens; Todd; Traverse; Wadena; Wilkin."],
-        BBOX[45.28,-96.86,47.48,-92.29]],
-    ID["EPSG",26820]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;NAD83 / Minnesota Central (ftUS)&quot;</span><span class="p">,</span>
+    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;NAD83&quot;</span><span class="p">,</span>
+        <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;North American Datum 1983&quot;</span><span class="p">,</span>
+            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+        <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+        <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">4269</span><span class="p">]],</span>
+    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;SPCS83 Minnesota Central zone (US Survey feet)&quot;</span><span class="p">,</span>
+        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Lambert Conic Conformal (2SP)&quot;</span><span class="p">,</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9802</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of false origin&quot;</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8821</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of false origin&quot;</span><span class="p">,-</span><span class="mf">94.25</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8822</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 1st standard parallel&quot;</span><span class="p">,</span><span class="mf">47.05</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8823</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 2nd standard parallel&quot;</span><span class="p">,</span><span class="mf">45.6166666666667</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8824</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Easting at false origin&quot;</span><span class="p">,</span><span class="mf">2624666.6667</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;US survey foot&quot;</span><span class="p">,</span><span class="mf">0.304800609601219</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8826</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Northing at false origin&quot;</span><span class="p">,</span><span class="mf">328083.3333</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;US survey foot&quot;</span><span class="p">,</span><span class="mf">0.304800609601219</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8827</span><span class="p">]]],</span>
+    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;easting (X)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;northing (Y)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Engineering survey, topographic mapping.&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;United States (USA) - Minnesota - counties of Aitkin; Becker; Benton; Carlton; Cass; Chisago; Clay; Crow Wing; Douglas; Grant; Hubbard; Isanti; Kanabec; Mille Lacs; Morrison; Otter Tail; Pine; Pope; Stearns; Stevens; Todd; Traverse; Wadena; Wilkin.&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[</span><span class="mf">45.28</span><span class="p">,-</span><span class="mf">96.86</span><span class="p">,</span><span class="mf">47.48</span><span class="p">,-</span><span class="mf">92.29</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">26820</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     

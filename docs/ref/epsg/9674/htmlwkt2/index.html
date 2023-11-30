@@ -32,49 +32,49 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">PROJCRS["NAD83 / USFS R6 Albers",
-    BASEGEOGCRS["NAD83",
-        DATUM["North American Datum 1983",
-            ELLIPSOID["GRS 1980",6378137,298.257222101,
-                LENGTHUNIT["metre",1]]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["degree",0.0174532925199433]],
-        ID["EPSG",4269]],
-    CONVERSION["US Forest Service region 6 Albers",
-        METHOD["Albers Equal Area",
-            ID["EPSG",9822]],
-        PARAMETER["Latitude of false origin",34,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8821]],
-        PARAMETER["Longitude of false origin",-120,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8822]],
-        PARAMETER["Latitude of 1st standard parallel",43,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8823]],
-        PARAMETER["Latitude of 2nd standard parallel",48,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8824]],
-        PARAMETER["Easting at false origin",600000,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8826]],
-        PARAMETER["Northing at false origin",0,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8827]]],
-    CS[Cartesian,2],
-        AXIS["(E)",east,
-            ORDER[1],
-            LENGTHUNIT["metre",1]],
-        AXIS["(N)",north,
-            ORDER[2],
-            LENGTHUNIT["metre",1]],
-    USAGE[
-        SCOPE["Forestry."],
-        AREA["United States (USA) - Oregon and Washington."],
-        BBOX[41.98,-124.79,49.05,-116.47]],
-    ID["EPSG",9674]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;NAD83 / USFS R6 Albers&quot;</span><span class="p">,</span>
+    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;NAD83&quot;</span><span class="p">,</span>
+        <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;North American Datum 1983&quot;</span><span class="p">,</span>
+            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+        <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+        <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">4269</span><span class="p">]],</span>
+    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;US Forest Service region 6 Albers&quot;</span><span class="p">,</span>
+        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Albers Equal Area&quot;</span><span class="p">,</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9822</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of false origin&quot;</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8821</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of false origin&quot;</span><span class="p">,-</span><span class="mi">120</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8822</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 1st standard parallel&quot;</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8823</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 2nd standard parallel&quot;</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8824</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Easting at false origin&quot;</span><span class="p">,</span><span class="mi">600000</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8826</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Northing at false origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8827</span><span class="p">]]],</span>
+    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(E)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(N)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Forestry.&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;United States (USA) - Oregon and Washington.&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[</span><span class="mf">41.98</span><span class="p">,-</span><span class="mf">124.79</span><span class="p">,</span><span class="mf">49.05</span><span class="p">,-</span><span class="mf">116.47</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9674</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     

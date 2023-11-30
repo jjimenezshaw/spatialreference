@@ -32,40 +32,40 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">COMPD_CS["GWWWA22 Grid + ODN height",
-    PROJCS["GWWWA22 Grid",
-        GEOGCS["GWWWA22-IRF",
-            DATUM["GWWWA22_Intermediate_Reference_Frame",
-                SPHEROID["GRS 1980",6378137,298.257222101,
-                    AUTHORITY["EPSG","7019"]],
-                AUTHORITY["EPSG","1342"]],
-            PRIMEM["Greenwich",0,
-                AUTHORITY["EPSG","8901"]],
-            UNIT["degree",0.0174532925199433,
-                AUTHORITY["EPSG","9122"]],
-            AUTHORITY["EPSG","10219"]],
-        PROJECTION["Lambert_Conformal_Conic_2SP"],
-        PARAMETER["latitude_of_origin",51.65],
-        PARAMETER["central_meridian",-2.65],
-        PARAMETER["standard_parallel_1",51.4],
-        PARAMETER["standard_parallel_2",51.9],
-        PARAMETER["false_easting",168854.016],
-        PARAMETER["false_northing",193447.117],
-        UNIT["metre",1,
-            AUTHORITY["EPSG","9001"]],
-        AXIS["Easting",EAST],
-        AXIS["Northing",NORTH],
-        AUTHORITY["EPSG","10222"]],
-    VERT_CS["ODN height",
-        VERT_DATUM["Ordnance Datum Newlyn",2005,
-            AUTHORITY["EPSG","5101"]],
-        UNIT["metre",1,
-            AUTHORITY["EPSG","9001"]],
-        AXIS["Gravity-related height",UP],
-        AUTHORITY["EPSG","5701"]],
-    AUTHORITY["EPSG","10223"]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">COMPD_CS</span><span class="p">[</span><span class="s2">&quot;GWWWA22 Grid + ODN height&quot;</span><span class="p">,</span>
+    <span class="kd">PROJCS</span><span class="p">[</span><span class="s2">&quot;GWWWA22 Grid&quot;</span><span class="p">,</span>
+        <span class="kd">GEOGCS</span><span class="p">[</span><span class="s2">&quot;GWWWA22-IRF&quot;</span><span class="p">,</span>
+            <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;GWWWA22_Intermediate_Reference_Frame&quot;</span><span class="p">,</span>
+                <span class="k">SPHEROID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+                    <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;7019&quot;</span><span class="p">]],</span>
+                <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;1342&quot;</span><span class="p">]],</span>
+            <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+                <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;8901&quot;</span><span class="p">]],</span>
+            <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">,</span>
+                <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9122&quot;</span><span class="p">]],</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;10219&quot;</span><span class="p">]],</span>
+        <span class="k">PROJECTION</span><span class="p">[</span><span class="s2">&quot;Lambert_Conformal_Conic_2SP&quot;</span><span class="p">],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;latitude_of_origin&quot;</span><span class="p">,</span><span class="mf">51.65</span><span class="p">],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;central_meridian&quot;</span><span class="p">,-</span><span class="mf">2.65</span><span class="p">],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;standard_parallel_1&quot;</span><span class="p">,</span><span class="mf">51.4</span><span class="p">],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;standard_parallel_2&quot;</span><span class="p">,</span><span class="mf">51.9</span><span class="p">],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_easting&quot;</span><span class="p">,</span><span class="mf">168854.016</span><span class="p">],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_northing&quot;</span><span class="p">,</span><span class="mf">193447.117</span><span class="p">],</span>
+        <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9001&quot;</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Easting&quot;</span><span class="p">,</span><span class="s">EAST</span><span class="p">],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Northing&quot;</span><span class="p">,</span><span class="s">NORTH</span><span class="p">],</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;10222&quot;</span><span class="p">]],</span>
+    <span class="kd">VERT_CS</span><span class="p">[</span><span class="s2">&quot;ODN height&quot;</span><span class="p">,</span>
+        <span class="k">VERT_DATUM</span><span class="p">[</span><span class="s2">&quot;Ordnance Datum Newlyn&quot;</span><span class="p">,</span><span class="mi">2005</span><span class="p">,</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;5101&quot;</span><span class="p">]],</span>
+        <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9001&quot;</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Gravity-related height&quot;</span><span class="p">,</span><span class="s">UP</span><span class="p">],</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;5701&quot;</span><span class="p">]],</span>
+    <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;10223&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     

@@ -32,55 +32,55 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">COMPOUNDCRS["NAD83 / South Carolina (ft) + NAVD88 height (ft)",
-    PROJCRS["NAD83 / South Carolina (ft)",
-        BASEGEOGCRS["NAD83",
-            DATUM["North American Datum 1983",
-                ELLIPSOID["GRS 1980",6378137,298.257222101,
-                    LENGTHUNIT["metre",1]]],
-            PRIMEM["Greenwich",0,
-                ANGLEUNIT["degree",0.0174532925199433]],
-            ID["EPSG",4269]],
-        CONVERSION["SPCS83 South Carolina zone (International feet)",
-            METHOD["Lambert Conic Conformal (2SP)",
-                ID["EPSG",9802]],
-            PARAMETER["Latitude of false origin",31.8333333333333,
-                ANGLEUNIT["degree",0.0174532925199433],
-                ID["EPSG",8821]],
-            PARAMETER["Longitude of false origin",-81,
-                ANGLEUNIT["degree",0.0174532925199433],
-                ID["EPSG",8822]],
-            PARAMETER["Latitude of 1st standard parallel",34.8333333333333,
-                ANGLEUNIT["degree",0.0174532925199433],
-                ID["EPSG",8823]],
-            PARAMETER["Latitude of 2nd standard parallel",32.5,
-                ANGLEUNIT["degree",0.0174532925199433],
-                ID["EPSG",8824]],
-            PARAMETER["Easting at false origin",2000000,
-                LENGTHUNIT["foot",0.3048],
-                ID["EPSG",8826]],
-            PARAMETER["Northing at false origin",0,
-                LENGTHUNIT["foot",0.3048],
-                ID["EPSG",8827]]],
-        CS[Cartesian,2],
-            AXIS["easting (X)",east,
-                ORDER[1],
-                LENGTHUNIT["foot",0.3048]],
-            AXIS["northing (Y)",north,
-                ORDER[2],
-                LENGTHUNIT["foot",0.3048]]],
-    VERTCRS["NAVD88 height (ft)",
-        VDATUM["North American Vertical Datum 1988"],
-        CS[vertical,1],
-            AXIS["gravity-related height (H)",up,
-                LENGTHUNIT["foot",0.3048]]],
-    USAGE[
-        SCOPE["Engineering survey, topographic mapping."],
-        AREA["United States (USA) - South Carolina - counties of Abbeville; Aiken; Allendale; Anderson; Bamberg; Barnwell; Beaufort; Berkeley; Calhoun; Charleston; Cherokee; Chester; Chesterfield; Clarendon; Colleton; Darlington; Dillon; Dorchester; Edgefield; Fairfield; Florence; Georgetown; Greenville; Greenwood; Hampton; Horry; Jasper; Kershaw; Lancaster; Laurens; Lee; Lexington; Marion; Marlboro; McCormick; Newberry; Oconee; Orangeburg; Pickens; Richland; Saluda; Spartanburg; Sumter; Union; Williamsburg; York."],
-        BBOX[32.05,-83.36,35.21,-78.52]],
-    ID["EPSG",8711]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">COMPOUNDCRS</span><span class="p">[</span><span class="s2">&quot;NAD83 / South Carolina (ft) + NAVD88 height (ft)&quot;</span><span class="p">,</span>
+    <span class="kd">PROJCRS</span><span class="p">[</span><span class="s2">&quot;NAD83 / South Carolina (ft)&quot;</span><span class="p">,</span>
+        <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;NAD83&quot;</span><span class="p">,</span>
+            <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;North American Datum 1983&quot;</span><span class="p">,</span>
+                <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+                    <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+            <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">4269</span><span class="p">]],</span>
+        <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;SPCS83 South Carolina zone (International feet)&quot;</span><span class="p">,</span>
+            <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Lambert Conic Conformal (2SP)&quot;</span><span class="p">,</span>
+                <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9802</span><span class="p">]],</span>
+            <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of false origin&quot;</span><span class="p">,</span><span class="mf">31.8333333333333</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+                <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8821</span><span class="p">]],</span>
+            <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of false origin&quot;</span><span class="p">,-</span><span class="mi">81</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+                <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8822</span><span class="p">]],</span>
+            <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 1st standard parallel&quot;</span><span class="p">,</span><span class="mf">34.8333333333333</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+                <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8823</span><span class="p">]],</span>
+            <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 2nd standard parallel&quot;</span><span class="p">,</span><span class="mf">32.5</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+                <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8824</span><span class="p">]],</span>
+            <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Easting at false origin&quot;</span><span class="p">,</span><span class="mi">2000000</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;foot&quot;</span><span class="p">,</span><span class="mf">0.3048</span><span class="p">],</span>
+                <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8826</span><span class="p">]],</span>
+            <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Northing at false origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;foot&quot;</span><span class="p">,</span><span class="mf">0.3048</span><span class="p">],</span>
+                <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8827</span><span class="p">]]],</span>
+        <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+            <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;easting (X)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
+                <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;foot&quot;</span><span class="p">,</span><span class="mf">0.3048</span><span class="p">]],</span>
+            <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;northing (Y)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+                <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;foot&quot;</span><span class="p">,</span><span class="mf">0.3048</span><span class="p">]]],</span>
+    <span class="kd">VERTCRS</span><span class="p">[</span><span class="s2">&quot;NAVD88 height (ft)&quot;</span><span class="p">,</span>
+        <span class="kd">VDATUM</span><span class="p">[</span><span class="s2">&quot;North American Vertical Datum 1988&quot;</span><span class="p">],</span>
+        <span class="kd">CS</span><span class="p">[</span><span class="s">vertical</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;gravity-related height (H)&quot;</span><span class="p">,</span><span class="s">up</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;foot&quot;</span><span class="p">,</span><span class="mf">0.3048</span><span class="p">]]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Engineering survey, topographic mapping.&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;United States (USA) - South Carolina - counties of Abbeville; Aiken; Allendale; Anderson; Bamberg; Barnwell; Beaufort; Berkeley; Calhoun; Charleston; Cherokee; Chester; Chesterfield; Clarendon; Colleton; Darlington; Dillon; Dorchester; Edgefield; Fairfield; Florence; Georgetown; Greenville; Greenwood; Hampton; Horry; Jasper; Kershaw; Lancaster; Laurens; Lee; Lexington; Marion; Marlboro; McCormick; Newberry; Oconee; Orangeburg; Pickens; Richland; Saluda; Spartanburg; Sumter; Union; Williamsburg; York.&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[</span><span class="mf">32.05</span><span class="p">,-</span><span class="mf">83.36</span><span class="p">,</span><span class="mf">35.21</span><span class="p">,-</span><span class="mf">78.52</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8711</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     

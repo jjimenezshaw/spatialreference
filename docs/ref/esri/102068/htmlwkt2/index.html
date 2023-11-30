@@ -32,46 +32,46 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">PROJCRS["EMEP_50_Kilometer_Grid",
-    BASEGEOGCRS["GCS_Sphere_EMEP",
-        DATUM["D_Sphere_EMEP",
-            ELLIPSOID["Sphere_EMEP",6370000,0,
-                LENGTHUNIT["metre",1]]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["Degree",0.0174532925199433]]],
-    CONVERSION["EMEP_50_Kilometer_Grid",
-        METHOD["Polar Stereographic (variant B)",
-            ID["EPSG",9829]],
-        PARAMETER["Latitude of standard parallel",60,
-            ANGLEUNIT["Degree",0.0174532925199433],
-            ID["EPSG",8832]],
-        PARAMETER["Longitude of origin",-32,
-            ANGLEUNIT["Degree",0.0174532925199433],
-            ID["EPSG",8833]],
-        PARAMETER["False easting",8,
-            LENGTHUNIT["50_Kilometers",50000],
-            ID["EPSG",8806]],
-        PARAMETER["False northing",110,
-            LENGTHUNIT["50_Kilometers",50000],
-            ID["EPSG",8807]]],
-    CS[Cartesian,2],
-        AXIS["(E)",south,
-            MERIDIAN[90,
-                ANGLEUNIT["degree",0.0174532925199433]],
-            ORDER[1],
-            LENGTHUNIT["50_Kilometers",50000]],
-        AXIS["(N)",south,
-            MERIDIAN[180,
-                ANGLEUNIT["degree",0.0174532925199433]],
-            ORDER[2],
-            LENGTHUNIT["50_Kilometers",50000]],
-    USAGE[
-        SCOPE["Not known."],
-        AREA["Europe"],
-        BBOX[34,-30,85,50]],
-    ID["ESRI",102068]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;EMEP_50_Kilometer_Grid&quot;</span><span class="p">,</span>
+    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;GCS_Sphere_EMEP&quot;</span><span class="p">,</span>
+        <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;D_Sphere_EMEP&quot;</span><span class="p">,</span>
+            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;Sphere_EMEP&quot;</span><span class="p">,</span><span class="mi">6370000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+        <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;Degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]]],</span>
+    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;EMEP_50_Kilometer_Grid&quot;</span><span class="p">,</span>
+        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Polar Stereographic (variant B)&quot;</span><span class="p">,</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9829</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of standard parallel&quot;</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;Degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8832</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of origin&quot;</span><span class="p">,-</span><span class="mi">32</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;Degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8833</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False easting&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;50_Kilometers&quot;</span><span class="p">,</span><span class="mi">50000</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8806</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False northing&quot;</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;50_Kilometers&quot;</span><span class="p">,</span><span class="mi">50000</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8807</span><span class="p">]]],</span>
+    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(E)&quot;</span><span class="p">,</span><span class="s">south</span><span class="p">,</span>
+            <span class="nx">MERIDIAN</span><span class="p">[</span><span class="mi">90</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;50_Kilometers&quot;</span><span class="p">,</span><span class="mi">50000</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(N)&quot;</span><span class="p">,</span><span class="s">south</span><span class="p">,</span>
+            <span class="nx">MERIDIAN</span><span class="p">[</span><span class="mi">180</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;50_Kilometers&quot;</span><span class="p">,</span><span class="mi">50000</span><span class="p">]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Not known.&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;Europe&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[</span><span class="mi">34</span><span class="p">,-</span><span class="mi">30</span><span class="p">,</span><span class="mi">85</span><span class="p">,</span><span class="mi">50</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;ESRI&quot;</span><span class="p">,</span><span class="mi">102068</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     
