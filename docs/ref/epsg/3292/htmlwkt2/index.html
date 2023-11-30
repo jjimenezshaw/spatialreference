@@ -32,55 +32,55 @@
     </div>
 
     <div id="content">
-        <div class="syntax">
-            <pre class="nicewkt">PROJCRS["WGS 84 / SCAR IMW SV51-60",
-    BASEGEOGCRS["WGS 84",
-        ENSEMBLE["World Geodetic System 1984 ensemble",
-            MEMBER["World Geodetic System 1984 (Transit)"],
-            MEMBER["World Geodetic System 1984 (G730)"],
-            MEMBER["World Geodetic System 1984 (G873)"],
-            MEMBER["World Geodetic System 1984 (G1150)"],
-            MEMBER["World Geodetic System 1984 (G1674)"],
-            MEMBER["World Geodetic System 1984 (G1762)"],
-            MEMBER["World Geodetic System 1984 (G2139)"],
-            ELLIPSOID["WGS 84",6378137,298.257223563,
-                LENGTHUNIT["metre",1]],
-            ENSEMBLEACCURACY[2.0]],
-        PRIMEM["Greenwich",0,
-            ANGLEUNIT["degree",0.0174532925199433]],
-        ID["EPSG",4326]],
-    CONVERSION["SCAR IMW SV51-60",
-        METHOD["Polar Stereographic (variant B)",
-            ID["EPSG",9829]],
-        PARAMETER["Latitude of standard parallel",-80.2386111111111,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8832]],
-        PARAMETER["Longitude of origin",150,
-            ANGLEUNIT["degree",0.0174532925199433],
-            ID["EPSG",8833]],
-        PARAMETER["False easting",0,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8806]],
-        PARAMETER["False northing",0,
-            LENGTHUNIT["metre",1],
-            ID["EPSG",8807]]],
-    CS[Cartesian,2],
-        AXIS["(E)",north,
-            MERIDIAN[-120,
-                ANGLEUNIT["degree",0.0174532925199433]],
-            ORDER[1],
-            LENGTHUNIT["metre",1]],
-        AXIS["(N)",north,
-            MERIDIAN[150,
-                ANGLEUNIT["degree",0.0174532925199433]],
-            ORDER[2],
-            LENGTHUNIT["metre",1]],
-    USAGE[
-        SCOPE["Topographic mapping (medium scale)."],
-        AREA["Antarctica - 84°S to 88°S and 120°E to 180°E."],
-        BBOX[-88,120,-84,180]],
-    ID["EPSG",3292]]</pre>
-        </div>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;WGS 84 / SCAR IMW SV51-60&quot;</span><span class="p">,</span>
+    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span>
+        <span class="nx">ENSEMBLE</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 ensemble&quot;</span><span class="p">,</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (Transit)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G730)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G873)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1150)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1674)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1762)&quot;</span><span class="p">],</span>
+            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G2139)&quot;</span><span class="p">],</span>
+            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257223563</span><span class="p">,</span>
+                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+            <span class="nx">ENSEMBLEACCURACY</span><span class="p">[</span><span class="mf">2.0</span><span class="p">]],</span>
+        <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+        <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">4326</span><span class="p">]],</span>
+    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;SCAR IMW SV51-60&quot;</span><span class="p">,</span>
+        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Polar Stereographic (variant B)&quot;</span><span class="p">,</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9829</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of standard parallel&quot;</span><span class="p">,-</span><span class="mf">80.2386111111111</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8832</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of origin&quot;</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span>
+            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8833</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False easting&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8806</span><span class="p">]],</span>
+        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False northing&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8807</span><span class="p">]]],</span>
+    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(E)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+            <span class="nx">MERIDIAN</span><span class="p">[-</span><span class="mi">120</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(N)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
+            <span class="nx">MERIDIAN</span><span class="p">[</span><span class="mi">150</span><span class="p">,</span>
+                <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
+    <span class="kd">USAGE</span><span class="p">[</span>
+        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Topographic mapping (medium scale).&quot;</span><span class="p">],</span>
+        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;Antarctica - 84°S to 88°S and 120°E to 180°E.&quot;</span><span class="p">],</span>
+        <span class="kc">BBOX</span><span class="p">[-</span><span class="mi">88</span><span class="p">,</span><span class="mi">120</span><span class="p">,-</span><span class="mi">84</span><span class="p">,</span><span class="mi">180</span><span class="p">]],</span>
+    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">3292</span><span class="p">]]</span>
+</pre></div>
+</div>
         <a href="../">More formats</a>
     </div>
     
