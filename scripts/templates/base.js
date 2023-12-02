@@ -83,6 +83,7 @@ function filter_data(data, search) {
     });
     return r;
 }
+
 function init_ref(home_dir) {
     fetch(home_dir + '/crslist.json', {
         method: "GET",
@@ -105,3 +106,12 @@ function init_ref(home_dir) {
         update_pages_links(page, params.search, Math.ceil(data.length / entries_per_page))
     });
 }
+
+function download_prj(name, file) {
+    if (name && name !=='') {
+      var link = document.createElement('a');
+      link.download = name;
+      link.href = file;
+      link.click();
+    }
+  }
