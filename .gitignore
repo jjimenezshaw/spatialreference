@@ -1,5 +1,6 @@
 scripts/dist/
 .bash-git-rc
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
