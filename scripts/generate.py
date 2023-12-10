@@ -71,12 +71,15 @@ def substitute(src_filename, dst_folder, dic):
         dst.write(read_tmpl(src_filename, dic))
 
 
-def dump(dst_folder, txt):
+def dump_f(dst_folder, file, txt):
     Path(dst_folder).mkdir(parents=True, exist_ok=True)
-    dst_folder += '/index.html'
+    dst_file = dst_folder + '/' + file
 
-    with open(dst_folder, 'w') as dst:
+    with open(dst_file, 'w') as dst:
         dst.write(txt)
+
+def dump(dst_folder, txt):
+    return dump_f(dst_folder, 'index.html', txt)
 
 def make_crslist(dest_dir):
     dest_file = f'{dest_dir}/crslist.json'
@@ -112,6 +115,23 @@ def make_mapping(sections, home_dir):
     for sec in ['head', 'leaflet', 'header', 'searchbox', 'navbar', 'footer']:
         mapping[sec] = Template(sections[sec]).substitute({'home_dir': home_dir})
     return mapping
+
+def make_wkts(crs):
+    try:
+        output_axis_rule = True if crs.is_projected else None
+        pretty = crs.to_wkt(version='WKT1_GDAL', pretty=True, output_axis_rule=output_axis_rule)
+        ogcwkt = crs.to_wkt(version='WKT1_GDAL', pretty=False, output_axis_rule=output_axis_rule)
+    except:
+        pretty = 'This CRS cannot be written as WKT1_GDAL'
+        ogcwkt = 'This CRS cannot be written as WKT1_GDAL'
+
+    pretty2 = crs.to_wkt(version='WKT2_2019', pretty=True, output_axis_rule=output_axis_rule)
+    ogcwkt2 = crs.to_wkt(version='WKT2_2019', pretty=False, output_axis_rule=output_axis_rule)
+
+    syntax_pretty = highlight(pretty, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
+    syntax_pretty2 = highlight(pretty2, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
+
+    return (syntax_pretty, pretty, ogcwkt, syntax_pretty2, pretty2, ogcwkt2)
 
 if __name__ == '__main__':
     dest_dir = os.getenv('DEST_DIR', '.')
@@ -164,7 +184,9 @@ if __name__ == '__main__':
         else:
             epsg_scaped_name = ''
             epsg_style = 'style="display: none;"'
-        bounds = ', '.join([str(x) for x in c["area_of_use"][:4]])
+        aou = c["area_of_use"]
+        bounds = ', '.join([str(x) for x in aou[:4]])
+        bounds_json = '{{"west_longitude": {}, "south_latitude": {}, "east_longitude": {}, "north_latitude": {} }}'.format(*aou)
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
         mapping = mapping_ref | {
@@ -185,46 +207,38 @@ if __name__ == '__main__':
         }
         substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', mapping)
 
-        try:
-            output_axis_rule = True if crs.is_projected else None
-            pretty = crs.to_wkt(version='WKT1_GDAL', pretty=True, output_axis_rule=output_axis_rule)
-            ogcwkt = crs.to_wkt(version='WKT1_GDAL', pretty=False, output_axis_rule=output_axis_rule)
-        except:
-            pretty = 'This CRS cannot be written as WKT1_GDAL'
-            ogcwkt = 'This CRS cannot be written as WKT1_GDAL'
-
-        pretty2 = crs.to_wkt(version='WKT2_2019', pretty=True, output_axis_rule=output_axis_rule)
-        ogcwkt2 = crs.to_wkt(version='WKT2_2019', pretty=False, output_axis_rule=output_axis_rule)
-
-        syntax_pretty = highlight(pretty, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
-        syntax_pretty2 = highlight(pretty2, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
+        syntax_pretty, pretty, ogcwkt, syntax_pretty2, pretty2, ogcwkt2 = make_wkts(crs)
 
         mapping = mapping_wkt | {
                'authority': auth_name,
                'code': code,
                'syntax_html': syntax_pretty,
+               'syntax_html_2': syntax_pretty2,
         }
-        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/html', mapping)
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt', pretty)
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/ogcwkt', ogcwkt)
 
-        mapping = mapping_wkt | {
-               'authority': auth_name,
-               'code': code,
-               'syntax_html': syntax_pretty2,
-        }
+        dir = f'{dest_dir}/ref/{auth_lowercase}/{code}'
+        substitute(f'{templates}/html.tmpl', f'{dir}/html', mapping)
+        dump_f(f'{dir}', 'prettywkt.txt', pretty)
+        dump_f(f'{dir}', 'ogcwkt.txt', ogcwkt)
+        dump(f'{dir}/prettywkt', pretty) # backwards compatible
+        dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
+
+
         substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', mapping)
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt2', pretty2)
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/ogcwkt2', ogcwkt2)
+        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'prettywkt2.txt', pretty2)
+        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'ogcwkt2.txt', ogcwkt2)
+
+        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'bounds.json', bounds_json)
 
         try:
             esri = crs.to_wkt(version='WKT1_ESRI')
         except:
             esri = 'This CRS cannot be written as WKT1_ESRI'
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/esriwkt', esri)
+        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'esriwkt.txt', esri)
+        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/esriwkt', esri)  # backwards compatible
 
-        json = crs.to_json(pretty=True)
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/json', json)
+        projjson = crs.to_json(pretty=True)
+        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'projjson.json', projjson)
 
         try:
             proj4 = crs.to_proj4()
