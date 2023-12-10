@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import json
-import os, shutil
+import os, shutil, sys
 import re
 from pathlib import Path
 from datetime import date
@@ -167,12 +167,22 @@ if __name__ == '__main__':
 
     mapping_ref = make_mapping(sections, '../../..')
     mapping_wkt = make_mapping(sections, '../../../..')
+    no_display = 'style="display: none;"'
 
     count = 0
+    total = len(crss)
+    sys.stdout.write(f'Processing {total} CRSs:\n')
+
     for id, c in enumerate(crss):
         count += 1
         if count > 10:
             break
+        if count % int(total/100) == 0 or total == count:
+            sys.stdout.write('\r')
+            # the exact output you're looking for:
+            sys.stdout.write("[%-20s] %d%%" % ('='*int(count/total*20), int(count/total*100)))
+            sys.stdout.flush()
+
         code=c["code"]
         auth_name=c["auth_name"]
         name = c["name"]
@@ -183,12 +193,13 @@ if __name__ == '__main__':
             epsg_style = ''
         else:
             epsg_scaped_name = ''
-            epsg_style = 'style="display: none;"'
+            epsg_style = no_display
         aou = c["area_of_use"]
         bounds = ', '.join([str(x) for x in aou[:4]])
         bounds_json = '{{"west_longitude": {}, "south_latitude": {}, "east_longitude": {}, "north_latitude": {} }}'.format(*aou)
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
+
         mapping = mapping_ref | {
                'authority': auth_name,
                'code': code,
@@ -196,7 +207,7 @@ if __name__ == '__main__':
                'area_name': c["area_of_use"][4],
                'epsg_scaped_name': epsg_scaped_name,
                'epsg_style' : epsg_style,
-               'deprecated_style' : '' if c["deprecated"] else 'style="display: none;"',
+               'deprecated_style' : '' if c["deprecated"] else no_display,
                'crs_type': c["type"],
                'bounds': bounds,
                'scope': crs.scope,

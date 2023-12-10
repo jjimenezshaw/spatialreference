@@ -71,13 +71,29 @@ function filter_data(data, search) {
     if (!search || !search.trim()) {
         return data;
     }
-    let s = search.toLowerCase().split(' ');
+    let s = search.toUpperCase().split(' ');
+    let possible_authorities = ['EPSG', 'ESRI', 'IAU_2015', 'IGNF', 'NKG', 'OGC']
+    let authorities = s
+        .map(a => a.split(':')[0])
+        .filter(a => possible_authorities.includes(a));
+
+    s = s.filter(a => !possible_authorities.includes(a))
+        .map(a => {
+            if (possible_authorities.includes(a.split(':')[0])) {
+                return a.slice(a.indexOf(':') + 1);
+            }
+            return a;
+    });
+
     let r = data.filter(d => {
-        let name = d.name.toLowerCase();
+        let name = d.name.toUpperCase();
         let valid = s.reduce((accum, current) => accum && name.includes(current), true);
 
         if (!isNaN(s[0]) && d.code === s[0]) {
             valid = true
+        }
+        if (authorities.length && !authorities.includes(d.auth_name)) {
+            valid = false
         }
         return valid;
     });
