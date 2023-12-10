@@ -109,6 +109,16 @@ def make_crslist(dest_dir):
         crss = json.load(fp)
     return crss
 
+def add_frozen_crss(crss):
+    parent = Path(__file__).parent.resolve()
+    print ('asdfas',parent)
+    for domain in ['iua2000.json', 'sr-org']:
+        with open(f'{parent}/{domain}', 'r') as fp:
+            dom = json.load(fp)
+            crss = [*dom, *crss] # TODO change order
+    return crss
+
+
 def make_mapping(sections, home_dir):
     mapping = {'last_revised': os.getenv('LAST_REVISED', '-missing-'),
                'home_dir': home_dir}
@@ -138,6 +148,7 @@ if __name__ == '__main__':
     templates = './templates'
 
     crss = make_crslist(dest_dir)
+    crss = add_frozen_crss(crss)
 
     # copy some literal files, not modified
     for literal in ['base.js', 'base.css', 'sr_logo.jpg', 'favicon.ico']:
