@@ -3,6 +3,7 @@
 import json
 import os, shutil, sys
 import re
+from itertools import groupby
 from pathlib import Path
 from datetime import date
 from string import Template
@@ -83,7 +84,6 @@ def dump(dst_folder, txt):
 
 def add_frozen_crss(crss):
     parent = Path(__file__).parent.resolve()
-    print ('asdfas',parent)
     for domain in ['iau2000.json', 'sr-org.json']:
         with open(f'{parent}/{domain}', 'r') as fp:
             dom = json.load(fp)
@@ -173,7 +173,17 @@ if __name__ == '__main__':
         'built_date': today,
     })
 
-    mapping = make_mapping(sections, '.')
+    authorities = {
+        key: len(list(group))
+        for key, group in groupby(crss, lambda x: x['auth_name'])
+    }
+    count_authorities = {
+        f'count_{key.lower().replace("-","_")}' : str(value)
+        for key, value in authorities.items()
+    }
+
+    mapping = make_mapping(sections, '.') | count_authorities
+    print(mapping)
     substitute(f'{templates}/index.tmpl', f'{dest_dir}', mapping)
     mapping = make_mapping(sections, '..')
     substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', mapping)
