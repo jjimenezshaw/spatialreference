@@ -183,7 +183,6 @@ if __name__ == '__main__':
     }
 
     mapping = make_mapping(sections, '.') | count_authorities
-    print(mapping)
     substitute(f'{templates}/index.tmpl', f'{dest_dir}', mapping)
     mapping = make_mapping(sections, '..')
     substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', mapping)
@@ -220,8 +219,8 @@ if __name__ == '__main__':
             try:
                 crs = pyproj.CRS.from_user_input(c["ogcwkt"])
             except Exception as e:
-                print(auth_name, code, name, '\n')
-                error = str(e)
+                print('error with', auth_name, code, name)
+                error = str(e).replace(',', ',<wbr>') # to be more readable in html
                 error_style = ''
         else:
             crs = pyproj.CRS.from_authority(auth_name=auth_name, code=code)
