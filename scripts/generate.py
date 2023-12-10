@@ -81,6 +81,15 @@ def dump_f(dst_folder, file, txt):
 def dump(dst_folder, txt):
     return dump_f(dst_folder, 'index.html', txt)
 
+def add_frozen_crss(crss):
+    parent = Path(__file__).parent.resolve()
+    print ('asdfas',parent)
+    for domain in ['iau2000.json', 'sr-org.json']:
+        with open(f'{parent}/{domain}', 'r') as fp:
+            dom = json.load(fp)
+            crss = [*crss, *dom]
+    return crss
+
 def make_crslist(dest_dir):
     dest_file = f'{dest_dir}/crslist.json'
 
@@ -88,8 +97,13 @@ def make_crslist(dest_dir):
 
     crs_list = pyproj.database.query_crs_info(allow_deprecated=True)
 
+    def adapt_crs(crs):
+        crs = crs._asdict()
+        crs['type'] = str(crs['type']).replace('PJType.', '')
+        return crs
+
     crss = sorted(
-        [crs._asdict() for crs in crs_list if crs.area_of_use],
+        [adapt_crs(crs) for crs in crs_list if crs.area_of_use],
         key=lambda d: d['auth_name'] + d['code'].zfill(7)
     )
 
@@ -102,22 +116,12 @@ def make_crslist(dest_dir):
         else:
             unique.append(code)
 
+    crss = add_frozen_crss(crss)
+
     with open(dest_file, 'w') as fp:
-        json.dump(crss, fp, indent=2, default=lambda o: str(o).replace('PJType.', ''))
+        json.dump(crss, fp, indent=2)
 
-    with open(dest_file, 'r') as fp:
-        crss = json.load(fp)
     return crss
-
-def add_frozen_crss(crss):
-    parent = Path(__file__).parent.resolve()
-    print ('asdfas',parent)
-    for domain in ['iua2000.json', 'sr-org']:
-        with open(f'{parent}/{domain}', 'r') as fp:
-            dom = json.load(fp)
-            crss = [*dom, *crss] # TODO change order
-    return crss
-
 
 def make_mapping(sections, home_dir):
     mapping = {'last_revised': os.getenv('LAST_REVISED', '-missing-'),
@@ -148,7 +152,6 @@ if __name__ == '__main__':
     templates = './templates'
 
     crss = make_crslist(dest_dir)
-    crss = add_frozen_crss(crss)
 
     # copy some literal files, not modified
     for literal in ['base.js', 'base.css', 'sr_logo.jpg', 'favicon.ico']:
@@ -186,7 +189,7 @@ if __name__ == '__main__':
 
     for id, c in enumerate(crss):
         count += 1
-        if count > 10:
+        if count > 1000:
             break
         if count % int(total/100) == 0 or total == count:
             sys.stdout.write('\r')
@@ -198,16 +201,30 @@ if __name__ == '__main__':
         auth_name=c["auth_name"]
         name = c["name"]
         auth_lowercase = auth_name.lower()
-        crs = pyproj.CRS.from_authority(auth_name=auth_name, code=code)
+        error = ''
+        error_style = no_display
+        list_style = ''
+        crs = None
+        if "ogcwkt" in c:
+            list_style = no_display
+            try:
+                crs = pyproj.CRS.from_user_input(c["ogcwkt"])
+            except Exception as e:
+                print(auth_name, code, name, '\n')
+                error = str(e)
+                error_style = ''
+        else:
+            crs = pyproj.CRS.from_authority(auth_name=auth_name, code=code)
+
         if auth_name == "EPSG":
             epsg_scaped_name = re.sub(r'[^0-9a-zA-Z]+', '-', name);
             epsg_style = ''
         else:
             epsg_scaped_name = ''
             epsg_style = no_display
-        aou = c["area_of_use"]
-        bounds = ', '.join([str(x) for x in aou[:4]])
-        bounds_json = '{{"west_longitude": {}, "south_latitude": {}, "east_longitude": {}, "north_latitude": {} }}'.format(*aou)
+        aou = c.get("area_of_use")
+        bounds = ', '.join([str(x) for x in aou[:4]]) if aou else 'Unknown'
+        bounds_json = '{{"west_longitude": {}, "south_latitude": {}, "east_longitude": {}, "north_latitude": {} }}'.format(*aou) if aou else "Unknonw"
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
 
@@ -215,57 +232,66 @@ if __name__ == '__main__':
                'authority': auth_name,
                'code': code,
                'name': name,
-               'area_name': c["area_of_use"][4],
+               'area_name': aou[4] if aou else 'Unknown',
                'epsg_scaped_name': epsg_scaped_name,
-               'epsg_style' : epsg_style,
-               'deprecated_style' : '' if c["deprecated"] else no_display,
-               'crs_type': c["type"],
+               'epsg_style': epsg_style,
+               'deprecated_style': '' if c.get("deprecated", '') else no_display,
+               'crs_type': c.get("type", '--'),
                'bounds': bounds,
-               'scope': crs.scope,
+               'bounds_map': bounds if aou else '-180, -90, 180, 90',
+               'scope': crs.scope if crs else '--',
                'prev_full_name': full_name(crss[id-1]),
                'prev_url': url(crss[id-1]),
                'next_full_name': full_name(crss[(id+1)%len(crss)]),
                'next_url': url(crss[(id+1)%len(crss)]),
+               'error': error,
+               'error_style': error_style,
+               'list_style': list_style,
         }
         substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', mapping)
 
-        syntax_pretty, pretty, ogcwkt, syntax_pretty2, pretty2, ogcwkt2 = make_wkts(crs)
-
-        mapping = mapping_wkt | {
-               'authority': auth_name,
-               'code': code,
-               'syntax_html': syntax_pretty,
-               'syntax_html_2': syntax_pretty2,
-        }
-
         dir = f'{dest_dir}/ref/{auth_lowercase}/{code}'
-        substitute(f'{templates}/html.tmpl', f'{dir}/html', mapping)
-        dump_f(f'{dir}', 'prettywkt.txt', pretty)
-        dump_f(f'{dir}', 'ogcwkt.txt', ogcwkt)
-        dump(f'{dir}/prettywkt', pretty) # backwards compatible
-        dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
+        if not crs:
+            ogcwkt = c.get("ogcwkt")
+            dump_f(f'{dir}', 'ogcwkt.txt', ogcwkt)
+            dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
+        else:
+            syntax_pretty, pretty, ogcwkt, syntax_pretty2, pretty2, ogcwkt2 = make_wkts(crs)
+
+            mapping = mapping_wkt | {
+                'authority': auth_name,
+                'code': code,
+                'syntax_html': syntax_pretty,
+                'syntax_html_2': syntax_pretty2,
+            }
+
+            substitute(f'{templates}/html.tmpl', f'{dir}/html', mapping)
+            dump_f(f'{dir}', 'prettywkt.txt', pretty)
+            dump_f(f'{dir}', 'ogcwkt.txt', ogcwkt)
+            dump(f'{dir}/prettywkt', pretty) # backwards compatible
+            dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
 
 
-        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', mapping)
-        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'prettywkt2.txt', pretty2)
-        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'ogcwkt2.txt', ogcwkt2)
+            substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', mapping)
+            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'prettywkt2.txt', pretty2)
+            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'ogcwkt2.txt', ogcwkt2)
 
-        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'bounds.json', bounds_json)
+            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'bounds.json', bounds_json)
 
-        try:
-            esri = crs.to_wkt(version='WKT1_ESRI')
-        except:
-            esri = 'This CRS cannot be written as WKT1_ESRI'
-        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'esriwkt.txt', esri)
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/esriwkt', esri)  # backwards compatible
+            try:
+                esri = crs.to_wkt(version='WKT1_ESRI')
+            except:
+                esri = 'This CRS cannot be written as WKT1_ESRI'
+            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'esriwkt.txt', esri)
+            dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/esriwkt', esri)  # backwards compatible
 
-        projjson = crs.to_json(pretty=True)
-        dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'projjson.json', projjson)
+            projjson = crs.to_json(pretty=True)
+            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'projjson.json', projjson)
 
-        try:
-            proj4 = crs.to_proj4()
-        except:
-            proj4 = ''
-        dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/proj4', proj4)
+            try:
+                proj4 = crs.to_proj4()
+            except:
+                proj4 = ''
+            dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/proj4', proj4)
 
     exit(0)

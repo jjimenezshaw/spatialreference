@@ -31,14 +31,13 @@
              defintion for EPSG:${code} | </span><a href="http://www.google.com/search?q=${name}" target="_blank">Google it</a>
         </p>
         <p style="font-size:0.8em"></p>
-        <ul>
-
+        <div ${error_style} class="crs_error"><b>ERROR!</b> ${error}</div>
+        <ul ${list_style}>
             <li><b>Type</b>: ${crs_type}</li>
             <li><b>WGS84 Bounds</b>: ${bounds} (<a href="bounds.json">json</a>)</li>
             <li><b>Scope</b>: ${scope}</li>
             <li><b>Area</b>: ${area_name}</li>
             <li ${deprecated_style}><b>Deprecated</b></li>
-
         </ul>
 
         <div style="margin:10px; padding: -5px 15px 0px 0px; background:lightgrey; border: 2px solid black; width:350px; max-width: 90%;">
@@ -71,7 +70,7 @@
 
     <script src="${home_dir}/base.js"></script>
     <script>
-        init_map([$bounds])
+        init_map([$bounds_map])
     </script>
 </body>
 </html>

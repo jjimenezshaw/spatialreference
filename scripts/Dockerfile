@@ -20,4 +20,5 @@ RUN /home/install.sh
 COPY templates ./templates
 
 COPY generate.py .
+COPY *.json .
 CMD ["python3", "./generate.py"]
