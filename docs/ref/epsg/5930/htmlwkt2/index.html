@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EPSG:5930 -- Spatial Reference</title>
     <link rel="stylesheet" href="../../../../base.css"/>
     <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+
+    <title>EPSG:5930 -- Spatial Reference</title>
 </head>
 
 <body>
@@ -14,81 +15,57 @@
         <div id="header_logo">
             <a href="../../../../"><img src="../../../../sr_logo.jpg" border=0></a>
         </div>
+
         <div id="header_title">
             EPSG:5930
         </div>
     </div>
-    <div id="searchbox"> <!--TODO XXX-->
+    <div id="searchbox">
         <form action="../../../../ref/">
-        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
-        </form>  
+            <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>
+
     </div>
 
-    <div id="navbar"> <!--TODO XXX-->
+    <div id="navbar">
         <div id="navlinks">
-            <a href="../../../../">Home</a> | 
+            <a href="../../../../">Home</a> |
             <a href="../../../../ref/">List all references</a>
         </div>
     </div>
 
     <div id="content">
-        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;WGS 84 / EPSG Arctic Regional zone B5&quot;</span><span class="p">,</span>
-    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span>
-        <span class="nx">ENSEMBLE</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 ensemble&quot;</span><span class="p">,</span>
-            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (Transit)&quot;</span><span class="p">],</span>
-            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G730)&quot;</span><span class="p">],</span>
-            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G873)&quot;</span><span class="p">],</span>
-            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1150)&quot;</span><span class="p">],</span>
-            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1674)&quot;</span><span class="p">],</span>
-            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G1762)&quot;</span><span class="p">],</span>
-            <span class="nx">MEMBER</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984 (G2139)&quot;</span><span class="p">],</span>
-            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257223563</span><span class="p">,</span>
-                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-            <span class="nx">ENSEMBLEACCURACY</span><span class="p">[</span><span class="mf">2.0</span><span class="p">]],</span>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCS</span><span class="p">[</span><span class="s2">&quot;WGS 84 / EPSG Arctic Regional zone B5&quot;</span><span class="p">,</span>
+    <span class="kd">GEOGCS</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span>
+        <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;WGS_1984&quot;</span><span class="p">,</span>
+            <span class="k">SPHEROID</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257223563</span><span class="p">,</span>
+                <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;7030&quot;</span><span class="p">]],</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;6326&quot;</span><span class="p">]],</span>
         <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
-        <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">4326</span><span class="p">]],</span>
-    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;EPSG Arctic Regional LCC zone B5&quot;</span><span class="p">,</span>
-        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Lambert Conic Conformal (2SP)&quot;</span><span class="p">,</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9802</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of false origin&quot;</span><span class="p">,</span><span class="mf">73.1557408611111</span><span class="p">,</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8821</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of false origin&quot;</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8822</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 1st standard parallel&quot;</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8823</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Latitude of 2nd standard parallel&quot;</span><span class="p">,</span><span class="mi">69</span><span class="p">,</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8824</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Easting at false origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8826</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Northing at false origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8827</span><span class="p">]]],</span>
-    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(E)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(N)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-    <span class="kd">USAGE</span><span class="p">[</span>
-        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Regional studies.&quot;</span><span class="p">],</span>
-        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;Arctic - 79°N to 67°N, approximately 132°E to approximately 138°W. May be extended westwards or eastwards within the latitude limits.&quot;</span><span class="p">],</span>
-        <span class="kc">BBOX</span><span class="p">[</span><span class="mi">67</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mf">79.01</span><span class="p">,-</span><span class="mi">138</span><span class="p">]],</span>
-    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">5930</span><span class="p">]]</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;8901&quot;</span><span class="p">]],</span>
+        <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">,</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9122&quot;</span><span class="p">]],</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;4326&quot;</span><span class="p">]],</span>
+    <span class="k">PROJECTION</span><span class="p">[</span><span class="s2">&quot;Lambert_Conformal_Conic_2SP&quot;</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;latitude_of_origin&quot;</span><span class="p">,</span><span class="mf">73.1557408611111</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;central_meridian&quot;</span><span class="p">,</span><span class="mi">177</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;standard_parallel_1&quot;</span><span class="p">,</span><span class="mi">77</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;standard_parallel_2&quot;</span><span class="p">,</span><span class="mi">69</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_easting&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_northing&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9001&quot;</span><span class="p">]],</span>
+    <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Easting&quot;</span><span class="p">,</span><span class="s">EAST</span><span class="p">],</span>
+    <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Northing&quot;</span><span class="p">,</span><span class="s">NORTH</span><span class="p">],</span>
+    <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;5930&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
         <a href="../">More formats</a>
     </div>
-    
+
     <div id="footer">
-        <a href="../../../../about/">About</a>
+        <a href="../../../../about/">About</a> - Built on 2023-12-10 using <a href="https://proj.org">PROJ</a> 9.3.0
     </div>
 </body>
 </html>
-    
+

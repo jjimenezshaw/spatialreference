@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ESRI:104257 -- Spatial Reference</title>
     <link rel="stylesheet" href="../../../../base.css"/>
     <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+
+    <title>ESRI:104257 -- Spatial Reference</title>
 </head>
 
 <body>
@@ -14,52 +15,44 @@
         <div id="header_logo">
             <a href="../../../../"><img src="../../../../sr_logo.jpg" border=0></a>
         </div>
+
         <div id="header_title">
             ESRI:104257
         </div>
     </div>
-    <div id="searchbox"> <!--TODO XXX-->
+    <div id="searchbox">
         <form action="../../../../ref/">
-        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
-        </form>  
+            <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>
+
     </div>
 
-    <div id="navbar"> <!--TODO XXX-->
+    <div id="navbar">
         <div id="navlinks">
-            <a href="../../../../">Home</a> | 
+            <a href="../../../../">Home</a> |
             <a href="../../../../ref/">List all references</a>
         </div>
     </div>
 
     <div id="content">
-        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">GEOGCRS</span><span class="p">[</span><span class="s2">&quot;GCS_ITRF_2008&quot;</span><span class="p">,</span>
-    <span class="nx">DYNAMIC</span><span class="p">[</span>
-        <span class="nx">FRAMEEPOCH</span><span class="p">[</span><span class="mi">2005</span><span class="p">]],</span>
-    <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;International Terrestrial Reference Frame 2008&quot;</span><span class="p">,</span>
-        <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">GEOGCS</span><span class="p">[</span><span class="s2">&quot;GCS_ITRF_2008 (deprecated)&quot;</span><span class="p">,</span>
+    <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;International_Terrestrial_Reference_Frame_2008&quot;</span><span class="p">,</span>
+        <span class="k">SPHEROID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;7019&quot;</span><span class="p">]],</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;1061&quot;</span><span class="p">]],</span>
     <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-        <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
-    <span class="kd">CS</span><span class="p">[</span><span class="s">ellipsoidal</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;geodetic latitude (Lat)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;geodetic longitude (Lon)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
-    <span class="kd">USAGE</span><span class="p">[</span>
-        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Not known.&quot;</span><span class="p">],</span>
-        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;World: Afghanistan, Albania, Algeria, American Samoa, Andorra, Angola, Anguilla, Antarctica, Antigua and Barbuda, Argentina, Armenia, Aruba, Australia, Austria, Azerbaijan, Bahamas, Bahrain, Bangladesh, Barbados, Belgium, Belgium, Belize, Benin, Bermuda, Bhutan, Bolivia, Bonaire, Saint Eustasius and Saba, Bosnia and Herzegovina, Botswana, Bouvet Island, Brazil, British Indian Ocean Territory, British Virgin Islands, Brunei Darussalam, Bulgaria, Burkina Faso, Burundi, Cambodia, Cameroon, Canada, Cape Verde, Cayman Islands, Central African Republic, Chad, Chile, China, Christmas Island, Cocos (Keeling) Islands, Comoros, Congo, Cook Islands, Costa Rica, Côte d&#39;Ivoire (Ivory Coast), Croatia, Cuba, Curacao, Cyprus, Czechia, Denmark, Djibouti, Dominica, Dominican Republic, East Timor, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia, Eswatini (Swaziland), Ethiopia, Falkland Islands (Malvinas), Faroe Islands, Fiji, Finland, France, French Guiana, French Polynesia, French Southern Territories, Gabon, Gambia, Georgia, Germany, Ghana, Gibraltar, Greece, Greenland, Grenada, Guadeloupe, Guam, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Heard Island and McDonald Islands, Holy See (Vatican City State), Honduras, China - Hong Kong, Hungary, Iceland, India, Indonesia, Islamic Republic of Iran, Iraq, Ireland, Israel, Italy, Jamaica, Japan, Jordan, Kazakhstan, Kenya, Kiribati, Democratic People&#39;s Republic of Korea (North Korea), Republic of Korea (South Korea), Kosovo, Kuwait, Kyrgyzstan, Lao People&#39;s Democratic Republic (Laos), Latvia, Lebanon, Lesotho, Liberia, Libyan Arab Jamahiriya, Liechtenstein, Lithuania, Luxembourg, China - Macao, Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Marshall Islands, Martinique, Mauritania, Mauritius, Mayotte, Mexico, Federated States of Micronesia, Monaco, Mongolia, Montenegro, Montserrat, Morocco, Mozambique, Myanmar (Burma), Namibia, Nauru, Nepal, Netherlands, New Caledonia, New Zealand, Nicaragua, Niger, Nigeria, Niue, Norfolk Island, North Macedonia, Northern Mariana Islands, Norway, Oman, Pakistan, Palau, Panama, Papua New Guinea (PNG), Paraguay, Peru, Philippines, Pitcairn, Poland, Portugal, Puerto Rico, Qatar, Reunion, Romania, Russian Federation, Rwanda, St Barthelemy, St Kitts and Nevis, St Helena, Ascension and Tristan da Cunha, St Lucia, St Martin, St Pierre and Miquelon, Saint Vincent and the Grenadines, Samoa, San Marino, Sao Tome and Principe, Saudi Arabia, Senegal, Serbia, Seychelles, Sierra Leone, Singapore, Slovakia (Slovak Republic), Slovenia, St Maarten, Solomon Islands, Somalia, South Africa, South Georgia and the South Sandwich Islands, South Sudan, Spain, Sri Lanka, Sudan, Suriname, Svalbard and Jan Mayen, Sweden, Switzerland, Syrian Arab Republic, Taiwan, Tajikistan, United Republic of Tanzania, Thailand, The Democratic Republic of the Congo (Zaire), Togo, Tokelau, Tonga, Trinidad and Tobago, Tunisia, Türkiye (Turkey), Turkmenistan, Turks and Caicos Islands, Tuvalu, Uganda, Ukraine, United Arab Emirates (UAE), United Kingdom (UK), United States (USA), United States Minor Outlying Islands, Uruguay, Uzbekistan, Vanuatu, Venezuela, Vietnam, US Virgin Islands, Wallis and Futuna, Western Sahara, Yemen, Zambia, Zimbabwe.&quot;</span><span class="p">],</span>
-        <span class="kc">BBOX</span><span class="p">[-</span><span class="mi">90</span><span class="p">,-</span><span class="mi">180</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">180</span><span class="p">]],</span>
-    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;ESRI&quot;</span><span class="p">,</span><span class="mi">104257</span><span class="p">]]</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;8901&quot;</span><span class="p">]],</span>
+    <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">,</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9122&quot;</span><span class="p">]],</span>
+    <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;ESRI&quot;</span><span class="p">,</span><span class="s2">&quot;104257&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
         <a href="../">More formats</a>
     </div>
-    
+
     <div id="footer">
-        <a href="../../../../about/">About</a>
+        <a href="../../../../about/">About</a> - Built on 2023-12-10 using <a href="https://proj.org">PROJ</a> 9.3.0
     </div>
 </body>
 </html>
-    
+

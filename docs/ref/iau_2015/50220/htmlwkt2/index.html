@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IAU_2015:50220 -- Spatial Reference</title>
     <link rel="stylesheet" href="../../../../base.css"/>
     <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+
+    <title>IAU_2015:50220 -- Spatial Reference</title>
 </head>
 
 <body>
@@ -14,61 +15,54 @@
         <div id="header_logo">
             <a href="../../../../"><img src="../../../../sr_logo.jpg" border=0></a>
         </div>
+
         <div id="header_title">
             IAU_2015:50220
         </div>
     </div>
-    <div id="searchbox"> <!--TODO XXX-->
+    <div id="searchbox">
         <form action="../../../../ref/">
-        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
-        </form>  
+            <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>
+
     </div>
 
-    <div id="navbar"> <!--TODO XXX-->
+    <div id="navbar">
         <div id="navlinks">
-            <a href="../../../../">Home</a> | 
+            <a href="../../../../">Home</a> |
             <a href="../../../../ref/">List all references</a>
         </div>
     </div>
 
     <div id="content">
-        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCRS</span><span class="p">[</span><span class="s2">&quot;Europa (2015) - Sphere / Ocentric / Sinusoidal, clon = 0&quot;</span><span class="p">,</span>
-    <span class="kd">BASEGEOGCRS</span><span class="p">[</span><span class="s2">&quot;Europa (2015) - Sphere / Ocentric&quot;</span><span class="p">,</span>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">PROJCS</span><span class="p">[</span><span class="s2">&quot;Europa (2015) - Sphere / Ocentric / Sinusoidal, clon = 0&quot;</span><span class="p">,</span>
+    <span class="kd">GEOGCS</span><span class="p">[</span><span class="s2">&quot;Europa (2015) - Sphere / Ocentric&quot;</span><span class="p">,</span>
         <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;Europa (2015) - Sphere&quot;</span><span class="p">,</span>
-            <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;Europa (2015) - Sphere&quot;</span><span class="p">,</span><span class="mi">1560800</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-                <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-            <span class="nx">ANCHOR</span><span class="p">[</span><span class="s2">&quot;Cilix: 182 W.0&quot;</span><span class="p">]],</span>
+            <span class="k">SPHEROID</span><span class="p">[</span><span class="s2">&quot;Europa (2015) - Sphere&quot;</span><span class="p">,</span><span class="mi">1560800</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+                <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;IAU&quot;</span><span class="p">,</span><span class="s2">&quot;50200&quot;</span><span class="p">]],</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;IAU&quot;</span><span class="p">,</span><span class="s2">&quot;50200&quot;</span><span class="p">]],</span>
         <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Reference Meridian&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
-        <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;IAU&quot;</span><span class="p">,</span><span class="mi">50200</span><span class="p">,</span><span class="mi">2015</span><span class="p">]],</span>
-    <span class="kd">CONVERSION</span><span class="p">[</span><span class="s2">&quot;Sinusoidal, clon = 0&quot;</span><span class="p">,</span>
-        <span class="k">METHOD</span><span class="p">[</span><span class="s2">&quot;Sinusoidal&quot;</span><span class="p">,</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;PROJ&quot;</span><span class="p">,</span><span class="s2">&quot;SINUSOIDAL&quot;</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;Longitude of natural origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-            <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8802</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False easting&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8806</span><span class="p">]],</span>
-        <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;False northing&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">8807</span><span class="p">]]],</span>
-    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(E)&quot;</span><span class="p">,</span><span class="s">east</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(N)&quot;</span><span class="p">,</span><span class="s">north</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;IAU&quot;</span><span class="p">,</span><span class="mi">50220</span><span class="p">,</span><span class="mi">2015</span><span class="p">]]</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;IAU&quot;</span><span class="p">,</span><span class="s2">&quot;50200&quot;</span><span class="p">]],</span>
+        <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">,</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9122&quot;</span><span class="p">]],</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;IAU&quot;</span><span class="p">,</span><span class="s2">&quot;50200&quot;</span><span class="p">]],</span>
+    <span class="k">PROJECTION</span><span class="p">[</span><span class="s2">&quot;Sinusoidal&quot;</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;longitude_of_center&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_easting&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="k">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_northing&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9001&quot;</span><span class="p">]],</span>
+    <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Easting&quot;</span><span class="p">,</span><span class="s">EAST</span><span class="p">],</span>
+    <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Northing&quot;</span><span class="p">,</span><span class="s">NORTH</span><span class="p">],</span>
+    <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;IAU&quot;</span><span class="p">,</span><span class="s2">&quot;50220&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
         <a href="../">More formats</a>
     </div>
-    
+
     <div id="footer">
-        <a href="../../../../about/">About</a>
+        <a href="../../../../about/">About</a> - Built on 2023-12-10 using <a href="https://proj.org">PROJ</a> 9.3.0
     </div>
 </body>
 </html>
-    
+

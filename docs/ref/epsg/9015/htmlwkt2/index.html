@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>EPSG:9015 -- Spatial Reference</title>
     <link rel="stylesheet" href="../../../../base.css"/>
     <link rel="icon" type="image/x-icon" href="../../../../favicon.ico"/>
+
+    <title>EPSG:9015 -- Spatial Reference</title>
 </head>
 
 <body>
@@ -14,55 +15,47 @@
         <div id="header_logo">
             <a href="../../../../"><img src="../../../../sr_logo.jpg" border=0></a>
         </div>
+
         <div id="header_title">
             EPSG:9015
         </div>
     </div>
-    <div id="searchbox"> <!--TODO XXX-->
+    <div id="searchbox">
         <form action="../../../../ref/">
-        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
-        </form>  
+            <input type="text"name="search" value=""/> <input type="submit" value="Search" />
+        </form>
+
     </div>
 
-    <div id="navbar"> <!--TODO XXX-->
+    <div id="navbar">
         <div id="navlinks">
-            <a href="../../../../">Home</a> | 
+            <a href="../../../../">Home</a> |
             <a href="../../../../ref/">List all references</a>
         </div>
     </div>
 
     <div id="content">
-        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">GEODCRS</span><span class="p">[</span><span class="s2">&quot;IGb08&quot;</span><span class="p">,</span>
-    <span class="nx">DYNAMIC</span><span class="p">[</span>
-        <span class="nx">FRAMEEPOCH</span><span class="p">[</span><span class="mi">2005</span><span class="p">]],</span>
+        <div class="nicewkt"><div class="syntax"><pre><span></span><span class="gh">GEOCCS</span><span class="p">[</span><span class="s2">&quot;IGb08&quot;</span><span class="p">,</span>
     <span class="k">DATUM</span><span class="p">[</span><span class="s2">&quot;IGb08&quot;</span><span class="p">,</span>
-        <span class="k">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+        <span class="k">SPHEROID</span><span class="p">[</span><span class="s2">&quot;GRS 1980&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257222101</span><span class="p">,</span>
+            <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;7019&quot;</span><span class="p">]],</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;1248&quot;</span><span class="p">]],</span>
     <span class="kc">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
-        <span class="nc">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
-    <span class="kd">CS</span><span class="p">[</span><span class="s">Cartesian</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(X)&quot;</span><span class="p">,</span><span class="s">geocentricX</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(Y)&quot;</span><span class="p">,</span><span class="s">geocentricY</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-        <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;(Z)&quot;</span><span class="p">,</span><span class="s">geocentricZ</span><span class="p">,</span>
-            <span class="kc">ORDER</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-            <span class="nc">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span>
-    <span class="kd">USAGE</span><span class="p">[</span>
-        <span class="kc">SCOPE</span><span class="p">[</span><span class="s2">&quot;Geodesy.&quot;</span><span class="p">],</span>
-        <span class="kc">AREA</span><span class="p">[</span><span class="s2">&quot;World.&quot;</span><span class="p">],</span>
-        <span class="kc">BBOX</span><span class="p">[-</span><span class="mi">90</span><span class="p">,-</span><span class="mi">180</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">180</span><span class="p">]],</span>
-    <span class="nb">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">9015</span><span class="p">]]</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;8901&quot;</span><span class="p">]],</span>
+    <span class="kc">UNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+        <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9001&quot;</span><span class="p">]],</span>
+    <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Geocentric X&quot;</span><span class="p">,</span><span class="nx">OTHER</span><span class="p">],</span>
+    <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Geocentric Y&quot;</span><span class="p">,</span><span class="nx">OTHER</span><span class="p">],</span>
+    <span class="k">AXIS</span><span class="p">[</span><span class="s2">&quot;Geocentric Z&quot;</span><span class="p">,</span><span class="s">NORTH</span><span class="p">],</span>
+    <span class="nb">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9015&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
         <a href="../">More formats</a>
     </div>
-    
+
     <div id="footer">
-        <a href="../../../../about/">About</a>
+        <a href="../../../../about/">About</a> - Built on 2023-12-10 using <a href="https://proj.org">PROJ</a> 9.3.0
     </div>
 </body>
 </html>
-    
+
