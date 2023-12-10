@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${head}
     <title>${authority}:${code} - WKT2 -- Spatial Reference</title>
-    <link rel="stylesheet" href="${home_dir}/base.css"/>
-    <link rel="icon" type="image/x-icon" href="${home_dir}/favicon.ico"/>
 </head>
 
 <body>
     <div id="header">
-        <div id="header_logo">
-            <a href="${home_dir}/"><img src="${home_dir}/sr_logo.jpg" border=0></a>
-        </div>
+        ${header}
         <div id="header_title">
             ${authority}:${code} - WKT2
         </div>
     </div>
-    <div id="searchbox"> <!--TODO XXX-->
-        <form action="${home_dir}/ref/">
-        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
-        </form>  
+    <div id="searchbox">
+        ${searchbox}
     </div>
 
-    <div id="navbar"> <!--TODO XXX-->
-        <div id="navlinks">
-            <a href="${home_dir}/">Home</a> | 
-            <a href="${home_dir}/ref/">List all references</a>
-        </div>
+    <div id="navbar">
+        ${navbar}
     </div>
 
     <div id="content">
         <div class="nicewkt">${syntax_html}</div>
         <a href="../">More formats</a>
     </div>
-    
+
     <div id="footer">
-        <a href="${home_dir}/about/">About</a>
+        ${footer}
     </div>
 </body>
 </html>
-    
+

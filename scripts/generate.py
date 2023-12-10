@@ -4,6 +4,7 @@ import json
 import os, shutil
 import re
 from pathlib import Path
+from datetime import date
 from string import Template
 
 from pygments.lexer import RegexLexer
@@ -49,14 +50,25 @@ class WKTLexer(RegexLexer):
         ]
     }
 
+def read_file(src_filename):
+    with open(src_filename, 'r') as src:
+        return src.read()
+
+def read_tmpl(src_filename, dic):
+    with open(src_filename, 'r') as src:
+        txt = Template(src.read())
+        result = txt.substitute(dic)
+        return result
+
+def subs(str, mapping):
+    return Template(str).substitute(mapping)
+
 def substitute(src_filename, dst_folder, dic):
     Path(dst_folder).mkdir(parents=True, exist_ok=True)
     dst_folder += '/index.html'
 
-    with open(src_filename, 'r') as src, open(dst_folder, 'w') as dst:
-        txt = Template(src.read())
-        result = txt.substitute(dic)
-        dst.write(result)
+    with open(dst_folder, 'w') as dst:
+        dst.write(read_tmpl(src_filename, dic))
 
 
 def dump(dst_folder, txt):
@@ -66,13 +78,10 @@ def dump(dst_folder, txt):
     with open(dst_folder, 'w') as dst:
         dst.write(txt)
 
-
-if __name__ == '__main__':
-    dest_dir = os.getenv('DEST_DIR', '.')
+def make_crslist(dest_dir):
     dest_file = f'{dest_dir}/crslist.json'
-    templates = './templates'
 
-    pyproj_versions = pyproj.show_versions()
+    pyproj.show_versions()
 
     crs_list = pyproj.database.query_crs_info(allow_deprecated=True)
 
@@ -95,40 +104,77 @@ if __name__ == '__main__':
 
     with open(dest_file, 'r') as fp:
         crss = json.load(fp)
+    return crss
 
+def make_mapping(sections, home_dir):
+    mapping = {'last_revised': os.getenv('LAST_REVISED', '-missing-'),
+               'home_dir': home_dir}
+    for sec in ['head', 'leaflet', 'header', 'searchbox', 'navbar', 'footer']:
+        mapping[sec] = Template(sections[sec]).substitute({'home_dir': home_dir})
+    return mapping
+
+if __name__ == '__main__':
+    dest_dir = os.getenv('DEST_DIR', '.')
+    templates = './templates'
+
+    crss = make_crslist(dest_dir)
+
+    # copy some literal files, not modified
     for literal in ['base.js', 'base.css', 'sr_logo.jpg', 'favicon.ico']:
         shutil.copy(f'{templates}/{literal}', dest_dir)
 
-    dic = {'version': os.getenv('PROJ_VERSION', '.'),
-           'home_dir': '.'}
-    substitute(f'{templates}/index.tmpl', f'{dest_dir}', dic)
-    dic['home_dir'] = '..'
-    substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', dic)
-    substitute(f'{templates}/ref.tmpl', f'{dest_dir}/ref', dic)
+    sections = {
+        'head': read_file(f'{templates}/sections/head.tmpl'),
+        'leaflet': read_file(f'{templates}/sections/leaflet.tmpl'),
+        'header': read_file(f'{templates}/sections/header.tmpl'),
+        'searchbox': read_file(f'{templates}/sections/searchbox.tmpl'),
+        'navbar': read_file(f'{templates}/sections/navbar.tmpl'),
+        'footer': read_file(f'{templates}/sections/footer.tmpl'),
+    }
+
+    # footer has some variables, apart from home_dir
+    today = date.today().isoformat()
+    sections['footer'] = Template(sections['footer']).safe_substitute({
+        'proj_version': os.getenv('PROJ_VERSION', '-missing-'),
+        'built_date': today,
+    })
+
+    mapping = make_mapping(sections, '.')
+    substitute(f'{templates}/index.tmpl', f'{dest_dir}', mapping)
+    mapping = make_mapping(sections, '..')
+    substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', mapping)
+    substitute(f'{templates}/ref.tmpl', f'{dest_dir}/ref', mapping)
+
+    mapping_ref = make_mapping(sections, '../../..')
+    mapping_wkt = make_mapping(sections, '../../../..')
 
     count = 0
     for id, c in enumerate(crss):
         count += 1
-        if count > 3000:
-            pass #break
+        if count > 10:
+            break
         code=c["code"]
         auth_name=c["auth_name"]
         name = c["name"]
         auth_lowercase = auth_name.lower()
         crs = pyproj.CRS.from_authority(auth_name=auth_name, code=code)
-        epsg_a = ''
         if auth_name == "EPSG":
-            scapedName = re.sub(r'[^0-9a-zA-Z]+', '-', name);
-            epsg_a = f'Watch it at <a href="https://epsg.org/crs_{code}/{scapedName}.html">epsg.org</a>'
+            epsg_scaped_name = re.sub(r'[^0-9a-zA-Z]+', '-', name);
+            epsg_style = ''
+        else:
+            epsg_scaped_name = ''
+            epsg_style = 'style="display: none;"'
         bounds = ', '.join([str(x) for x in c["area_of_use"][:4]])
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
-        dic = {'home_dir': '../../..',
+        mapping = mapping_ref | {
                'authority': auth_name,
                'code': code,
                'name': name,
                'area_name': c["area_of_use"][4],
-               'epsg_a': epsg_a,
+               'epsg_scaped_name': epsg_scaped_name,
+               'epsg_style' : epsg_style,
+               'deprecated_style' : '' if c["deprecated"] else 'style="display: none;"',
                'crs_type': c["type"],
                'bounds': bounds,
                'scope': crs.scope,
@@ -137,7 +183,7 @@ if __name__ == '__main__':
                'next_full_name': full_name(crss[(id+1)%len(crss)]),
                'next_url': url(crss[(id+1)%len(crss)]),
         }
-        substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', dic)
+        substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', mapping)
 
         try:
             output_axis_rule = True if crs.is_projected else None
@@ -153,21 +199,21 @@ if __name__ == '__main__':
         syntax_pretty = highlight(pretty, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
         syntax_pretty2 = highlight(pretty2, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
 
-        dic = {'home_dir': '../../../..',
+        mapping = mapping_wkt | {
                'authority': auth_name,
                'code': code,
                'syntax_html': syntax_pretty,
         }
-        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/html', dic)
+        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/html', mapping)
         dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt', pretty)
         dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/ogcwkt', ogcwkt)
 
-        dic = {'home_dir': '../../../..',
+        mapping = mapping_wkt | {
                'authority': auth_name,
                'code': code,
                'syntax_html': syntax_pretty2,
         }
-        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', dic)
+        substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', mapping)
         dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/prettywkt2', pretty2)
         dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/ogcwkt2', ogcwkt2)
 

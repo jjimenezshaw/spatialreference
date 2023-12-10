@@ -1,55 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    ${head}
     <title>${authority}:${code} ${name} -- Spatial Reference</title>
-    <link rel="stylesheet" href="${home_dir}/base.css"/>
-    <link rel="icon" type="image/x-icon" href="${home_dir}/favicon.ico"/>
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    ${leaflet}
 </head>
 
 <body>
     <div id="header">
-        <div id="header_logo">
-            <a href="${home_dir}/"><img src="${home_dir}/sr_logo.jpg" border=0></a>
-        </div>
+        ${header}
         <div id="header_title">
             ${authority}:<wbr />${code}
         </div>
     </div>
-    <div id="searchbox"> <!--TODO XXX-->
-        <form action="${home_dir}/ref/">
-        <input type="text"name="search" value=""/> <input type="submit" value="Search" />
-        </form>  
+    <div id="searchbox">
+        ${searchbox}
     </div>
 
-    <div id="navbar"> <!--TODO XXX-->
-        <div id="navlinks">
-            <a href="${home_dir}/">Home</a> | 
-            <a href="${home_dir}/ref/">List all references</a>
-        </div>
+    <div id="navbar">
+        ${navbar}
     </div>
 
     <div id="content">
-        Previous: <a href="${prev_url}">${prev_full_name}</a> | Next: <a href="${next_url}">${next_full_name}</a> 
+        Previous: <a href="${prev_url}">${prev_full_name}</a> | Next: <a href="${next_url}">${next_full_name}</a>
 
         <h1>${authority}:${code}</h1>
         <h2>${name}</h2>
-        <p>${epsg_a}</p>
+        <p>
+            <span ${epsg_style}>View <a href="https://epsg.org/crs_${code}/${epsg_scaped_name}.html" target="_blank">EPSG.org</a>
+             defintion for EPSG:${code} | </span><a href="http://www.google.com/search?q=${name}" target="_blank">Google it</a>
+        </p>
         <p style="font-size:0.8em"></p>
         <ul>
-        
+
             <li><b>Type</b>: ${crs_type}</li>
             <li><b>WGS84 Bounds</b>: ${bounds}</li>
             <li><b>Scope</b>: ${scope}</li>
             <li><b>Area</b>: ${area_name}</li>
-          
+            <li ${deprecated_style}><b>Deprecated</b></li>
+
         </ul>
-        
+
         <div style="margin:10px; padding: -5px 15px 0px 0px; background:lightgrey; border: 2px solid black; width:350px; max-width: 90%;">
         <ul>
             <li>WKT-1</li>
@@ -68,20 +59,20 @@
             <li><a href="#" onclick="download_prj('${code}.prj', 'esriwkt/')" title="Download as PRJ file from ESRI">.PRJ</a></li>
             <li><a href="json/" title="PROJJSON">JSON</a></li>
             <li><a href="proj4/">Proj4</a></li>
-        </ul>  
+        </ul>
         </div>
-        
+
         <div id="map" style="width:512px; height:256px; max-width: 90%; margin:10px; padding: -5px 15px 0px 0px; border: 2px solid darkblue;"></div>
     </div>
-    
+
     <div id="footer">
-        <a href="${home_dir}/about/">About</a>
+        ${footer}
     </div>
+
     <script src="${home_dir}/base.js"></script>
     <script>
         init_map([$bounds])
-    </script>     
-       
+    </script>
 </body>
 </html>
-    
+
