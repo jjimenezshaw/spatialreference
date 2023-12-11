@@ -1,0 +1,1 @@
+GEOGCS["Cocos Islands 1965",DATUM["Anna_1_1965",SPHEROID["Australian National Spheroid",6378160,298.25,AUTHORITY["EPSG","7003"]]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433],AUTHORITY["EPSG","37231"]]

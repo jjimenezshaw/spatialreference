@@ -1,0 +1,1 @@
+GEOGCRS["Atlas 2000",DATUM["D_Atlas_2000",ELLIPSOID["Atlas_2000_IAU_IAG",18500,3.7,LENGTHUNIT["metre",1,ID["EPSG",9001]]]],PRIMEM["Greenwich",0,ANGLEUNIT["Decimal_Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Decimal_Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Decimal_Degree",0.0174532925199433]]]

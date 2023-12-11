@@ -1,0 +1,140 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "mutm_84",
+  "base_crs": {
+    "name": "EVEREST_NEPAL",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "<custom>",
+      "ellipsoid": {
+        "name": "<custom>",
+        "semi_major_axis": 6377276.345,
+        "inverse_flattening": 300.8017
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Transverse Mercator",
+      "id": {
+        "authority": "EPSG",
+        "code": 9807
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of natural origin",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Longitude of natural origin",
+        "value": 84,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "Scale factor at natural origin",
+        "value": 0.9999,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8805
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 500000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "California_Lambert",
+  "base_crs": {
+    "name": "NAD27",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "North_American_Datum_1927",
+      "ellipsoid": {
+        "name": "Clarke 1866",
+        "semi_major_axis": 6378206.4,
+        "inverse_flattening": 294.9786982,
+        "id": {
+          "authority": "EPSG",
+          "code": 7008
+        }
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Lambert Conic Conformal (2SP)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9802
+      }
+    },
+    "parameters": [
+      {
+        "name": "Easting at false origin",
+        "value": 0,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8826
+        }
+      },
+      {
+        "name": "Northing at false origin",
+        "value": 0,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8827
+        }
+      },
+      {
+        "name": "Longitude of false origin",
+        "value": -119,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8822
+        }
+      },
+      {
+        "name": "Latitude of 1st standard parallel",
+        "value": 33,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8823
+        }
+      },
+      {
+        "name": "Latitude of 2nd standard parallel",
+        "value": 45,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8824
+        }
+      },
+      {
+        "name": "Scale_Factor",
+        "value": 1,
+        "unit": "unity"
+      },
+      {
+        "name": "Latitude of false origin",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8821
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

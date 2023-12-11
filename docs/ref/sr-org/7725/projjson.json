@@ -1,0 +1,141 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "South_America_Albers_Equal_Area_Conic",
+  "base_crs": {
+    "name": "SAD69",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "South_American_Datum_1969",
+      "ellipsoid": {
+        "name": "GRS_1967_Modified",
+        "semi_major_axis": 6378160,
+        "inverse_flattening": 298.25
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Albers Equal Area",
+      "id": {
+        "authority": "EPSG",
+        "code": 9822
+      }
+    },
+    "parameters": [
+      {
+        "name": "Easting at false origin",
+        "value": 0,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8826
+        }
+      },
+      {
+        "name": "Northing at false origin",
+        "value": 0,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8827
+        }
+      },
+      {
+        "name": "Longitude of false origin",
+        "value": -54,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8822
+        }
+      },
+      {
+        "name": "Latitude of 1st standard parallel",
+        "value": -2,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8823
+        }
+      },
+      {
+        "name": "Latitude of 2nd standard parallel",
+        "value": -22,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8824
+        }
+      },
+      {
+        "name": "Latitude of false origin",
+        "value": -12,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8821
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

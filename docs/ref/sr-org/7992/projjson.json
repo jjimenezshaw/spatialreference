@@ -1,0 +1,132 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "TWD1967 / TM2 zone 121",
+  "base_crs": {
+    "name": "TWD67",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Taiwan Datum 1967",
+      "ellipsoid": {
+        "name": "GRS 1967 Modified",
+        "semi_major_axis": 6378160,
+        "inverse_flattening": 298.25
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Geodetic latitude",
+          "abbreviation": "Lat",
+          "direction": "north",
+          "unit": "degree"
+        },
+        {
+          "name": "Geodetic longitude",
+          "abbreviation": "Lon",
+          "direction": "east",
+          "unit": "degree"
+        }
+      ]
+    },
+    "id": {
+      "authority": "EPSG",
+      "code": 3821
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Transverse Mercator",
+      "id": {
+        "authority": "EPSG",
+        "code": 9807
+      }
+    },
+    "parameters": [
+      {
+        "name": "Longitude of natural origin",
+        "value": 121,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "Latitude of natural origin",
+        "value": 0,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Scale factor at natural origin",
+        "value": 0.9999,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8805
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 250000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "id": {
+    "authority": "EPSG",
+    "code": 3828
+  }
+}

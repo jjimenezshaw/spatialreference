@@ -1,0 +1,5 @@
+LOCAL_CS["TBC_CS",
+    UNIT["metre",1,
+        AUTHORITY["EPSG","9001"]],
+    AXIS["Easting",EAST],
+    AXIS["Northing",NORTH]]

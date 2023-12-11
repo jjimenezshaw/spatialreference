@@ -1,0 +1,113 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "FordingRiverV2",
+  "base_crs": {
+    "name": "NAD83(CSRS)",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "NAD83 Canadian Spatial Reference System",
+      "ellipsoid": {
+        "name": "GRS 1980",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257222101
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6140
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Local"
+    },
+    "parameters": [
+      {
+        "name": "False_Easting",
+        "value": 22738.63,
+        "unit": "metre"
+      },
+      {
+        "name": "False_Northing",
+        "value": 151750.89,
+        "unit": "metre"
+      },
+      {
+        "name": "Scale_Factor",
+        "value": 1.0003213,
+        "unit": "unity"
+      },
+      {
+        "name": "Azimuth",
+        "value": -0.141115,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Longitude_Of_Center",
+        "value": -114.88527860351,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Latitude_Of_Center",
+        "value": 50.2123762093307,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

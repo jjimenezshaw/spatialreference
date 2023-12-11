@@ -1,0 +1,140 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "MineStar WKT (sft)",
+  "base_crs": {
+    "name": "WGS 84",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "WGS 84",
+      "ellipsoid": {
+        "name": "WGS 84",
+        "semi_major_axis": 6378136.99999551,
+        "inverse_flattening": 298.257223563
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Decimal Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Decimal Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Transverse Mercator",
+      "id": {
+        "authority": "EPSG",
+        "code": 9807
+      }
+    },
+    "parameters": [
+      {
+        "name": "Longitude of natural origin",
+        "value": -114.51505735914,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Decimal Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "Latitude of natural origin",
+        "value": 40.968630101556,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Decimal Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Scale factor at natural origin",
+        "value": 1,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8805
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 951163.98199999,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "sft",
+          "conversion_factor": 0.304800609601219
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 512777.13800001,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "sft",
+          "conversion_factor": 0.304800609601219
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "sft",
+          "conversion_factor": 0.304800609601219
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "sft",
+          "conversion_factor": 0.304800609601219
+        }
+      }
+    ]
+  }
+}

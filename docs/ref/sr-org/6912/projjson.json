@@ -1,0 +1,128 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Germany_Zone_3",
+  "base_crs": {
+    "name": "DHDN",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Deutsches Hauptdreiecksnetz",
+      "ellipsoid": {
+        "name": "Bessel 1841",
+        "semi_major_axis": 6377397.155,
+        "inverse_flattening": 299.1528128
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6314
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Transverse Mercator",
+      "id": {
+        "authority": "EPSG",
+        "code": 9807
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of natural origin",
+        "value": 0,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Longitude of natural origin",
+        "value": 9,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "Scale factor at natural origin",
+        "value": 1,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8805
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 3500000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "X",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Y",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

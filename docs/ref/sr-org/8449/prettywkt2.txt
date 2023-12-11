@@ -1,0 +1,10 @@
+ENGCRS["GCS_North_American_1983",
+    EDATUM["Unknown engineering datum"],
+    CS[Cartesian,2],
+        AXIS["(E)",east,
+            ORDER[1],
+            LENGTHUNIT["US survey foot",0.304800609601219]],
+        AXIS["(N)",north,
+            ORDER[2],
+            LENGTHUNIT["US survey foot",0.304800609601219]],
+    ID["EPSG",2227]]

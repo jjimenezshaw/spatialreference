@@ -1,0 +1,17 @@
+PROJCS["Venier - Albers Canada",
+    GEOGCS["GCS_North_American_1983_CSRS98",
+        DATUM["D_North_American_1983_CSRS98",
+            SPHEROID["GRS_
+1980",6378137,298.257222101]],
+        PRIMEM["Greenwich",0],
+        UNIT["Degree",0.0174532925199433]],
+    PROJECTION["Albers_Conic_Equal_Area"],
+    PARAMETER["latitude_of_center",0],
+    PARAMETER["longitude_of_center",-96],
+    PARAMETER["standard_parallel_1",48],
+    PARAMETER["standard_parallel_2",62],
+    PARAMETER["false_northing",0],
+    UNIT["metre",1,
+        AUTHORITY["EPSG","9001"]],
+    AXIS["Easting",EAST],
+    AXIS["Northing",NORTH]]

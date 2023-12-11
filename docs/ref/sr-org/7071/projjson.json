@@ -1,0 +1,127 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "'PCS_ITRF2000_TM'",
+  "base_crs": {
+    "name": "'GCS_ITRF_2000'",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "'D_ITRF_2000'",
+      "ellipsoid": {
+        "name": "'GRS_1980'",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257222101
+      },
+      "prime_meridian": {
+        "name": "'Greenwich'",
+        "longitude": {
+          "value": 0,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "'Degree'",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "'Degree'",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "'Degree'",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "'Transverse_Mercator'"
+    },
+    "parameters": [
+      {
+        "name": "'False_Easting'",
+        "value": 200000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "'False_Northing'",
+        "value": 500000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "'Central_Meridian'",
+        "value": 127,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "'Degree'",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "'Scale_Factor'",
+        "value": 1,
+        "unit": "unity"
+      },
+      {
+        "name": "'Latitude_Of_Origin'",
+        "value": 38,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "'Degree'",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

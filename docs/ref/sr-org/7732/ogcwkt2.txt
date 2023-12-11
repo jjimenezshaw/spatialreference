@@ -1,0 +1,1 @@
+GEOGCRS["Longitude / Latitude (WGS 84)",DATUM["WGS 84",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1,ID["EPSG",9001]]]],PRIMEM["Greenwich",0,ANGLEUNIT["Decimal Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Decimal Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Decimal Degree",0.0174532925199433]]]

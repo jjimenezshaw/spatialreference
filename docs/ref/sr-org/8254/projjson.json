@@ -1,0 +1,146 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "unnamed",
+  "base_crs": {
+    "name": "unnamed",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Tananarive 1925",
+      "ellipsoid": {
+        "name": "International - 1924",
+        "semi_major_axis": 6378388,
+        "inverse_flattening": 297.00000000006
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6297
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Hotine Oblique Mercator (variant A)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9812
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of projection centre",
+        "value": -18.9,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8811
+        }
+      },
+      {
+        "name": "Longitude of projection centre",
+        "value": 46.43722917,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8812
+        }
+      },
+      {
+        "name": "Azimuth of initial line",
+        "value": 18.9,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8813
+        }
+      },
+      {
+        "name": "Angle from Rectified to Skew Grid",
+        "value": 18.9,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8814
+        }
+      },
+      {
+        "name": "Scale factor on initial line",
+        "value": 0.9995,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8815
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 1113136.3146,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 2882900.7279,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

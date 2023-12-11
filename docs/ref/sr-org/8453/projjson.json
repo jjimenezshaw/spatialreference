@@ -1,0 +1,163 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "'InternationalTerrestrialReferenceFrame1996/TransverseMercator'",
+  "base_crs": {
+    "name": "'InternationalTerrestrialReferenceFrame1996'",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "'InternationalTerrestrialReferenceFrame1996'",
+      "ellipsoid": {
+        "name": "'GRS1980'",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257222101
+      },
+      "prime_meridian": {
+        "name": "'Greenwich'",
+        "longitude": {
+          "value": 0,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "'Degree'",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      },
+      "id": {
+        "authority": "'EPSG'",
+        "code": "'6654'"
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "'Degree'",
+            "conversion_factor": 0.0174532925199433,
+            "id": {
+              "authority": "'EPSG'",
+              "code": "'9102'"
+            }
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "'Degree'",
+            "conversion_factor": 0.0174532925199433,
+            "id": {
+              "authority": "'EPSG'",
+              "code": "'9102'"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "'Transverse_Mercator'"
+    },
+    "parameters": [
+      {
+        "name": "'Central_Meridian'",
+        "value": 33,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "'Degree'",
+          "conversion_factor": 0.0174532925199433,
+          "id": {
+            "authority": "'EPSG'",
+            "code": "'9102'"
+          }
+        }
+      },
+      {
+        "name": "'Latitude_Of_Origin'",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "'Degree'",
+          "conversion_factor": 0.0174532925199433,
+          "id": {
+            "authority": "'EPSG'",
+            "code": "'9102'"
+          }
+        }
+      },
+      {
+        "name": "'Scale_Factor'",
+        "value": 0.9996,
+        "unit": "unity"
+      },
+      {
+        "name": "'False_Easting'",
+        "value": 500000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Metre'",
+          "conversion_factor": 1,
+          "id": {
+            "authority": "'EPSG'",
+            "code": "'9001'"
+          }
+        }
+      },
+      {
+        "name": "'False_Northing'",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Metre'",
+          "conversion_factor": 1,
+          "id": {
+            "authority": "'EPSG'",
+            "code": "'9001'"
+          }
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Metre'",
+          "conversion_factor": 1,
+          "id": {
+            "authority": "'EPSG'",
+            "code": "'9001'"
+          }
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Metre'",
+          "conversion_factor": 1,
+          "id": {
+            "authority": "'EPSG'",
+            "code": "'9001'"
+          }
+        }
+      }
+    ]
+  }
+}

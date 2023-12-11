@@ -1,0 +1,119 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Malaysia Cassini Selangor",
+  "base_crs": {
+    "name": "GCS_MCS",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Kertau 1968",
+      "ellipsoid": {
+        "name": "Everest - Modified",
+        "semi_major_axis": 6377304.063,
+        "inverse_flattening": 300.801700097121
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Cassini-Soldner",
+      "id": {
+        "authority": "EPSG",
+        "code": 9806
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of natural origin",
+        "value": 3.680344444,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Longitude of natural origin",
+        "value": 101.5082444,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "False easting",
+        "value": -21759.43848,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 55960.90576,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "id": {
+    "authority": "EPSG",
+    "code": 3380999
+  }
+}

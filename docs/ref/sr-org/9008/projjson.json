@@ -1,0 +1,143 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "GGTN1963_SHIFTXY_ADJ_NGS_SHIFT_VALUE_GUAM63",
+  "base_crs": {
+    "name": "Guam 1963",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Guam 1963",
+      "ellipsoid": {
+        "name": "Clarke 1866",
+        "semi_major_axis": 6378206.4,
+        "inverse_flattening": 294.9786982
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6675
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Modified Azimuthal Equidistant",
+      "id": {
+        "authority": "EPSG",
+        "code": 9832
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of natural origin",
+        "value": 13.473899,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Longitude of natural origin",
+        "value": 144.751172,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 164041.994750656,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "foot",
+          "conversion_factor": 0.3048
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 164041.994750656,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "foot",
+          "conversion_factor": 0.3048
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "foot",
+          "conversion_factor": 0.3048,
+          "id": {
+            "authority": "EPSG",
+            "code": 9002
+          }
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "foot",
+          "conversion_factor": 0.3048,
+          "id": {
+            "authority": "EPSG",
+            "code": 9002
+          }
+        }
+      }
+    ]
+  }
+}

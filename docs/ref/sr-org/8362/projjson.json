@@ -1,0 +1,127 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "lambert_conformal_conic_1SP",
+  "base_crs": {
+    "name": "unknown",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "unknown",
+      "ellipsoid": {
+        "name": "unknown",
+        "radius": 6367470
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Geodetic longitude",
+          "abbreviation": "",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Geodetic latitude",
+          "abbreviation": "",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Lambert Conic Conformal (1SP)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9801
+      }
+    },
+    "parameters": [
+      {
+        "name": "Longitude of natural origin",
+        "value": -95.0000076293945,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "Latitude of natural origin",
+        "value": 25.0000019073486,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Scale factor at natural origin",
+        "value": 1,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8805
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "id": {
+    "authority": "EPSG",
+    "code": 971801
+  }
+}

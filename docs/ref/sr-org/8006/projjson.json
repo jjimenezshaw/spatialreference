@@ -1,0 +1,113 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Uklad_Lodz09",
+  "base_crs": {
+    "name": "Pulkovo 1942",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Pulkovo 1942",
+      "ellipsoid": {
+        "name": "Krassowsky 1940",
+        "semi_major_axis": 6378245,
+        "inverse_flattening": 298.3
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6284
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Local"
+    },
+    "parameters": [
+      {
+        "name": "False_Easting",
+        "value": 50000,
+        "unit": "metre"
+      },
+      {
+        "name": "False_Northing",
+        "value": 50000,
+        "unit": "metre"
+      },
+      {
+        "name": "Scale_Factor",
+        "value": 1.00002775,
+        "unit": "unity"
+      },
+      {
+        "name": "Azimuth",
+        "value": 0.002375,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Longitude_Of_Center",
+        "value": 19.46384034,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Latitude_Of_Center",
+        "value": 51.765945935,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

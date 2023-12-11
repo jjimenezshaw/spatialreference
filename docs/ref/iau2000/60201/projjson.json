@@ -1,0 +1,39 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "Enceladus 2000",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "D_Enceladus_2000",
+    "ellipsoid": {
+      "name": "Enceladus_2000_IAU_IAG",
+      "semi_major_axis": 256300,
+      "inverse_flattening": 21.9059829059829
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Longitude",
+        "abbreviation": "lon",
+        "direction": "east",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Decimal_Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Latitude",
+        "abbreviation": "lat",
+        "direction": "north",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Decimal_Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  }
+}

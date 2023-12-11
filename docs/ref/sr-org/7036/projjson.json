@@ -1,0 +1,43 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "GDM 2008",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "D_GDM_2008",
+    "ellipsoid": {
+      "name": "WGS 84",
+      "semi_major_axis": 6378137,
+      "inverse_flattening": 298.257223563,
+      "id": {
+        "authority": "EPSG",
+        "code": 7030
+      }
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Lat",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Lon",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  }
+}

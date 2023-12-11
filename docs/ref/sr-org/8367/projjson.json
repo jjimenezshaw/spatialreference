@@ -1,0 +1,134 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "User Define",
+  "base_crs": {
+    "name": "WGS 84",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "World Geodetic System 1984",
+      "ellipsoid": {
+        "name": "WGS_84",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257223563
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "DEGREE",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "DEGREE",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "SPHERE_MERCATOR"
+    },
+    "parameters": [
+      {
+        "name": "false_easting",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "false_northing",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "central_meridian",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "DEGREE",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "latitude_of_origin",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "DEGREE",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "standard_parallel_1",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "DEGREE",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "standard_parallel_2",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "DEGREE",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "scale_factor",
+        "value": 1,
+        "unit": "unity"
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "METER",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

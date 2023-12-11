@@ -1,0 +1,116 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "New Zealand Map Grid",
+  "base_crs": {
+    "name": "International 1909 (Hayford)",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "unknown",
+      "ellipsoid": {
+        "name": "intl",
+        "semi_major_axis": 6378388,
+        "inverse_flattening": 297
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "New Zealand Map Grid",
+      "id": {
+        "authority": "EPSG",
+        "code": 9811
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of natural origin",
+        "value": -41,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8801
+        }
+      },
+      {
+        "name": "Longitude of natural origin",
+        "value": 173,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8802
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 2510000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 6023150,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "remarks": "PROJ CRS string: +proj=nzmg +lat_0=-41 +lon_0=173 +x_0=2510000 +y_0=6023150 +ellps=intl +units=m +nadgrids=nzgd2kgrid0005.gsb +wktext"
+}

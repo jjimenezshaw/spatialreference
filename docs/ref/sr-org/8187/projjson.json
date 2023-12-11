@@ -1,0 +1,263 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "BoundCRS",
+  "source_crs": {
+    "type": "ProjectedCRS",
+    "name": "\\KKJ / Finland zone 2\\",
+    "base_crs": {
+      "name": "\\KKJ\\",
+      "datum": {
+        "type": "GeodeticReferenceFrame",
+        "name": "\\Kartastokoordinaattijarjestelma_1966\\",
+        "ellipsoid": {
+          "name": "\\International 1924\\",
+          "semi_major_axis": 6378388,
+          "inverse_flattening": 297
+        },
+        "prime_meridian": {
+          "name": "\\Greenwich\\",
+          "longitude": {
+            "value": 0,
+            "unit": {
+              "type": "AngularUnit",
+              "name": "\\degree\\",
+              "conversion_factor": 0.0174532925199433
+            }
+          }
+        }
+      },
+      "coordinate_system": {
+        "subtype": "ellipsoidal",
+        "axis": [
+          {
+            "name": "Longitude",
+            "abbreviation": "lon",
+            "direction": "east",
+            "unit": {
+              "type": "AngularUnit",
+              "name": "\\degree\\",
+              "conversion_factor": 0.0174532925199433
+            }
+          },
+          {
+            "name": "Latitude",
+            "abbreviation": "lat",
+            "direction": "north",
+            "unit": {
+              "type": "AngularUnit",
+              "name": "\\degree\\",
+              "conversion_factor": 0.0174532925199433
+            }
+          }
+        ]
+      },
+      "id": {
+        "authority": "\\EPSG\\",
+        "code": "\\4123\\"
+      }
+    },
+    "conversion": {
+      "name": "unnamed",
+      "method": {
+        "name": "\\Transverse_Mercator\\"
+      },
+      "parameters": [
+        {
+          "name": "\\latitude_of_origin\\",
+          "value": 0,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "\\degree\\",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "\\central_meridian\\",
+          "value": 24,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "\\degree\\",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "\\scale_factor\\",
+          "value": 1,
+          "unit": "unity"
+        },
+        {
+          "name": "\\false_easting\\",
+          "value": 2500000,
+          "unit": {
+            "type": "LinearUnit",
+            "name": "\\metre\\",
+            "conversion_factor": 1
+          }
+        },
+        {
+          "name": "\\false_northing\\",
+          "value": 0,
+          "unit": {
+            "type": "LinearUnit",
+            "name": "\\metre\\",
+            "conversion_factor": 1
+          }
+        }
+      ]
+    },
+    "coordinate_system": {
+      "subtype": "Cartesian",
+      "axis": [
+        {
+          "name": "\\Y\\",
+          "abbreviation": "",
+          "direction": "east",
+          "unit": {
+            "type": "LinearUnit",
+            "name": "\\metre\\",
+            "conversion_factor": 1
+          }
+        },
+        {
+          "name": "\\X\\",
+          "abbreviation": "",
+          "direction": "north",
+          "unit": {
+            "type": "LinearUnit",
+            "name": "\\metre\\",
+            "conversion_factor": 1
+          }
+        }
+      ]
+    },
+    "id": {
+      "authority": "\\EPSG\\",
+      "code": "\\2392\\"
+    }
+  },
+  "target_crs": {
+    "type": "GeographicCRS",
+    "name": "WGS 84",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "World Geodetic System 1984",
+      "ellipsoid": {
+        "name": "WGS 84",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257223563
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        },
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        }
+      ]
+    },
+    "id": {
+      "authority": "EPSG",
+      "code": 4326
+    }
+  },
+  "transformation": {
+    "name": "Transformation from \\KKJ\\ to WGS84",
+    "method": {
+      "name": "Position Vector transformation (geog2D domain)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9606
+      }
+    },
+    "parameters": [
+      {
+        "name": "X-axis translation",
+        "value": -96.0617,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8605
+        }
+      },
+      {
+        "name": "Y-axis translation",
+        "value": -82.4278,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8606
+        }
+      },
+      {
+        "name": "Z-axis translation",
+        "value": -121.7535,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8607
+        }
+      },
+      {
+        "name": "X-axis rotation",
+        "value": 4.80107,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8608
+        }
+      },
+      {
+        "name": "Y-axis rotation",
+        "value": 0.34543,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8609
+        }
+      },
+      {
+        "name": "Z-axis rotation",
+        "value": -1.37646,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8610
+        }
+      },
+      {
+        "name": "Scale difference",
+        "value": 1.4964,
+        "unit": {
+          "type": "ScaleUnit",
+          "name": "parts per million",
+          "conversion_factor": 1e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8611
+        }
+      }
+    ]
+  }
+}

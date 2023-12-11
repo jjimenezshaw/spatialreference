@@ -1,0 +1,109 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "xrail90",
+  "base_crs": {
+    "name": "GCS_GRS 1980 (IUGG, 1980)",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "D_xrail90",
+      "ellipsoid": {
+        "name": "GRS80",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257222101
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "xrail90_Azimuth_Center"
+    },
+    "parameters": [
+      {
+        "name": "latitude_of_center",
+        "value": 51.5116922417,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "longitude_of_center",
+        "value": 0.2855338722,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "azimuth",
+        "value": 88.5,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "scale_factor",
+        "value": 1,
+        "unit": "unity"
+      },
+      {
+        "name": "false_easting",
+        "value": -9818513.799,
+        "unit": "metre"
+      },
+      {
+        "name": "false_northing",
+        "value": -172636.263,
+        "unit": "metre"
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "DHDN / Ferro",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "Deutsches Hauptdreiecksnetz",
+    "ellipsoid": {
+      "name": "Bessel 1841",
+      "semi_major_axis": 6377397.155,
+      "inverse_flattening": 299.1528128
+    },
+    "prime_meridian": {
+      "name": "ferro",
+      "longitude": -17.6666666666667
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Geodetic latitude",
+        "abbreviation": "Lat",
+        "direction": "north",
+        "unit": "degree"
+      },
+      {
+        "name": "Geodetic longitude",
+        "abbreviation": "Lon",
+        "direction": "east",
+        "unit": "degree"
+      }
+    ]
+  },
+  "id": {
+    "authority": "EPSG",
+    "code": 4314
+  }
+}

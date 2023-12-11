@@ -1,0 +1,94 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "My Sphere",
+  "base_crs": {
+    "name": "GCS_Sphere_ARC_INFO",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "D_Sphere_ARC_INFO",
+      "ellipsoid": {
+        "name": "Sphere_ARC_INFO",
+        "radius": 6370997
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Projection"
+    },
+    "parameters": [
+      {
+        "name": "False_Easting",
+        "value": 0,
+        "unit": "metre"
+      },
+      {
+        "name": "False_Northing",
+        "value": 0,
+        "unit": "metre"
+      },
+      {
+        "name": "Longitude_Of_Center",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Latitude_Of_Center",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

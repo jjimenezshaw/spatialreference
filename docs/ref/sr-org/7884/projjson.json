@@ -1,0 +1,276 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "BoundCRS",
+  "source_crs": {
+    "type": "ProjectedCRS",
+    "name": "Custom_PCS",
+    "base_crs": {
+      "name": "Israel",
+      "datum": {
+        "type": "GeodeticReferenceFrame",
+        "name": "Israel",
+        "ellipsoid": {
+          "name": "GRS_1980",
+          "semi_major_axis": 6378137,
+          "inverse_flattening": 298.257222101
+        }
+      },
+      "coordinate_system": {
+        "subtype": "ellipsoidal",
+        "axis": [
+          {
+            "name": "Longitude",
+            "abbreviation": "lon",
+            "direction": "east",
+            "unit": {
+              "type": "AngularUnit",
+              "name": "Degree",
+              "conversion_factor": 0.0174532925199433
+            }
+          },
+          {
+            "name": "Latitude",
+            "abbreviation": "lat",
+            "direction": "north",
+            "unit": {
+              "type": "AngularUnit",
+              "name": "Degree",
+              "conversion_factor": 0.0174532925199433
+            }
+          }
+        ]
+      }
+    },
+    "conversion": {
+      "name": "unnamed",
+      "method": {
+        "name": "Transverse Mercator",
+        "id": {
+          "authority": "EPSG",
+          "code": 9807
+        }
+      },
+      "parameters": [
+        {
+          "name": "Longitude of natural origin",
+          "value": 35.2045166666667,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 8802
+          }
+        },
+        {
+          "name": "Latitude of natural origin",
+          "value": 31.7343944444444,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 8801
+          }
+        },
+        {
+          "name": "False easting",
+          "value": 219.5296,
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Kilometer",
+            "conversion_factor": 1000
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 8806
+          }
+        },
+        {
+          "name": "False northing",
+          "value": 626.9074,
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Kilometer",
+            "conversion_factor": 1000
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 8807
+          }
+        },
+        {
+          "name": "Scale factor at natural origin",
+          "value": 1.0000067,
+          "unit": "unity",
+          "id": {
+            "authority": "EPSG",
+            "code": 8805
+          }
+        }
+      ]
+    },
+    "coordinate_system": {
+      "subtype": "Cartesian",
+      "axis": [
+        {
+          "name": "Easting",
+          "abbreviation": "E",
+          "direction": "east",
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Kilometer",
+            "conversion_factor": 1000,
+            "id": {
+              "authority": "EPSG",
+              "code": 9036
+            }
+          }
+        },
+        {
+          "name": "Northing",
+          "abbreviation": "N",
+          "direction": "north",
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Kilometer",
+            "conversion_factor": 1000,
+            "id": {
+              "authority": "EPSG",
+              "code": 9036
+            }
+          }
+        }
+      ]
+    }
+  },
+  "target_crs": {
+    "type": "GeographicCRS",
+    "name": "WGS 84",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "World Geodetic System 1984",
+      "ellipsoid": {
+        "name": "WGS 84",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257223563
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        },
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        }
+      ]
+    },
+    "id": {
+      "authority": "EPSG",
+      "code": 4326
+    }
+  },
+  "transformation": {
+    "name": "Transformation from Israel to WGS84",
+    "method": {
+      "name": "Position Vector transformation (geog2D domain)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9606
+      }
+    },
+    "parameters": [
+      {
+        "name": "X-axis translation",
+        "value": -23.5,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8605
+        }
+      },
+      {
+        "name": "Y-axis translation",
+        "value": -18.19,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8606
+        }
+      },
+      {
+        "name": "Z-axis translation",
+        "value": -17.53,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8607
+        }
+      },
+      {
+        "name": "X-axis rotation",
+        "value": -0.3,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8608
+        }
+      },
+      {
+        "name": "Y-axis rotation",
+        "value": -1.84,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8609
+        }
+      },
+      {
+        "name": "Z-axis rotation",
+        "value": 1.64,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8610
+        }
+      },
+      {
+        "name": "Scale difference",
+        "value": 5.43,
+        "unit": {
+          "type": "ScaleUnit",
+          "name": "parts per million",
+          "conversion_factor": 1e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8611
+        }
+      }
+    ]
+  }
+}

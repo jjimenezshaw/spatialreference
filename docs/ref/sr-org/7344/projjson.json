@@ -1,0 +1,35 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "Custom_Indian",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "Based upon the Everest 1830 ellipsoid",
+    "ellipsoid": {
+      "name": "Based upon the Everest 1830 ellipsoid",
+      "semi_major_axis": 6377301.243,
+      "inverse_flattening": 300.801700000002
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Geodetic latitude",
+        "abbreviation": "Lat",
+        "direction": "north",
+        "unit": "degree"
+      },
+      {
+        "name": "Geodetic longitude",
+        "abbreviation": "Lon",
+        "direction": "east",
+        "unit": "degree"
+      }
+    ]
+  },
+  "id": {
+    "authority": "EPSG",
+    "code": 4131
+  }
+}

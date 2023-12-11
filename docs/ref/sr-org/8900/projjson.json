@@ -1,0 +1,104 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Gauss-Kruger",
+  "base_crs": {
+    "name": "Campo Inchauspe",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Campo Inchauspe",
+      "ellipsoid": {
+        "name": "International 1924",
+        "semi_major_axis": 6378388,
+        "inverse_flattening": 297.000745017694
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6221
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Gauss-Kruger"
+    },
+    "parameters": [
+      {
+        "name": "False_Easting",
+        "value": 4500000,
+        "unit": "metre"
+      },
+      {
+        "name": "False_Northing",
+        "value": 0,
+        "unit": "metre"
+      },
+      {
+        "name": "Central_Meridian",
+        "value": -63,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Scale_Factor",
+        "value": 1,
+        "unit": "unity"
+      },
+      {
+        "name": "Latitude_of_Origin",
+        "value": -90,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

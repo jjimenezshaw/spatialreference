@@ -1,0 +1,31 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "International 1909 (Hayford)",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "CAI",
+    "ellipsoid": {
+      "name": "intl",
+      "semi_major_axis": 6378388,
+      "inverse_flattening": 297
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Longitude",
+        "abbreviation": "lon",
+        "direction": "east",
+        "unit": "degree"
+      },
+      {
+        "name": "Latitude",
+        "abbreviation": "lat",
+        "direction": "north",
+        "unit": "degree"
+      }
+    ]
+  }
+}

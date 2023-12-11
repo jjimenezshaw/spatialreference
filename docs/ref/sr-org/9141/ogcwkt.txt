@@ -1,0 +1,1 @@
+PROJCS["Myanmar UTM Zone 46"]

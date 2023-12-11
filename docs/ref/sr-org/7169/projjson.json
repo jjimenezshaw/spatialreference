@@ -1,0 +1,35 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "NAD83",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "North American Datum 1983",
+    "ellipsoid": {
+      "name": "GRS 1980",
+      "semi_major_axis": 6378137,
+      "inverse_flattening": 298.257222101
+    },
+    "id": {
+      "authority": "EPSG",
+      "code": 6269
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Longitude",
+        "abbreviation": "lon",
+        "direction": "east",
+        "unit": "degree"
+      },
+      {
+        "name": "Latitude",
+        "abbreviation": "lat",
+        "direction": "north",
+        "unit": "degree"
+      }
+    ]
+  }
+}

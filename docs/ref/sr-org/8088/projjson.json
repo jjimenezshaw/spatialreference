@@ -1,0 +1,173 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Olympic Dam Mine Plant Grid",
+  "base_crs": {
+    "name": "GDA94",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Geocentric Datum of Australia 1994",
+      "ellipsoid": {
+        "name": "GRS 1980",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257222101
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6283
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Krovak (North Orientated)",
+      "id": {
+        "authority": "EPSG",
+        "code": 1041
+      }
+    },
+    "parameters": [
+      {
+        "name": "False easting",
+        "value": 500940.5017,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": 1453462.619769,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      },
+      {
+        "name": "Latitude of pseudo standard parallel",
+        "value": 78.5,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8818
+        }
+      },
+      {
+        "name": "Scale factor on pseudo standard parallel",
+        "value": 1,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8819
+        }
+      },
+      {
+        "name": "Co-latitude of cone axis",
+        "value": 108.941709,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 1036
+        }
+      },
+      {
+        "name": "Longitude of origin",
+        "value": 136.882186,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8833
+        }
+      },
+      {
+        "name": "Latitude of projection centre",
+        "value": -30.441709,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8811
+        }
+      },
+      {
+        "name": "X_Scale",
+        "value": 1,
+        "unit": "unity"
+      },
+      {
+        "name": "Y_Scale",
+        "value": -1,
+        "unit": "unity"
+      },
+      {
+        "name": "XY_Plane_Rotation",
+        "value": 256.517,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

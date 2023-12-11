@@ -1,0 +1,39 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "GCS_NAD_1983_HARN_Adj_WI_Dunn",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "D_NAD_1983_HARN_Adj_WI_DU",
+    "ellipsoid": {
+      "name": "GRS_1980_Adj_WI_DU",
+      "semi_major_axis": 6378413.021,
+      "inverse_flattening": 298.270129514522
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Longitude",
+        "abbreviation": "lon",
+        "direction": "east",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Latitude",
+        "abbreviation": "lat",
+        "direction": "north",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  }
+}

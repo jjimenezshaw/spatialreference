@@ -1,0 +1,154 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Test_PRJ",
+  "base_crs": {
+    "name": "GDA94",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Geocentric Datum of Australia 1994",
+      "ellipsoid": {
+        "name": "GRS 1980",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257222101
+      },
+      "id": {
+        "authority": "EPSG",
+        "code": 6283
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Hotine Oblique Mercator (variant B)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9815
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of projection centre",
+        "value": -20.69008981,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8811
+        }
+      },
+      {
+        "name": "Longitude of projection centre",
+        "value": 139.48639389,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8812
+        }
+      },
+      {
+        "name": "Azimuth of initial line",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8813
+        }
+      },
+      {
+        "name": "Angle from Rectified to Skew Grid",
+        "value": -2.81172011533955,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8814
+        }
+      },
+      {
+        "name": "Scale factor on initial line",
+        "value": 1.000063,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8815
+        }
+      },
+      {
+        "name": "Easting at projection centre",
+        "value": 12520.6,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8816
+        }
+      },
+      {
+        "name": "Northing at projection centre",
+        "value": 39952.907,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8817
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

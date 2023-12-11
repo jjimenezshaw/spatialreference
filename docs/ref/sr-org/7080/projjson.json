@@ -1,0 +1,127 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "\\My Coordinate System\\",
+  "base_crs": {
+    "name": "\\MY_GENERATED_GCS\\",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "\\WGS84\\",
+      "ellipsoid": {
+        "name": "\\My Spheroid\\",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257223563
+      },
+      "prime_meridian": {
+        "name": "\\Greenwich\\",
+        "longitude": {
+          "value": 0,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "\\Radian\\",
+            "conversion_factor": 1
+          }
+        }
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "\\Radian\\",
+            "conversion_factor": 1
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "\\Radian\\",
+            "conversion_factor": 1
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "\\Transverse_Mercator\\"
+    },
+    "parameters": [
+      {
+        "name": "\\False_Easting\\",
+        "value": 500000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "\\Meter\\",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "\\False_Northing\\",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "\\Meter\\",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "\\Central_Meridian\\",
+        "value": 4.450589593,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "\\Radian\\",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "\\Scale_Factor\\",
+        "value": 0.9996,
+        "unit": "unity"
+      },
+      {
+        "name": "\\Latitude_Of_Origin\\",
+        "value": 0,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "\\Radian\\",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "\\Meter\\",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "\\Meter\\",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

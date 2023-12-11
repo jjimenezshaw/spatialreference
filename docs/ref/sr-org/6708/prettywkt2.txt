@@ -1,0 +1,10 @@
+ENGCRS["Non-Earth (Meter)",
+    EDATUM["Local Datum"],
+    CS[Cartesian,2],
+        AXIS["x",north,
+            ORDER[1],
+            LENGTHUNIT["m",1]],
+        AXIS["geocentric Y",east,
+            ORDER[2],
+            LENGTHUNIT["m",1]],
+    ID["EPSG",262148]]

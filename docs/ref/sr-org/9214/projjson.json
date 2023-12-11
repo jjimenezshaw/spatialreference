@@ -1,0 +1,121 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Conical_Conformal_Lambert_El_Salvador",
+  "base_crs": {
+    "name": "NAD27",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "North American Datum 1927",
+      "ellipsoid": {
+        "name": "Clarke 1866",
+        "semi_major_axis": 6378206.4,
+        "inverse_flattening": 294.978698213901
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Geodetic latitude",
+          "abbreviation": "Lat",
+          "direction": "north",
+          "unit": "degree"
+        },
+        {
+          "name": "Geodetic longitude",
+          "abbreviation": "Lon",
+          "direction": "east",
+          "unit": "degree"
+        }
+      ]
+    },
+    "id": {
+      "authority": "EPSG",
+      "code": 4267
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Lambert Conic Conformal (2SP)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9802
+      }
+    },
+    "parameters": [
+      {
+        "name": "Latitude of 1st standard parallel",
+        "value": 13.316666666666,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8823
+        }
+      },
+      {
+        "name": "Latitude of 2nd standard parallel",
+        "value": 14.25,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8824
+        }
+      },
+      {
+        "name": "Latitude of false origin",
+        "value": 13.7833333333333,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8821
+        }
+      },
+      {
+        "name": "Longitude of false origin",
+        "value": -89,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8822
+        }
+      },
+      {
+        "name": "Easting at false origin",
+        "value": 500000,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8826
+        }
+      },
+      {
+        "name": "Northing at false origin",
+        "value": 295809.184,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8827
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "BoundCRS",
+  "source_crs": {
+    "type": "ProjectedCRS",
+    "name": "unnamed",
+    "base_crs": {
+      "name": "Bessel 1841",
+      "datum": {
+        "type": "GeodeticReferenceFrame",
+        "name": "unknown",
+        "ellipsoid": {
+          "name": "bessel",
+          "semi_major_axis": 6377397.155,
+          "inverse_flattening": 299.1528128
+        }
+      },
+      "coordinate_system": {
+        "subtype": "ellipsoidal",
+        "axis": [
+          {
+            "name": "Longitude",
+            "abbreviation": "lon",
+            "direction": "east",
+            "unit": "degree"
+          },
+          {
+            "name": "Latitude",
+            "abbreviation": "lat",
+            "direction": "north",
+            "unit": "degree"
+          }
+        ]
+      }
+    },
+    "conversion": {
+      "name": "unnamed",
+      "method": {
+        "name": "Krovak",
+        "id": {
+          "authority": "EPSG",
+          "code": 9819
+        }
+      },
+      "parameters": [
+        {
+          "name": "Latitude of projection centre",
+          "value": 49.5,
+          "unit": "degree",
+          "id": {
+            "authority": "EPSG",
+            "code": 8811
+          }
+        },
+        {
+          "name": "Longitude of origin",
+          "value": 24.8333333333333,
+          "unit": "degree",
+          "id": {
+            "authority": "EPSG",
+            "code": 8833
+          }
+        },
+        {
+          "name": "Co-latitude of cone axis",
+          "value": 0,
+          "unit": "degree",
+          "id": {
+            "authority": "EPSG",
+            "code": 1036
+          }
+        },
+        {
+          "name": "Latitude of pseudo standard parallel",
+          "value": 0,
+          "unit": "degree",
+          "id": {
+            "authority": "EPSG",
+            "code": 8818
+          }
+        },
+        {
+          "name": "Scale factor on pseudo standard parallel",
+          "value": 0.9999,
+          "unit": "unity",
+          "id": {
+            "authority": "EPSG",
+            "code": 8819
+          }
+        },
+        {
+          "name": "False easting",
+          "value": 0,
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Meter",
+            "conversion_factor": 1
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 8806
+          }
+        },
+        {
+          "name": "False northing",
+          "value": 0,
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Meter",
+            "conversion_factor": 1
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 8807
+          }
+        }
+      ]
+    },
+    "coordinate_system": {
+      "subtype": "Cartesian",
+      "axis": [
+        {
+          "name": "Southing",
+          "abbreviation": "",
+          "direction": "south",
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Meter",
+            "conversion_factor": 1
+          }
+        },
+        {
+          "name": "Westing",
+          "abbreviation": "",
+          "direction": "west",
+          "unit": {
+            "type": "LinearUnit",
+            "name": "Meter",
+            "conversion_factor": 1
+          }
+        }
+      ]
+    }
+  },
+  "target_crs": {
+    "type": "GeographicCRS",
+    "name": "WGS 84",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "World Geodetic System 1984",
+      "ellipsoid": {
+        "name": "WGS 84",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257223563
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        },
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        }
+      ]
+    },
+    "id": {
+      "authority": "EPSG",
+      "code": 4326
+    }
+  },
+  "transformation": {
+    "name": "Transformation from Bessel 1841 to WGS84",
+    "method": {
+      "name": "Position Vector transformation (geog2D domain)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9606
+      }
+    },
+    "parameters": [
+      {
+        "name": "X-axis translation",
+        "value": 570.8,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8605
+        }
+      },
+      {
+        "name": "Y-axis translation",
+        "value": 85.7,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8606
+        }
+      },
+      {
+        "name": "Z-axis translation",
+        "value": 462.8,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8607
+        }
+      },
+      {
+        "name": "X-axis rotation",
+        "value": 4.998,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8608
+        }
+      },
+      {
+        "name": "Y-axis rotation",
+        "value": 1.587,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8609
+        }
+      },
+      {
+        "name": "Z-axis rotation",
+        "value": 5.261,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "arc-second",
+          "conversion_factor": 4.84813681109536e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8610
+        }
+      },
+      {
+        "name": "Scale difference",
+        "value": 3.56,
+        "unit": {
+          "type": "ScaleUnit",
+          "name": "parts per million",
+          "conversion_factor": 1e-06
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8611
+        }
+      }
+    ]
+  }
+}

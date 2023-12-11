@@ -1,0 +1,144 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "'Asia_North_Albers_Equal_Area_Conic'",
+  "base_crs": {
+    "name": "'GCS_WGS_1984'",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "D_'WGS_1984'",
+      "ellipsoid": {
+        "name": "WGS 84",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257223563,
+        "id": {
+          "authority": "EPSG",
+          "code": 7030
+        }
+      },
+      "prime_meridian": {
+        "name": "'Greenwich'",
+        "longitude": {
+          "value": 0,
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "'Albers'"
+    },
+    "parameters": [
+      {
+        "name": "'False_Easting'",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "'False_Northing'",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "'Central_Meridian'",
+        "value": 105,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "'Standard_Parallel_1'",
+        "value": 11,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "'Standard_Parallel_2'",
+        "value": 21,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "'Latitude_Of_Origin'",
+        "value": 16,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "'Meter'",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

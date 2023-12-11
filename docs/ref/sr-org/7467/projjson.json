@@ -1,0 +1,31 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "WGS_2000",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "WGS_2000",
+    "ellipsoid": {
+      "name": "WGS_2000",
+      "semi_major_axis": 6378137,
+      "inverse_flattening": 298.257221101
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Longitude",
+        "abbreviation": "lon",
+        "direction": "east",
+        "unit": "degree"
+      },
+      {
+        "name": "Latitude",
+        "abbreviation": "lat",
+        "direction": "north",
+        "unit": "degree"
+      }
+    ]
+  }
+}

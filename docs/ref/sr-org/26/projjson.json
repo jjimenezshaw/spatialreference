@@ -1,0 +1,145 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "LCC_SOI",
+  "base_crs": {
+    "name": "GCS_Everest_India_Nepal",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Everest_India_Nepal",
+      "ellipsoid": {
+        "name": "Everest 1830 (1975 Definition)",
+        "semi_major_axis": 6377301.243,
+        "inverse_flattening": 300.8017,
+        "id": {
+          "authority": "EPSG",
+          "code": 7045
+        }
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Lambert Conic Conformal (2SP)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9802
+      }
+    },
+    "parameters": [
+      {
+        "name": "Easting at false origin",
+        "value": 2000000,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8826
+        }
+      },
+      {
+        "name": "Northing at false origin",
+        "value": 2000000,
+        "unit": "metre",
+        "id": {
+          "authority": "EPSG",
+          "code": 8827
+        }
+      },
+      {
+        "name": "Longitude of false origin",
+        "value": 82,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8822
+        }
+      },
+      {
+        "name": "Latitude of 1st standard parallel",
+        "value": 12.47278,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8823
+        }
+      },
+      {
+        "name": "Latitude of 2nd standard parallel",
+        "value": 35.17281,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8824
+        }
+      },
+      {
+        "name": "Latitude of false origin",
+        "value": 20,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Degree",
+          "conversion_factor": 0.0174532925199433
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8821
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": "metre"
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": "metre"
+      }
+    ]
+  }
+}

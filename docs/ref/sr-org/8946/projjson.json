@@ -1,0 +1,137 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "unnamed",
+  "base_crs": {
+    "name": "GCS Name = Coordinate System imported from GRIB file",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "Datum = unknown",
+      "ellipsoid": {
+        "name": "Ellipsoid = Sphere",
+        "radius": 6371229
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Geodetic longitude",
+          "abbreviation": "",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Geodetic latitude",
+          "abbreviation": "",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Lambert Conic Conformal (2SP)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9802
+      }
+    },
+    "parameters": [
+      {
+        "name": "Longitude of false origin",
+        "value": 162.593002,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8822
+        }
+      },
+      {
+        "name": "Latitude of false origin",
+        "value": 0,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8821
+        }
+      },
+      {
+        "name": "Latitude of 1st standard parallel",
+        "value": -30,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8823
+        }
+      },
+      {
+        "name": "Easting at false origin",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8826
+        }
+      },
+      {
+        "name": "Northing at false origin",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8827
+        }
+      },
+      {
+        "name": "scale_factor",
+        "value": 1,
+        "unit": "unity"
+      },
+      {
+        "name": "Latitude of 2nd standard parallel",
+        "value": -60,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8824
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "Danish System 34 Sjaelland",
+  "base_crs": {
+    "name": "European 1950",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "European 1950",
+      "ellipsoid": {
+        "name": "International 1924",
+        "semi_major_axis": 6378388,
+        "inverse_flattening": 297
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Decimal Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": {
+            "type": "AngularUnit",
+            "name": "Decimal Degree",
+            "conversion_factor": 0.0174532925199433
+          }
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Transverse Mercator Sjaelland"
+    },
+    "parameters": [
+      {
+        "name": "Scale_Factor",
+        "value": 0.9996,
+        "unit": "unity"
+      },
+      {
+        "name": "Central_Meridian",
+        "value": 9,
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Decimal Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "False_Easting",
+        "value": 500000,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "Easting",
+        "abbreviation": "E",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Northing",
+        "abbreviation": "N",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "Meter",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+LOCAL_CS["Non-Earth (Meter)",
+    LOCAL_DATUM["Local Datum",32767],
+    UNIT["Meter",1],
+    AXIS["X",EAST],
+    AXIS["Y",NORTH]]

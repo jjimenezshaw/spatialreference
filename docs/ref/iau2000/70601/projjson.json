@@ -1,0 +1,38 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "GeographicCRS",
+  "name": "Cordelia 2000",
+  "datum": {
+    "type": "GeodeticReferenceFrame",
+    "name": "D_Cordelia_2000",
+    "ellipsoid": {
+      "name": "Cordelia_2000_IAU_IAG",
+      "radius": 13000
+    }
+  },
+  "coordinate_system": {
+    "subtype": "ellipsoidal",
+    "axis": [
+      {
+        "name": "Longitude",
+        "abbreviation": "lon",
+        "direction": "east",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Decimal_Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      },
+      {
+        "name": "Latitude",
+        "abbreviation": "lat",
+        "direction": "north",
+        "unit": {
+          "type": "AngularUnit",
+          "name": "Decimal_Degree",
+          "conversion_factor": 0.0174532925199433
+        }
+      }
+    ]
+  }
+}

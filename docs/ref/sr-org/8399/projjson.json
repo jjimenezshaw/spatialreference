@@ -1,0 +1,103 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "COSMO-EU projection",
+  "base_crs": {
+    "name": "COSMO Coordinate System",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "COSMO Kugel",
+      "ellipsoid": {
+        "name": "Erdkugel",
+        "radius": 6371229
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Rotated_Latitude_Longitude"
+    },
+    "parameters": [
+      {
+        "name": "central_meridian",
+        "value": -170,
+        "unit": "degree"
+      },
+      {
+        "name": "latitude_of_origin",
+        "value": 40,
+        "unit": "degree"
+      },
+      {
+        "name": "scale_factor",
+        "value": 1,
+        "unit": "unity"
+      },
+      {
+        "name": "false_easting",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "false_northing",
+        "value": 0,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "X",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Y",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "id": {
+    "authority": "EPSG",
+    "code": 1000003
+  }
+}

@@ -1,0 +1,1 @@
+ENGCRS["Non-Earth (Meter)",EDATUM["Local Datum"],CS[Cartesian,2],AXIS["x",north,ORDER[1],LENGTHUNIT["Meter",1]],AXIS["y",east,ORDER[2],LENGTHUNIT["Meter",1]]]

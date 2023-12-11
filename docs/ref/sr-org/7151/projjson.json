@@ -1,0 +1,146 @@
+{
+  "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+  "type": "ProjectedCRS",
+  "name": "NAD_1983_Hotine_Oblique_Mercator_Azimuth_Natural_Origin",
+  "base_crs": {
+    "name": "NAD83",
+    "datum": {
+      "type": "GeodeticReferenceFrame",
+      "name": "North American Datum 1983",
+      "ellipsoid": {
+        "name": "GRS 1980",
+        "semi_major_axis": 6378137,
+        "inverse_flattening": 298.257222101
+      }
+    },
+    "coordinate_system": {
+      "subtype": "ellipsoidal",
+      "axis": [
+        {
+          "name": "Longitude",
+          "abbreviation": "lon",
+          "direction": "east",
+          "unit": "degree"
+        },
+        {
+          "name": "Latitude",
+          "abbreviation": "lat",
+          "direction": "north",
+          "unit": "degree"
+        }
+      ]
+    }
+  },
+  "conversion": {
+    "name": "unnamed",
+    "method": {
+      "name": "Hotine Oblique Mercator (variant A)",
+      "id": {
+        "authority": "EPSG",
+        "code": 9812
+      }
+    },
+    "parameters": [
+      {
+        "name": "Longitude of projection centre",
+        "value": -86,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8812
+        }
+      },
+      {
+        "name": "Latitude of projection centre",
+        "value": 45.3091666666667,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8811
+        }
+      },
+      {
+        "name": "Azimuth of initial line",
+        "value": 337.25556,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8813
+        }
+      },
+      {
+        "name": "Scale factor on initial line",
+        "value": 0.9996,
+        "unit": "unity",
+        "id": {
+          "authority": "EPSG",
+          "code": 8815
+        }
+      },
+      {
+        "name": "False easting",
+        "value": 2546731.496,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8806
+        }
+      },
+      {
+        "name": "False northing",
+        "value": -4354009.816,
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 8807
+        }
+      },
+      {
+        "name": "Angle from Rectified to Skew Grid",
+        "value": 337.25556,
+        "unit": "degree",
+        "id": {
+          "authority": "EPSG",
+          "code": 8814
+        }
+      }
+    ]
+  },
+  "coordinate_system": {
+    "subtype": "Cartesian",
+    "axis": [
+      {
+        "name": "X",
+        "abbreviation": "",
+        "direction": "east",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      },
+      {
+        "name": "Y",
+        "abbreviation": "",
+        "direction": "north",
+        "unit": {
+          "type": "LinearUnit",
+          "name": "m",
+          "conversion_factor": 1
+        }
+      }
+    ]
+  },
+  "id": {
+    "authority": "UDIG",
+    "code": 0
+  }
+}

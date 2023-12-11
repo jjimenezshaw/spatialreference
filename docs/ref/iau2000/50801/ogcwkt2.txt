@@ -1,0 +1,1 @@
+GEOGCRS["Pasiphae 2000",DATUM["D_Pasiphae_2000",ELLIPSOID["Pasiphae_2000_IAU_IAG",18000,0,LENGTHUNIT["metre",1,ID["EPSG",9001]]]],PRIMEM["Greenwich",0,ANGLEUNIT["Decimal_Degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["longitude",east,ORDER[1],ANGLEUNIT["Decimal_Degree",0.0174532925199433]],AXIS["latitude",north,ORDER[2],ANGLEUNIT["Decimal_Degree",0.0174532925199433]]]
