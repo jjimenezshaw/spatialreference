@@ -188,6 +188,11 @@ if __name__ == '__main__':
     substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', mapping)
     substitute(f'{templates}/ref.tmpl', f'{dest_dir}/ref', mapping)
 
+    mapping = make_mapping(sections, '../..')
+    for authority in authorities.keys():
+        mapping['authority'] = authority
+        substitute(f'{templates}/authority.tmpl', f'{dest_dir}/ref/{authority.lower()}', mapping)
+
     mapping_ref = make_mapping(sections, '../../..')
     mapping_wkt = make_mapping(sections, '../../../..')
     no_display = 'style="display: none;"'
@@ -198,7 +203,7 @@ if __name__ == '__main__':
 
     for id, c in enumerate(crss):
         count += 1
-        if count > 1000:
+        if count > 10:
             break
         if count % int(total/100) == 0 or total == count:
             sys.stdout.write('\r')

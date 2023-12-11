@@ -67,23 +67,26 @@ function paramsToDic(location) {
     return dic;
 }
 
-function filter_data(data, search) {
+function filter_data(data, search, authority) {
     if (!search || !search.trim()) {
-        return data;
+        search = ''
     }
+    let authorities = [authority]
     let s = search.toUpperCase().split(' ');
-    let possible_authorities = ['EPSG', 'ESRI', 'IAU_2015', 'IGNF', 'NKG', 'OGC']
-    let authorities = s
-        .map(a => a.split(':')[0])
-        .filter(a => possible_authorities.includes(a));
+    if (!authority) {
+        let possible_authorities = ['EPSG', 'ESRI', 'IAU_2015', 'IGNF', 'NKG', 'OGC']
+        authorities = s
+            .map(a => a.split(':')[0])
+            .filter(a => possible_authorities.includes(a));
 
-    s = s.filter(a => !possible_authorities.includes(a))
-        .map(a => {
-            if (possible_authorities.includes(a.split(':')[0])) {
-                return a.slice(a.indexOf(':') + 1);
-            }
-            return a;
-    });
+        s = s.filter(a => !possible_authorities.includes(a))
+            .map(a => {
+                if (possible_authorities.includes(a.split(':')[0])) {
+                    return a.slice(a.indexOf(':') + 1);
+                }
+                return a;
+        });
+    }
 
     let r = data.filter(d => {
         let name = d.name.toUpperCase();
@@ -100,7 +103,7 @@ function filter_data(data, search) {
     return r;
 }
 
-function init_ref(home_dir) {
+function init_ref(home_dir, authority) {
     fetch(home_dir + '/crslist.json', {
         method: "GET",
     })
@@ -109,11 +112,19 @@ function init_ref(home_dir) {
         let entries_per_page = 50;
         let params = paramsToDic(window.location);
         let page = params.page || 1;
-        data = filter_data(data, params.search);
+        data = filter_data(data, params.search, authority);
         document.querySelector('#found').innerText = data.length;
         if(params.search && params.search.trim()) {
             document.querySelector('#searched_text').innerHTML =
             ` from search: <pre style="display: inline;">${params.search}</pre>`;
+
+            const forms = document.querySelectorAll('form')
+            Array.from(forms).forEach(form => form.elements['search'].value = params.search);
+
+            only_searching = document.querySelector('.only_searching')
+            if (only_searching) {
+                only_searching.href += params.search.trim();
+            }
         }
         let container = document.querySelector('#list1 ul');
         generate_entries(data, home_dir, (page - 1) * entries_per_page, entries_per_page/2, container);

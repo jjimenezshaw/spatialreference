@@ -29,6 +29,8 @@
             <input type="submit" value="Search" />
         </form></p>
 
+        <p>You are only searching <b>${authority}</b> references. <a class="only_searching" href="${home_dir}/ref/?&amp;search=">Search All</a>?</p>
+
         <p>Entries found: <span id="found"></span> <span id="searched_text"></span></p>
         <div class="outer-wrapper">
             <div class="inner-flexbox">
@@ -52,7 +54,7 @@
     </div>
     <script src="${home_dir}/base.js"></script>
     <script>
-        init_ref("${home_dir}")
+        init_ref("${home_dir}", "${authority}")
     </script>
 
 </body>
