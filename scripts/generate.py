@@ -238,7 +238,6 @@ if __name__ == '__main__':
             epsg_style = no_display
         aou = c.get("area_of_use")
         bounds = ', '.join([str(x) for x in aou[:4]]) if aou else 'Unknown'
-        bounds_json = '{{"west_longitude": {}, "south_latitude": {}, "east_longitude": {}, "north_latitude": {} }}'.format(*aou) if aou else "Unknonw"
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
 
@@ -277,8 +276,8 @@ if __name__ == '__main__':
                 'code': code,
                 'syntax_html': '', #syntax_pretty,
                 'syntax_html_2': '', #syntax_pretty2,
-                'wkt_filename': '../prettywkt.txt',
-                'wkt_filename_2': '../prettywkt2.txt',
+                'wkt_filename': './prettywkt.txt',
+                'wkt_filename_2': './prettywkt2.txt',
             }
 
             substitute_f(f'{templates}/html.tmpl', f'{dir}/wkt.html', mapping)
@@ -290,13 +289,11 @@ if __name__ == '__main__':
             substitute_f(f'{templates}/htmlwkt2.tmpl', f'{dir}/wkt2.html', mapping)
             dump_f(f'{dir}', 'prettywkt2.txt', pretty2)
 
-            dump_f(f'{dir}', 'bounds.json', bounds_json)
-
             try:
                 esri = crs.to_wkt(version='WKT1_ESRI')
             except:
                 esri = 'This CRS cannot be written as WKT1_ESRI'
-            dump(f'{dir}/esriwkt', esri)  # backwards compatible
+            dump_f(f'{dir}', 'esriwkt.txt', esri)
 
             projjson = crs.to_json(pretty=False)
             dump_f(f'{dir}', 'projjson.json', projjson)
@@ -305,6 +302,7 @@ if __name__ == '__main__':
                 proj4 = crs.to_proj4()
             except:
                 proj4 = ''
-            dump(f'{dir}/proj4', proj4)
+            dump_f(f'{dir}', 'proj4.txt', proj4)
+
 
     exit(0)

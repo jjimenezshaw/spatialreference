@@ -27,20 +27,19 @@
         <h1>${authority}:${code}</h1>
         <h2>${name}</h2>
         <p>
-            <span ${epsg_style}>View <a href="https://epsg.org/crs_${code}/${epsg_scaped_name}.html" target="_blank">EPSG.org</a>
-             defintion for EPSG:${code} | </span><a href="http://www.google.com/search?q=${name}" target="_blank">Google it</a>
+            <span ${epsg_style}>View <a href="https://epsg.org/crs_${code}/${epsg_scaped_name}.html" target="_blank">EPSG.org
+             defintion for EPSG:${code}</a> | </span><a href="http://www.google.com/search?q=${name}" target="_blank">Google it</a>
         </p>
-        <p style="font-size:0.8em"></p>
         <div ${error_style} class="crs_error"><b>ERROR!</b> ${error}</div>
         <ul ${list_style}>
             <li><b>Type</b>: ${crs_type}</li>
-            <li><b>WGS84 Bounds</b>: ${bounds} (<a href="bounds.json">json</a>)</li>
+            <li><b>WGS84 Bounds</b>: ${bounds}</li>
             <li><b>Scope</b>: ${scope}</li>
             <li><b>Area</b>: ${area_name}</li>
-            <li ${deprecated_style}><b>Deprecated</b></li>
+            <li ${deprecated_style} class="darkred"><b>Deprecated!</b></li>
         </ul>
 
-        <div style="margin:10px; padding: -5px 15px 0px 0px; background:lightgrey; border: 2px solid black; width:350px; max-width: 90%;">
+        <div class="list-box">
         <ul>
             <li>WKT-1</li>
             <ul>
@@ -53,14 +52,14 @@
                 <li><a href="wkt2.html">Well Known Text 2 as HTML</a></li>
                 <li><a href="prettywkt2.txt">Human-Readable OGC WKT2</a></li>
             </ul>
-            <li><a href="esriwkt/">ESRI WKT</a></li>
-            <li><a href="#" onclick="download_prj('${code}.prj', 'esriwkt/')" title="Download as PRJ file from ESRI">.PRJ</a></li>
+            <li><a href="esriwkt.txt">ESRI WKT</a></li>
+            <li><a href="#" onclick="download_prj('${code}.prj', 'esriwkt.txt')" title="Download as PRJ file from ESRI">.PRJ</a></li>
             <li><a href="projjson.json" title="PROJJSON">JSON</a></li>
-            <li><a href="proj4/">Proj4</a></li>
+            <li><a href="proj4.txt">Proj4</a></li>
         </ul>
         </div>
 
-        <div id="map" style="width:512px; height:256px; max-width: 90%; margin:10px; padding: -5px 15px 0px 0px; border: 2px solid darkblue;"></div>
+        <div id="map" class="map-container"></div>
     </div>
 
     <div id="footer">
