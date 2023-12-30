@@ -85,6 +85,8 @@ def dump(dst_folder, txt):
     return dump_f(dst_folder, 'index.html', txt)
 
 def add_frozen_crss(crss):
+    return crss
+    # Do not add it. It is too big in GitHub pages.
     parent = Path(__file__).parent.resolve()
     for domain in ['iau2000.json', 'sr-org.json']:
         with open(f'{parent}/{domain}', 'r') as fp:
