@@ -197,7 +197,7 @@ if __name__ == '__main__':
         substitute(f'{templates}/authority.tmpl', f'{dest_dir}/ref/{authority.lower()}', mapping)
 
     mapping_ref = make_mapping(sections, '../../..')
-    mapping_wkt = make_mapping(sections, '../../../..')
+    mapping_wkt = make_mapping(sections, '../../..')
     no_display = 'style="display: none;"'
 
     count = 0
