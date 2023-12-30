@@ -1,5 +1,0 @@
-LOCAL_CS["ADMINCS1",
-    LOCAL_DATUM["ADMINDAT",32767],
-    UNIT["m",1],
-    AXIS["X",EAST],
-    AXIS["Y",NORTH]]

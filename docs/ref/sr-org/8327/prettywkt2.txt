@@ -1,9 +1,0 @@
-ENGCRS["WEAVER1438",
-    EDATUM["Unknown engineering datum"],
-    CS[Cartesian,2],
-        AXIS["(E)",east,
-            ORDER[1],
-            LENGTHUNIT["Degree",0.0174532925199433]],
-        AXIS["(N)",north,
-            ORDER[2],
-            LENGTHUNIT["Degree",0.0174532925199433]]]

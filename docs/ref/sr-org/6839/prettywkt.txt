@@ -1,7 +1,0 @@
-GEOGCS["GCS_Assumed_Geographic_1",
-    DATUM["North_American_Datum_1927",
-        SPHEROID["Clarke 1866",6378206.4,294.9786982,
-            AUTHORITY["EPSG","7008"]],
-        AUTHORITY["EPSG","6267"]],
-    PRIMEM["Greenwich",0],
-    UNIT["Degree",0.0174532925199433]]

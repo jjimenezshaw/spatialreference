@@ -1,1 +1,0 @@
-GEOGCS["GCS_Indian_1960",DATUM["D_Based_upon_the_Everest_1830_ellipsoid",SPHEROID["Based_upon_the_Everest_1830_ellipsoid",6377301.243,300.801700000002]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]]

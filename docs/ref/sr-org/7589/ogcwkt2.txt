@@ -1,1 +1,0 @@
-ENGCRS["Wildcard 2D cartesian plane in metric unit",EDATUM["Unknown"],CS[Cartesian,2],AXIS["x",east,ORDER[1],LENGTHUNIT["m",1]],AXIS["y",north,ORDER[2],LENGTHUNIT["m",1]],ID["EPSG",404000]]

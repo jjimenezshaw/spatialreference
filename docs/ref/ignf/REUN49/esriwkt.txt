@@ -1,1 +1,0 @@
-This CRS cannot be written as WKT1_ESRI

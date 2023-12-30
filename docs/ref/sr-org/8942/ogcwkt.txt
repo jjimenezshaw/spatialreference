@@ -1,1 +1,0 @@
-PROJCS["Cassini_Soldner",GEOGCS["Geographic Coordinate System",DATUM["D_VIENNA1806",SPHEROID["zach",6376130,310.0000001549967]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Cassini"],PARAMETER["central_meridian48.2091",],PARAMETER["latitude_of_center",16.37655],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["Meter",1]]

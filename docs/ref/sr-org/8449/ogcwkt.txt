@@ -1,1 +1,0 @@
-LOCAL_CS["GCS_North_American_1983",UNIT["US survey foot",0.304800609601219],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2227"]]

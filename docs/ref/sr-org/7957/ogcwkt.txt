@@ -1,1 +1,0 @@
-"+proj=tmerc+ellps=clrk66+towgs84=-5.661"
