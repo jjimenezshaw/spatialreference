@@ -44,45 +44,43 @@
         <h1>EPSG:3308</h1>
         <h2>GDA94 / NSW Lambert</h2>
         <p>
-            <span >View <a href="https://epsg.org/crs_3308/GDA94-NSW-Lambert.html" target="_blank">EPSG.org</a>
-             defintion for EPSG:3308 | </span><a href="http://www.google.com/search?q=GDA94 / NSW Lambert" target="_blank">Google it</a>
+            <span >View <a href="https://epsg.org/crs_3308/GDA94-NSW-Lambert.html" target="_blank">EPSG.org
+             defintion for EPSG:3308</a> | </span><a href="http://www.google.com/search?q=GDA94 / NSW Lambert" target="_blank">Google it</a>
         </p>
-        <p style="font-size:0.8em"></p>
         <div style="display: none;" class="crs_error"><b>ERROR!</b> </div>
         <ul >
             <li><b>Type</b>: PROJECTED_CRS</li>
-            <li><b>WGS84 Bounds</b>: 140.99, -37.53, 153.69, -28.15 (<a href="bounds.json">json</a>)</li>
+            <li><b>WGS84 Bounds</b>: 140.99, -37.53, 153.69, -28.15</li>
             <li><b>Scope</b>: State-wide spatial data management.</li>
             <li><b>Area</b>: Australia - New South Wales.</li>
-            <li style="display: none;"><b>Deprecated</b></li>
+            <li style="display: none;" class="darkred"><b>Deprecated!</b></li>
         </ul>
 
-        <div style="margin:10px; padding: -5px 15px 0px 0px; background:lightgrey; border: 2px solid black; width:350px; max-width: 90%;">
+        <div class="list-box">
         <ul>
             <li>WKT-1</li>
             <ul>
-                <li><a href="html/">Well Known Text as HTML</a></li>
+                <li><a href="wkt.html">Well Known Text as HTML</a></li>
                 <li><a href="prettywkt.txt">Human-Readable OGC WKT</a></li>
-                <li><a href="ogcwkt.txt">OGC WKT</a></li>
+                <li><a href="ogcwkt/">OGC WKT</a></li>
             </ul>
             <li>WKT-2</li>
             <ul>
-                <li><a href="htmlwkt2/">Well Known Text 2 as HTML</a></li>
+                <li><a href="wkt2.html">Well Known Text 2 as HTML</a></li>
                 <li><a href="prettywkt2.txt">Human-Readable OGC WKT2</a></li>
-                <li><a href="ogcwkt2.txt">OGC WKT2</a></li>
             </ul>
-            <li><a href="esriwkt/">ESRI WKT</a></li>
-            <li><a href="#" onclick="download_prj('3308.prj', 'esriwkt/')" title="Download as PRJ file from ESRI">.PRJ</a></li>
+            <li><a href="esriwkt.txt">ESRI WKT</a></li>
+            <li><a href="#" onclick="download_prj('3308.prj', 'esriwkt.txt')" title="Download as PRJ file from ESRI">.PRJ</a></li>
             <li><a href="projjson.json" title="PROJJSON">JSON</a></li>
-            <li><a href="proj4/">Proj4</a></li>
+            <li><a href="proj4.txt">Proj4</a></li>
         </ul>
         </div>
 
-        <div id="map" style="width:512px; height:256px; max-width: 90%; margin:10px; padding: -5px 15px 0px 0px; border: 2px solid darkblue;"></div>
+        <div id="map" class="map-container"></div>
     </div>
 
     <div id="footer">
-        <a href="../../../about/">About</a> - Built on 2023-12-11 using <a href="https://proj.org">PROJ</a> 9.3.0
+        <a href="../../../about/">About</a> - Built on 2023-12-30 using <a href="https://proj.org">PROJ</a> 9.3.0
     </div>
 
     <script src="../../../base.js"></script>

@@ -141,4 +141,106 @@ function download_prj(name, file) {
       link.href = file;
       link.click();
     }
-  }
+}
+
+function lexer_from_python() {
+    const Error = 'err';
+    const Text = '';
+    const Punctuation = 'p';
+    const Generic = {Heading: 'gh'};
+    const Keyword = {Declaration: 'kd', Constant: 'kc'}; // Keyword='k'
+    const Name = {Class: 'nc', Builtin: 'nb', Other: 'no'};
+    const Literal = {String: 's'};
+    const Number = {Float: 'mf', Hex: 'mh', Integer: 'mi'};
+    const String = {Double: 's2', Single: 's1'};
+
+    function r(rx, type) {
+        if (type == Keyword)
+            type = 'k';
+        let res = {cls:type};
+        res.regex = rx instanceof RegExp ? rx : new RegExp(rx.replaceAll('\b', '\\b'), 'y');
+        return res;
+    }
+
+    // just removed the initial "r" from every line, and add a few extra \ in Text and Punctuation
+    const lexer = [
+        r('^This CRS cannot be written.*', Error),
+        r('\\s+', Text),
+        r('[{}\\[\\]();,-.]+', Punctuation),
+        r('^(PROJCS|GEOGCS|GEOCCS|VERT_CS|COMPD_CS)\b', Generic.Heading),
+        r('^(PROJCRS|GEOGCRS|GEODCRS|VERTCRS|COMPOUNDCRS)\b', Generic.Heading),
+        r('(PROJCS|GEOGCS|GEOCCS|VERT_CS)\b', Keyword.Declaration),
+        r('(PROJCRS|GEOGCRS|GEODCRS|VERTCRS)\b', Keyword.Declaration),
+        r('(PARAMETER|PROJECTION|SPHEROID|DATUM|GEOGCS|AXIS|VERT_DATUM)\b', Keyword),
+        r('(ELLIPSOID)\b', Keyword),
+        r('(METHOD)\b', Keyword),
+        r('(PRIMEM|UNIT|TOWGS84)\b', Keyword.Constant),
+        r('([A-Z]+UNIT)\b', Name.Class),
+        r('(east|west|north|south|up|down|geocentric[XYZ])\b', Literal.String),
+        r('(EAST|WEST|NORTH|SOUTH|UP|DOWN)\b', Literal.String),
+        r('(ORDER|SCOPE|AREA|BBOX)\b', Keyword.Constant),
+        r('(BASEGEOGCRS|CONVERSION|CS|USAGE|VDATUM)\b', Keyword.Declaration),
+        r('([Cc]artesian|[Ee]llipsoidal|[Vv]ertical)\b', Literal.String),
+        r('(AUTHORITY)\b', Name.Builtin),
+        r('(ID)\b', Name.Builtin),
+        r('[$a-zA-Z_][a-zA-Z0-9_]*', Name.Other),
+        r('[0-9][0-9]*\.[0-9]+([eE][0-9]+)?[fd]?', Number.Float),
+        r('0x[0-9a-fA-F]+', Number.Hex),
+        r('[0-9]+', Number.Integer),
+        r('"(\\\\|\\"|[^"])*"', String.Double),
+        r("'(\\\\|\\'|[^'])*'", String.Single),
+    ];
+    return lexer
+}
+function format(txt) {
+    let lexer = lexer_from_python();
+    const lines = txt.split('\n');
+    let res = ''
+    lines.forEach(line => {
+        let pos = 0;
+        while (line.length > 0 && pos < line.length) {
+            let found = false;
+            for(let l = 0; l < lexer.length; l++) {
+                let lx = lexer[l];
+                lx.regex.lastIndex = pos;
+                const match = lx.regex.exec(line);
+                if (match && match.index == pos) {
+                    found = true;
+                    const matched = match[0];
+                    if (lexer[l].cls == '') {
+                        res += matched;
+                    } else {
+                        res += `<span class="${lx.cls}">${matched}</span>`;
+                    }
+                    pos += matched.length
+                    break;
+                }
+            }
+            if (!found) {
+                res += line[pos];
+                pos += 1
+            }
+        }
+        res += '\n';
+    });
+    let syntax = document.createElement('div');
+    syntax.classList.add('syntax');
+    let pre = document.createElement('pre');
+    pre.innerHTML = res;
+    syntax.appendChild(pre);
+    return syntax;
+}
+
+function fill_prettywkt(filename) {
+    let wkt = document.getElementById('wkt');
+    if (!wkt.innerText) {
+        fetch(filename, {
+            method: "GET",
+        })
+        .then(response => response.text())
+        .then(data => {
+                let syntax = format(data);
+                wkt.appendChild(syntax);
+        })
+    }
+}
