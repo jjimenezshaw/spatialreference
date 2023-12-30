@@ -21,13 +21,17 @@
     </div>
 
     <div id="content">
-        <div class="nicewkt">${syntax_html}</div>
+        <div class="nicewkt" id="wkt">${syntax_html}</div>
         <a href="../">More formats</a>
     </div>
 
     <div id="footer">
         ${footer}
     </div>
+    <script src="${home_dir}/base.js"></script>
+    <script>
+        fill_prettywkt("${wkt_filename}")
+    </script>
 </body>
 </html>
 

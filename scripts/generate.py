@@ -64,12 +64,14 @@ def read_tmpl(src_filename, dic):
 def subs(str, mapping):
     return Template(str).substitute(mapping)
 
+def substitute_f(src_filename, dst_filename, dic):
+    with open(dst_filename, 'w') as dst:
+        dst.write(read_tmpl(src_filename, dic))
+
 def substitute(src_filename, dst_folder, dic):
     Path(dst_folder).mkdir(parents=True, exist_ok=True)
-    dst_folder += '/index.html'
-
-    with open(dst_folder, 'w') as dst:
-        dst.write(read_tmpl(src_filename, dic))
+    dst_filename = dst_folder + '/index.html'
+    return substitute_f(src_filename, dst_filename, dic)
 
 
 def dump_f(dst_folder, file, txt):
@@ -140,12 +142,11 @@ def make_wkts(crs):
         ogcwkt = 'This CRS cannot be written as WKT1_GDAL'
 
     pretty2 = crs.to_wkt(version='WKT2_2019', pretty=True, output_axis_rule=output_axis_rule)
-    ogcwkt2 = crs.to_wkt(version='WKT2_2019', pretty=False, output_axis_rule=output_axis_rule)
 
-    syntax_pretty = highlight(pretty, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
-    syntax_pretty2 = highlight(pretty2, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
+    #syntax_pretty = highlight(pretty, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
+    #syntax_pretty2 = highlight(pretty2, WKTLexer(), HtmlFormatter(cssclass='syntax', nobackground=True))
 
-    return (syntax_pretty, pretty, ogcwkt, syntax_pretty2, pretty2, ogcwkt2)
+    return (pretty, ogcwkt, pretty2)
 
 if __name__ == '__main__':
     dest_dir = os.getenv('DEST_DIR', '.')
@@ -204,10 +205,9 @@ if __name__ == '__main__':
     for id, c in enumerate(crss):
         count += 1
         if count > 10:
-            break
+            pass #break
         if count % int(total/100) == 0 or total == count:
             sys.stdout.write('\r')
-            # the exact output you're looking for:
             sys.stdout.write("[%-20s] %d%%" % ('='*int(count/total*20), int(count/total*100)))
             sys.stdout.flush()
 
@@ -262,50 +262,49 @@ if __name__ == '__main__':
                'error_style': error_style,
                'list_style': list_style,
         }
-        substitute(f'{templates}/crs.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}', mapping)
-
         dir = f'{dest_dir}/ref/{auth_lowercase}/{code}'
+        substitute(f'{templates}/crs.tmpl', f'{dir}', mapping)
+
         if not crs:
             ogcwkt = c.get("ogcwkt")
             dump_f(f'{dir}', 'ogcwkt.txt', ogcwkt)
             dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
         else:
-            syntax_pretty, pretty, ogcwkt, syntax_pretty2, pretty2, ogcwkt2 = make_wkts(crs)
+            pretty, ogcwkt, pretty2 = make_wkts(crs)
 
             mapping = mapping_wkt | {
                 'authority': auth_name,
                 'code': code,
-                'syntax_html': syntax_pretty,
-                'syntax_html_2': syntax_pretty2,
+                'syntax_html': '', #syntax_pretty,
+                'syntax_html_2': '', #syntax_pretty2,
+                'wkt_filename': '../prettywkt.txt',
+                'wkt_filename_2': '../prettywkt2.txt',
             }
 
-            substitute(f'{templates}/html.tmpl', f'{dir}/html', mapping)
+            substitute_f(f'{templates}/html.tmpl', f'{dir}/wkt.html', mapping)
             dump_f(f'{dir}', 'prettywkt.txt', pretty)
-            dump_f(f'{dir}', 'ogcwkt.txt', ogcwkt)
             dump(f'{dir}/prettywkt', pretty) # backwards compatible
             dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
 
 
-            substitute(f'{templates}/html.tmpl', f'{dest_dir}/ref/{auth_lowercase}/{code}/htmlwkt2', mapping)
-            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'prettywkt2.txt', pretty2)
-            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'ogcwkt2.txt', ogcwkt2)
+            substitute_f(f'{templates}/htmlwkt2.tmpl', f'{dir}/wkt2.html', mapping)
+            dump_f(f'{dir}', 'prettywkt2.txt', pretty2)
 
-            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'bounds.json', bounds_json)
+            dump_f(f'{dir}', 'bounds.json', bounds_json)
 
             try:
                 esri = crs.to_wkt(version='WKT1_ESRI')
             except:
                 esri = 'This CRS cannot be written as WKT1_ESRI'
-            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'esriwkt.txt', esri)
-            dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/esriwkt', esri)  # backwards compatible
+            dump(f'{dir}/esriwkt', esri)  # backwards compatible
 
-            projjson = crs.to_json(pretty=True)
-            dump_f(f'{dest_dir}/ref/{auth_lowercase}/{code}', 'projjson.json', projjson)
+            projjson = crs.to_json(pretty=False)
+            dump_f(f'{dir}', 'projjson.json', projjson)
 
             try:
                 proj4 = crs.to_proj4()
             except:
                 proj4 = ''
-            dump(f'{dest_dir}/ref/{auth_lowercase}/{code}/proj4', proj4)
+            dump(f'{dir}/proj4', proj4)
 
     exit(0)
