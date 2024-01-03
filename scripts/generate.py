@@ -222,6 +222,21 @@ def main():
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
 
+        axis_directions = []
+        if crs:
+            projjson = crs.to_json(pretty=False)
+            try:
+                js = json.loads(projjson)
+                if 'components' in js:
+                    components = js['components'] # to support compound CRSs
+                else:
+                    components = [js]
+                for comp in components:
+                    axis_directions += [x['direction'] for x in comp['coordinate_system']['axis']]
+                axis_directions = ', '.join(axis_directions)
+            except:
+                pass
+
         mapping = mapping_ref | {
                'authority': auth_name,
                'code': code,
@@ -240,6 +255,7 @@ def main():
                'error': error,
                'show_list': show_list,
                'projection_method_name': c.get("projection_method_name", ''),
+               'axis_directions': axis_directions,
         }
         dir = f'{dest_dir}/ref/{auth_lowercase}/{code}'
         g.render('crs.tmpl', f'{dir}/', mapping)
@@ -277,7 +293,7 @@ def main():
                 esri = 'This CRS cannot be written as WKT1_ESRI'
             dump_f(f'{dir}', 'esriwkt.txt', esri)
 
-            projjson = crs.to_json(pretty=False)
+            # projjson generated above for the axes
             dump_f(f'{dir}', 'projjson.json', projjson)
 
             try:
