@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    ${head}
+    {% include 'sections/head.tmpl' %}
     <title>About -- Spatial Reference</title>
 </head>
 
 <body>
     <div id="header">
-        ${header}
+        {% include 'sections/header.tmpl' %}
         <div id="header_title">
             About spatial reference
         </div>
     </div>
     <div id="searchbox">
-        ${searchbox}
+        {% include 'sections/searchbox.tmpl' %}
     </div>
 
     <div id="navbar">
-        ${navbar}
+        {% include 'sections/navbar.tmpl' %}
     </div>
 
     <div id="content">
@@ -41,25 +41,25 @@
         refreshed from the PROJ' SRS database, at each PROJ release.
         </p>
         <p>
-        Each SRS is available in different formats under the root URL https://spatialreference.org/ref/AUTHORITY/CODE:
+        Each SRS is available in different formats under the root URL https://spatialreference.org/ref/authority/CODE:
         <ul>
-        <li>As <a href="http://portal.opengeospatial.org/files/?artifact_id=999">WKT1</a> / Well-known Text v1 / OGC 01-009:
-        <ul>
-        <li>/wkt.html: as HTML content. <a href="https://spatialreference.org/ref/EPSG/4326/wkt.html">Example</a></li>
-        <li>/prettywkt.txt: as text content, with indentation (for potential consumption by software). <a href="https://spatialreference.org/ref/EPSG/4326/prettywkt.html">Example</a></li>
-        <li>/ogcwkt/: as text content, single line (for potential consumption by software). <a href="https://spatialreference.org/ref/EPSG/4326/ogcwkt/">Example</a></li>
-        </ul>
-        </li>
-        <li>As <a href="http://docs.opengeospatial.org/is/18-010r7/18-010r7.html">WKT2:2019</a> / Well-known Text v2 / OGC 18-010r7:
-        <ul>
-        <li>/wkt2.html: as HTML content. <a href="https://spatialreference.org/ref/EPSG/4326/wkt2.html">Example</a></li>
-        <li>/prettywkt2.txt: as text-content, with indentation (for potential consumption by software). <a href="https://spatialreference.org/ref/EPSG/4326/prettywkt2.html">Example</a></li>
-        </ul>
-        </li>
-        <li>/esriwkt.txt: WKT variant used by Esri software, typically for Shapefile .prj side-car file, as text content. <a href="https://spatialreference.org/ref/EPSG/4326/esriwkt.txt">Example</a></li>
-        <li>/#: same as above, but downloads the result as a file with .prj content. Requires JavaScript</li>
-        <li>/projjson.txt: as JSON content, following the <a href="https://proj.org/specifications/projjson.html">PROJ JSON</a> encoding, which is equivalent to WKT2:2019. <a href="https://spatialreference.org/ref/EPSG/4326/projjson.txt">Example</a></li>
-        <li>/proj4.txt: as PROJ.4 CRS string. Note this encoding is considered as legacy, and is generally lossy, particularly regarding geodetic or vertical datums. <a href="https://spatialreference.org/ref/EPSG/4326/proj4.txt">Example</a></li>
+            <li>As <a href="https://portal.opengeospatial.org/files/?artifact_id=999">WKT1</a> / Well-known Text v1 / OGC 01-009:
+                <ul>
+                    <li><span class="about_items">/wkt.html</span> as HTML content. <a href="{{ home_dir }}/ref/epsg/4326/wkt.html">Example</a></li>
+                    <li><span class="about_items">/prettywkt.txt</span>: as text content, with indentation (for potential consumption by software). <a href="{{ home_dir }}/ref/epsg/4326/prettywkt.txt">Example</a></li>
+                    <li><span class="about_items">/ogcwkt/</span>: as text content, single line (for potential consumption by software). <a href="{{ home_dir }}/ref/epsg/4326/ogcwkt/">Example</a></li>
+                </ul>
+            </li>
+            <li>As <a href="https://docs.opengeospatial.org/is/18-010r7/18-010r7.html">WKT2:2019</a> / Well-known Text v2 / OGC 18-010r7:
+                <ul>
+                    <li><span class="about_items">/wkt2.html</span>: as HTML content. <a href="{{ home_dir }}/ref/epsg/4326/wkt2.html">Example</a></li>
+                    <li><span class="about_items">/prettywkt2.txt</span>: as text-content, with indentation (for potential consumption by software). <a href="{{ home_dir }}/ref/epsg/4326/prettywkt2.txt">Example</a></li>
+                </ul>
+            </li>
+            <li><span class="about_items">/esriwkt.txt</span>: WKT variant used by Esri software, typically for Shapefile .prj side-car file, as text content. <a href="{{ home_dir }}/ref/epsg/4326/esriwkt.txt">Example</a></li>
+            <li><span class="about_items">/#</span>: same as above, but downloads the result as a file with .prj content. Requires JavaScript</li>
+            <li><span class="about_items">/projjson.json</span>: as JSON content, following the <a href="https://proj.org/specifications/projjson.html">PROJ JSON</a> encoding, which is equivalent to WKT2:2019. <a href="{{ home_dir }}/ref/epsg/4326/projjson.json">Example</a></li>
+            <li><span class="about_items">/proj4.txt</span>: as PROJ.4 CRS string. Note this encoding is considered as legacy, and is generally lossy, particularly regarding geodetic or vertical datums. <a href="{{ home_dir }}/ref/epsg/4326/proj4.txt">Example</a></li>
         </ul>
         <p>Note that the previous version of this website allowed user-defined
         SRS to be submitted. This functionality has been removed, and the website
@@ -68,12 +68,12 @@
 
         <h3>Press</h3>
         <ul>
-        <li><a href="http://3liz.com/blog/rldhont/index.php/2007/07/26/71-un-site-pour-les-systemes-de-references-spatials">Un site pour les Systèmes de Références Spatials</a> -- Link back to SpatialReference.org</li>
+        <li><a href="https://www.3liz.com/blog/rldhont/index.php?post/2007/07/26/71-un-site-pour-les-systemes-de-references-spatials">Un site pour les Systèmes de Références Spatials</a> -- Link back to SpatialReference.org</li>
         </ul>
 
     </div>
     <div id="footer">
-        ${footer}
+        {% include 'sections/footer.tmpl' %}
     </div>
 </body>
 </html>

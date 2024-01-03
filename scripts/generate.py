@@ -13,6 +13,8 @@ from pygments.token import *
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 
+import jinja2
+
 import pyproj
 #from contextlib import redirect_stdout
 
@@ -51,37 +53,13 @@ class WKTLexer(RegexLexer):
         ]
     }
 
-def read_file(src_filename):
-    with open(src_filename, 'r') as src:
-        return src.read()
-
-def read_tmpl(src_filename, dic):
-    with open(src_filename, 'r') as src:
-        txt = Template(src.read())
-        result = txt.substitute(dic)
-        return result
-
-def subs(str, mapping):
-    return Template(str).substitute(mapping)
-
-def substitute_f(src_filename, dst_filename, dic):
-    with open(dst_filename, 'w') as dst:
-        dst.write(read_tmpl(src_filename, dic))
-
-def substitute(src_filename, dst_folder, dic):
-    Path(dst_folder).mkdir(parents=True, exist_ok=True)
-    dst_filename = dst_folder + '/index.html'
-    return substitute_f(src_filename, dst_filename, dic)
-
-
 def dump_f(dst_folder, file, txt):
-    Path(dst_folder).mkdir(parents=True, exist_ok=True)
     dst_file = dst_folder + '/' + file
-
     with open(dst_file, 'w') as dst:
         dst.write(txt)
 
 def dump(dst_folder, txt):
+    Path(dst_folder).mkdir(parents=True, exist_ok=True)
     return dump_f(dst_folder, 'index.html', txt)
 
 def add_frozen_crss(crss):
@@ -127,11 +105,12 @@ def make_crslist(dest_dir):
 
     return crss
 
-def make_mapping(sections, home_dir):
-    mapping = {'last_revised': os.getenv('LAST_REVISED', '-missing-'),
-               'home_dir': home_dir}
-    for sec in ['head', 'leaflet', 'header', 'searchbox', 'navbar', 'footer']:
-        mapping[sec] = Template(sections[sec]).substitute({'home_dir': home_dir})
+def make_mapping(home_dir):
+    today = date.today().isoformat()
+    mapping = {'home_dir': home_dir,
+               'last_revised': os.getenv('LAST_REVISED', '-missing-'),
+               'proj_version': os.getenv('PROJ_VERSION', '-missing-'),
+               'built_date': today,}
     return mapping
 
 def make_wkts(crs):
@@ -150,31 +129,37 @@ def make_wkts(crs):
 
     return (pretty, ogcwkt, pretty2)
 
-if __name__ == '__main__':
+class Generator:
+    """ class to deal with Jinja2 templates rendering """
+    def __init__(self):
+        self.jinja2_env = jinja2.Environment(
+            loader=jinja2.FileSystemLoader('templates'),
+            undefined=jinja2.StrictUndefined,
+            trim_blocks=False,
+            lstrip_blocks=True,)
+
+    def render(self, tmpl, dest, mapping):
+        if os.path.isdir(dest) or dest[-1] == '/':
+            dest = os.path.join(dest, 'index.html')
+        directory = os.path.dirname(dest)
+        Path(directory).mkdir(parents=True, exist_ok=True)
+
+        template = self.jinja2_env.get_template(tmpl)
+        output_from_parsed_template = template.render(mapping)
+
+        with open(dest, "w") as fh:
+            fh.write(output_from_parsed_template)
+
+
+def main():
     dest_dir = os.getenv('DEST_DIR', '.')
-    templates = './templates'
+    g = Generator()
 
     crss = make_crslist(dest_dir)
 
     # copy some literal files, not modified
     for literal in ['base.js', 'base.css', 'sr_logo.jpg', 'favicon.ico']:
-        shutil.copy(f'{templates}/{literal}', dest_dir)
-
-    sections = {
-        'head': read_file(f'{templates}/sections/head.tmpl'),
-        'leaflet': read_file(f'{templates}/sections/leaflet.tmpl'),
-        'header': read_file(f'{templates}/sections/header.tmpl'),
-        'searchbox': read_file(f'{templates}/sections/searchbox.tmpl'),
-        'navbar': read_file(f'{templates}/sections/navbar.tmpl'),
-        'footer': read_file(f'{templates}/sections/footer.tmpl'),
-    }
-
-    # footer has some variables, apart from home_dir
-    today = date.today().isoformat()
-    sections['footer'] = Template(sections['footer']).safe_substitute({
-        'proj_version': os.getenv('PROJ_VERSION', '-missing-'),
-        'built_date': today,
-    })
+        shutil.copy(f'./templates/{literal}', dest_dir)
 
     authorities = {
         key: len(list(group))
@@ -185,20 +170,20 @@ if __name__ == '__main__':
         for key, value in authorities.items()
     }
 
-    mapping = make_mapping(sections, '.') | count_authorities
-    substitute(f'{templates}/index.tmpl', f'{dest_dir}', mapping)
-    mapping = make_mapping(sections, '..')
-    substitute(f'{templates}/about.tmpl', f'{dest_dir}/about', mapping)
-    substitute(f'{templates}/ref.tmpl', f'{dest_dir}/ref', mapping)
 
-    mapping = make_mapping(sections, '../..')
+    mapping = make_mapping('.') | count_authorities
+    g.render('index.tmpl', f'{dest_dir}', mapping)
+    g.render('about.tmpl', f'{dest_dir}/about.html', mapping)
+    mapping = make_mapping('..')
+    g.render('ref.tmpl', f'{dest_dir}/ref/', mapping)
+
+    mapping = make_mapping('../..')
     for authority in authorities.keys():
         mapping['authority'] = authority
-        substitute(f'{templates}/authority.tmpl', f'{dest_dir}/ref/{authority.lower()}', mapping)
+        g.render('authority.tmpl', f'{dest_dir}/ref/{authority.lower()}/', mapping)
 
-    mapping_ref = make_mapping(sections, '../../..')
-    mapping_wkt = make_mapping(sections, '../../..')
-    no_display = 'style="display: none;"'
+    mapping_ref = make_mapping('../../..')
+    mapping_wkt = make_mapping('../../..')
 
     count = 0
     total = len(crss)
@@ -213,31 +198,25 @@ if __name__ == '__main__':
             sys.stdout.write("[%-20s] %d%%" % ('='*int(count/total*20), int(count/total*100)))
             sys.stdout.flush()
 
-        code=c["code"]
-        auth_name=c["auth_name"]
+        code = c["code"]
+        auth_name = c["auth_name"]
         name = c["name"]
         auth_lowercase = auth_name.lower()
         error = ''
-        error_style = no_display
-        list_style = ''
+        show_list = True
         crs = None
         if "ogcwkt" in c:
-            list_style = no_display
+            show_list = False
             try:
                 crs = pyproj.CRS.from_user_input(c["ogcwkt"])
             except Exception as e:
                 print('error with', auth_name, code, name)
-                error = str(e).replace(',', ',<wbr>') # to be more readable in html
-                error_style = ''
+                error = str(e)
         else:
             crs = pyproj.CRS.from_authority(auth_name=auth_name, code=code)
 
-        if auth_name == "EPSG":
-            epsg_scaped_name = re.sub(r'[^0-9a-zA-Z]+', '-', name);
-            epsg_style = ''
-        else:
-            epsg_scaped_name = ''
-            epsg_style = no_display
+        epsg_scaped_name = re.sub(r'[^0-9a-zA-Z]+', '-', name) if auth_name == "EPSG" else ''
+
         aou = c.get("area_of_use")
         bounds = ', '.join([str(x) for x in aou[:4]]) if aou else 'Unknown'
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
@@ -249,22 +228,21 @@ if __name__ == '__main__':
                'name': name,
                'area_name': aou[4] if aou else 'Unknown',
                'epsg_scaped_name': epsg_scaped_name,
-               'epsg_style': epsg_style,
-               'deprecated_style': '' if c.get("deprecated", '') else no_display,
+               'deprecated': c.get("deprecated", False),
                'crs_type': c.get("type", '--'),
                'bounds': bounds,
-               'bounds_map': bounds if aou else '-180, -90, 180, 90',
+               'bounds_map': bounds if aou and auth_lowercase[0:3] != 'iau' else None,
                'scope': crs.scope if crs else '--',
                'prev_full_name': full_name(crss[id-1]),
                'prev_url': url(crss[id-1]),
                'next_full_name': full_name(crss[(id+1)%len(crss)]),
                'next_url': url(crss[(id+1)%len(crss)]),
                'error': error,
-               'error_style': error_style,
-               'list_style': list_style,
+               'show_list': show_list,
+               'projection_method_name': c.get("projection_method_name", ''),
         }
         dir = f'{dest_dir}/ref/{auth_lowercase}/{code}'
-        substitute(f'{templates}/crs.tmpl', f'{dir}', mapping)
+        g.render('crs.tmpl', f'{dir}/', mapping)
 
         if not crs:
             ogcwkt = c.get("ogcwkt")
@@ -276,19 +254,21 @@ if __name__ == '__main__':
             mapping = mapping_wkt | {
                 'authority': auth_name,
                 'code': code,
+                'wkt_type': '',
                 'syntax_html': '', #syntax_pretty,
-                'syntax_html_2': '', #syntax_pretty2,
                 'wkt_filename': './prettywkt.txt',
-                'wkt_filename_2': './prettywkt2.txt',
             }
 
-            substitute_f(f'{templates}/html.tmpl', f'{dir}/wkt.html', mapping)
+            g.render('htmlwkt2.tmpl', f'{dir}/wkt.html', mapping)
             dump_f(f'{dir}', 'prettywkt.txt', pretty)
             dump(f'{dir}/prettywkt', pretty) # backwards compatible
             dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
 
-
-            substitute_f(f'{templates}/htmlwkt2.tmpl', f'{dir}/wkt2.html', mapping)
+            mapping = mapping | {
+                'wkt_type': ' - WKT2',
+                'wkt_filename': './prettywkt2.txt',
+            }
+            g.render('htmlwkt2.tmpl', f'{dir}/wkt2.html', mapping)
             dump_f(f'{dir}', 'prettywkt2.txt', pretty2)
 
             try:
@@ -306,5 +286,8 @@ if __name__ == '__main__':
                 proj4 = ''
             dump_f(f'{dir}', 'proj4.txt', proj4)
 
+    return 0
 
-    exit(0)
+
+if __name__ == '__main__':
+    exit(main())

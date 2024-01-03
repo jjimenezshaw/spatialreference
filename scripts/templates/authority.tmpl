@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    ${head}
+    {% include 'sections/head.tmpl' %}
     <title>Spatial Reference List -- Spatial Reference</title>
 </head>
 
 <body>
     <div id="header">
-        ${header}
+        {% include 'sections/header.tmpl' %}
         <div id="header_title">
             Spatial Reference List
         </div>
     </div>
     <div id="searchbox">
-        ${searchbox}
+        {% include 'sections/searchbox.tmpl' %}
     </div>
 
     <div id="navbar">
-        ${navbar}
+        {% include 'sections/navbar.tmpl' %}
     </div>
 
     <div id="content">
@@ -29,7 +29,7 @@
             <input type="submit" value="Search" />
         </form></p>
 
-        <p>You are only searching <b>${authority}</b> references. <a class="only_searching" href="${home_dir}/ref/?&amp;search=">Search All</a>?</p>
+        <p>You are only searching <b>{{ authority }}</b> references. <a class="only_searching" href="{{ home_dir }}/ref/?&amp;search=">Search All</a>?</p>
 
         <p>Entries found: <span id="found"></span> <span id="searched_text"></span></p>
         <div class="outer-wrapper">
@@ -50,11 +50,11 @@
     </div>
 
     <div id="footer">
-        ${footer}
+        {% include 'sections/footer.tmpl' %}
     </div>
-    <script src="${home_dir}/base.js"></script>
+    <script src="{{ home_dir }}/base.js"></script>
     <script>
-        init_ref("${home_dir}", "${authority}")
+        init_ref("{{ home_dir }}", "{{ authority }}")
     </script>
 
 </body>

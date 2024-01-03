@@ -1,4 +1,5 @@
 function init_map(area_of_use) {
+    if (!area_of_use) return;
     let map = L.map('map').setView([0, 0], 1);
     let osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',

@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    ${head}
-    <title>${authority}:${code} - WKT2 -- Spatial Reference</title>
+    {% include 'sections/head.tmpl' %}
+    <title>{{ authority }}:{{ code }}{{ wkt_type }} -- Spatial Reference</title>
 </head>
 
 <body>
     <div id="header">
-        ${header}
+        {% include 'sections/header.tmpl' %}
         <div id="header_title">
-            ${authority}:${code} - WKT2
+            {{ authority }}:{{ code }}{{ wkt_type }}
         </div>
     </div>
     <div id="searchbox">
-        ${searchbox}
+        {% include 'sections/searchbox.tmpl' %}
     </div>
 
     <div id="navbar">
-        ${navbar}
+        {% include 'sections/navbar.tmpl' %}
     </div>
 
     <div id="content">
-        <div class="nicewkt" id="wkt">${syntax_html_2}</div>
+        <div class="nicewkt" id="wkt">{{ syntax_html }}</div>
         <a href="./">More formats</a>
     </div>
 
     <div id="footer">
-        ${footer}
+        {% include 'sections/footer.tmpl' %}
     </div>
-    <script src="${home_dir}/base.js"></script>
+    <script src="{{ home_dir }}/base.js"></script>
     <script>
-        fill_prettywkt("${wkt_filename_2}")
+        fill_prettywkt("{{ wkt_filename }}")
     </script>
 </body>
 </html>
