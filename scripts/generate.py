@@ -191,7 +191,7 @@ def main():
 
     for id, c in enumerate(crss):
         count += 1
-        if count > 10:
+        if count > 100:
             pass #break
         if count % int(total/100) == 0 or total == count:
             sys.stdout.write('\r')

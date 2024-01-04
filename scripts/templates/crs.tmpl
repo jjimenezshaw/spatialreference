@@ -27,32 +27,32 @@
         <h1>{{ authority }}:{{ code }}</h1>
         <h2>{{ name|e }}</h2>
         <p>
-            {% if epsg_scaped_name -%}
-                View <a href="https://epsg.org/crs_{{ code }}/{{ epsg_scaped_name }}.html" target="_blank">
-                EPSG.org defintion for EPSG:{{ code }}</a> |
-            {% endif -%}
+          {%- if epsg_scaped_name %}
+            View <a href="https://epsg.org/crs_{{ code }}/{{ epsg_scaped_name }}.html" target="_blank">
+            EPSG.org defintion for EPSG:{{ code }}</a> |
+          {%- endif %}
             <a href="http://www.google.com/search?q={{ name }}" target="_blank">Google it</a>
         </p>
-        {% if error %}
+        {%- if error %}
         <div class="crs_error"><b>ERROR!</b> {{ error|e|replace(",", ",<wbr>") }}</div>
-        {% endif %}
-        {% if show_list %}
+        {%- endif %}
+        {%- if show_list %}
         <ul>
             <li><b>Type</b>: {{ crs_type }}</li>
             <li><b>WGS84 Bounds</b>: {{ bounds }}</li>
             <li><b>Scope</b>: {{ scope|e }}</li>
             <li><b>Area</b>: {{ area_name|e }}</li>
-            {% if projection_method_name %}
+            {%- if projection_method_name %}
             <li><b>Projection method name</b>: {{ projection_method_name }}</li>
-            {% endif %}
-            {% if axis_directions %}
+            {%- endif %}
+            {%- if axis_directions %}
             <li><b title="Info got from PROJJSON">Axis directions</b>: {{ axis_directions }}</li>
-            {% endif %}
-            {% if deprecated %}
+            {%- endif %}
+            {%- if deprecated %}
             <li class="darkred"><b>Deprecated!</b></li>
-            {% endif %}
+            {%- endif %}
         </ul>
-        {% endif %}
+        {%- endif %}
 
         <div class="list-box">
         <ul>
@@ -74,9 +74,9 @@
         </ul>
         </div>
 
-        {% if bounds_map %}
+        {%- if bounds_map %}
         <div id="map" class="map-container"></div>
-        {% endif %}
+        {%- endif %}
     </div>
 
     <div id="footer">
