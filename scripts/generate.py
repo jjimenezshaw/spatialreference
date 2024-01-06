@@ -275,7 +275,7 @@ def main():
                 'wkt_filename': './prettywkt.txt',
             }
 
-            g.render('htmlwkt2.tmpl', f'{dir}/wkt.html', mapping)
+            g.render('htmlwkt.tmpl', f'{dir}/wkt.html', mapping)
             dump_f(f'{dir}', 'prettywkt.txt', pretty)
             dump(f'{dir}/prettywkt', pretty) # backwards compatible
             dump(f'{dir}/ogcwkt', ogcwkt) # backwards compatible
@@ -284,7 +284,7 @@ def main():
                 'wkt_type': ' - WKT2',
                 'wkt_filename': './prettywkt2.txt',
             }
-            g.render('htmlwkt2.tmpl', f'{dir}/wkt2.html', mapping)
+            g.render('htmlwkt.tmpl', f'{dir}/wkt2.html', mapping)
             dump_f(f'{dir}', 'prettywkt2.txt', pretty2)
 
             try:
