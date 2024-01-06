@@ -222,7 +222,7 @@ def main():
         full_name = lambda c: f'{c["auth_name"]}:{c["code"]} : {c["name"]}'
         url = lambda c: f'../../../ref/{c["auth_name"].lower()}/{c["code"]}'
 
-        axis_directions = []
+        axes = {}
         if crs:
             projjson = crs.to_json(pretty=False)
             try:
@@ -231,9 +231,15 @@ def main():
                     components = js['components'] # to support compound CRSs
                 else:
                     components = [js]
+                axes_arr = []
                 for comp in components:
-                    axis_directions += [x['direction'] for x in comp['coordinate_system']['axis']]
-                axis_directions = ', '.join(axis_directions)
+                    axes_arr += [x for x in comp['coordinate_system']['axis']]
+                if len(axes_arr) > 0:
+                    axes['directions'] = ', '.join([x['direction'] for x in axes_arr])
+                    axes['names'] = ', '.join([x['name'] for x in axes_arr])
+                    axes['abbr'] = ','.join([x['abbreviation'] for x in axes_arr])
+                    units = [x['unit']['name'] if 'name' in x['unit'] else x['unit'] for x in axes_arr]
+                    axes['units'] = units[0] if all(e == units[0] for e in units) else ', '.join(units)
             except:
                 pass
 
@@ -255,7 +261,7 @@ def main():
                'error': error,
                'show_list': show_list,
                'projection_method_name': c.get("projection_method_name", ''),
-               'axis_directions': axis_directions,
+               'axes': axes,
         }
         dir = f'{dest_dir}/ref/{auth_lowercase}/{code}'
         g.render('crs.tmpl', f'{dir}/', mapping)
