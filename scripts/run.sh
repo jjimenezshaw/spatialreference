@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-echo 'Set first argument to "addgit" if you want to add wkt files automatically'
-
 # indicate DOCKER PROJ version
 PROJ_VERSION=9.3.0
 PYPROJ_VERSION=3.6.1
@@ -13,7 +11,6 @@ TAG="crs-explorer:$PROJ_VERSION"
 DIRNAME=`dirname $(readlink -f $0)`
 mkdir -p $DIRNAME/dist
 test "$(ls -A $DIRNAME/dist/)" && rm -r $DIRNAME/dist/*
-mkdir -p $DIRNAME/../docs
 
 # build container
 docker build --pull --build-arg VERSION=$PROJ_VERSION --build-arg PYPROJ_VERSION=$PYPROJ_VERSION --tag $TAG $DIRNAME
@@ -21,5 +18,6 @@ docker build --pull --build-arg VERSION=$PROJ_VERSION --build-arg PYPROJ_VERSION
 # execute container
 docker run --user $(id -u):$(id -g) -e LAST_REVISED=$LAST_REVISED -e PROJ_VERSION=$PROJ_VERSION --rm -v "$DIRNAME/dist:/home/dist" $TAG
 
-# copy to docs location
-#cp -r $DIRNAME/dist/* $DIRNAME/../docs
+# done
+echo .
+echo Enjoy the generated code at $DIRNAME/dist/
