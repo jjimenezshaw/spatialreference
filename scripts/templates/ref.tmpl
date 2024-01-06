@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    ${head}
+    {% include 'sections/head.tmpl' %}
     <title>Spatial Reference List -- Spatial Reference</title>
 </head>
 
 <body>
     <div id="header">
-        ${header}
+        {% include 'sections/header.tmpl' %}
         <div id="header_title">
             Spatial Reference List
         </div>
     </div>
     <div id="searchbox">
-        ${searchbox}
+        {% include 'sections/searchbox.tmpl' %}
     </div>
 
     <div id="navbar">
-        ${navbar}
+        {% include 'sections/navbar.tmpl' %}
     </div>
 
     <div id="content">
@@ -48,11 +48,11 @@
     </div>
 
     <div id="footer">
-        ${footer}
+        {% include 'sections/footer.tmpl' %}
     </div>
-    <script src="${home_dir}/base.js"></script>
+    <script src="{{ home_dir }}/base.js"></script>
     <script>
-        init_ref("${home_dir}")
+        init_ref("{{ home_dir }}")
     </script>
 
 </body>
