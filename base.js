@@ -1,5 +1,4 @@
 async function init_map(area_of_use, crs_type, id) {
-    console.log("crs_type", crs_type);
     if (!area_of_use) return;
     let map = L.map('map');
     let osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -14,15 +13,23 @@ async function init_map(area_of_use, crs_type, id) {
         await proj.init();
         const transformer = proj.create_transformer_from_crs({source_crs: 'EPSG:4326', target_crs: id});
         const axes = proj.crs_axes({crs: id});
-        document.querySelector('#first_coordinate > span.coordinate_name').innerText = axes[0].name;
-        document.querySelector('#second_coordinate > span.coordinate_name').innerText = axes[1].name;
+        document.querySelector('#coordinates table tr:nth-child(1) .name').innerText = axes[0].name + ' : ';
+        document.querySelector('#coordinates table tr:nth-child(2) .name').innerText = axes[1].name + ' : ';
+
         const marker = L.marker(rect.getCenter(), {draggable: true}).addTo(map);
         marker.on('move', (e) => {
-            const res = transformer.transform({points: [[e.latlng.lat, e.latlng.lng]]});
-            document.querySelector('#first_coordinate > span.coordinate_value').innerText = res[0][0].toFixed(decimals);
-            document.querySelector('#second_coordinate > span.coordinate_value').innerText = res[0][1].toFixed(decimals);
+            let res = [[NaN, NaN]];
+            try {
+                res = transformer.transform({points: [[e.latlng.lat, e.latlng.lng]]});
+            } catch (_e) {}
+            document.querySelector('#coordinates table tr:nth-child(1) .number').innerText = res[0][0].toFixed(decimals);
+            document.querySelector('#coordinates table tr:nth-child(2) .number').innerText = res[0][1].toFixed(decimals);
         });
         marker.setLatLng(rect.getCenter());
+        marker.once('move', (e) => {
+            console.log(proj.proj_info());
+            document.getElementById('drag_marker').classList.add('hidden');
+        });
     }
 }
 

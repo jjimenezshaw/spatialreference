@@ -81,17 +81,28 @@
             <li><a href="proj4.txt">Proj4</a> (deprecated format)</li>
         </ul>
         </div>
+        <div id="map_coord_container">
         <div id="map" class="map-container"></div>
         <div id="coordinates">
-            <div id="first_coordinate"><span class="coordinate_name"></span> : <span class="coordinate_value"></span></div>
-            <div id="second_coordinate"><span class="coordinate_name"></span> : <span class="coordinate_value"></span></div>
+            <table>
+                <tr>
+                    <td class="name"></td>
+                    <td class="number"></td>
+                </tr>
+                <tr>
+                    <td class="name"></td>
+                    <td class="number"></td>
+                </tr>
+            </table>
             <a href="https://jjimenezshaw.github.io/wasm-proj/transform.html?sh=EPSG%3A4326&th=EPSG%3A10254"
-                target="_blank" >Transform coordinates here</a>
+                target="_blank" >Transform coordinates</a>
+            <div id="drag_marker">(Drag the marker in the map)</div>
+        </div>
         </div>
     </div>
 
     <div id="footer">
-        <a href="../../../about.html">About</a> - Built on 2026-03-23 using
+        <a href="../../../about.html">About</a> - Built on 2026-03-24 using
         <a href="https://proj.org">PROJ</a> 9.8.0 (See detailed <a href="../../../versions.html">versions here</a>)
     </div>
 
