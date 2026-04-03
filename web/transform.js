@@ -46,7 +46,10 @@ function handleFileLoad(event, targetId) {
 }
 
 function updateURLParams() {
+    const oldParams = new URLSearchParams(window.location.search);
+
     const params = new URLSearchParams();
+    params.set('nsrs_aux_db', oldParams.get('nsrs_aux_db') ?? '');
 
     params.set('st', document.querySelector('input[name="source_type"]:checked').value);
     params.set('tt', document.querySelector('input[name="target_type"]:checked').value);
@@ -77,20 +80,24 @@ function updateURLParams() {
     window.history.replaceState({ path: newUrl }, '', newUrl);
 }
 
-function loadFromURLParams(crs_list, searchParams = undefined) {
+async function loadFromURLParams(crs_list, searchParams = undefined) {
     const params = searchParams ?? new URLSearchParams(window.location.search);
+
+    if (params.get('nsrs_aux_db') === '1') {
+        await loadAuxDbUrl(crs_list);
+    }
 
     if (params.has('st'))
         document.querySelector(`input[name="source_type"][value="${params.get('st')}"]`).checked = true;
     if (params.has('tt'))
         document.querySelector(`input[name="target_type"][value="${params.get('tt')}"]`).checked = true;
 
-    document.getElementById('source-horizontal-input').value = getFullDescriptor(crs_list, params.get('sh')) ?? '';
-    document.getElementById('source-vertical-input').value = getFullDescriptor(crs_list, params.get('sv')) ?? '';
+    document.getElementById('source-horizontal-input').value = getFullDescriptor(crs_list, params.get('sh'), true);
+    document.getElementById('source-vertical-input').value = getFullDescriptor(crs_list, params.get('sv'), true);
     document.getElementById('source-freetext').value = params.get('sf') ?? '';
 
-    document.getElementById('target-horizontal-input').value = getFullDescriptor(crs_list, params.get('th')) ?? '';
-    document.getElementById('target-vertical-input').value = getFullDescriptor(crs_list, params.get('tv')) ?? '';
+    document.getElementById('target-horizontal-input').value = getFullDescriptor(crs_list, params.get('th'), true);
+    document.getElementById('target-vertical-input').value = getFullDescriptor(crs_list, params.get('tv'), true);
     document.getElementById('target-freetext').value = params.get('tf') ?? '';
 
     if (params.has('se')) {
@@ -117,7 +124,35 @@ function loadFromURLParams(crs_list, searchParams = undefined) {
     return params.get('run') === '1';
 }
 
-function swapSourceTarget(crs_list) {
+async function loadAuxDbUrl(crs_list) {
+    const aux_db_url = 'https://jjimenezshaw.github.io/NSRS-2022-PROJ/nsrs_proj.db';
+    console.time(`loading ${aux_db_url}`);
+    try {
+        const response = await fetch(aux_db_url);
+        const file = await response.blob();
+        const filename = aux_db_url.split('/').pop();
+        const dbs = [{ name: filename, array_buffer: await file.arrayBuffer() }];
+        proj.set_database({ aux_dbs: dbs });
+        await g_proj_worker.set_database({ aux_dbs: dbs });
+
+        const id = 'aux-files';
+        const display = document.getElementById(`${id}-name`);
+        const clearBtn = document.querySelector(`[data-clear-file="${id}"]`);
+        display.textContent = filename;
+        display.classList.add('has-file');
+        clearBtn.classList.remove('hidden');
+        crs_list.splice(0, Infinity, ...get_crs_list());
+        updateComboboxes(crs_list);
+        return true;
+    } catch (e) {
+        console.error(`error loading auxdb from ${aux_db_url}`, e);
+    } finally {
+        console.timeEnd(`loading ${aux_db_url}`);
+    }
+    return false;
+}
+
+async function swapSourceTarget(crs_list) {
     updateURLParams();
 
     const params = new URLSearchParams(window.location.search);
@@ -146,7 +181,7 @@ function swapSourceTarget(crs_list) {
         newParams.set('coords', params.get('coords') || '');
     }
 
-    loadFromURLParams(crs_list, newParams);
+    await loadFromURLParams(crs_list, newParams);
     updateAfterLoadUrl(crs_list);
     validateForm();
 }
@@ -617,13 +652,13 @@ function getCrsId(descriptor) {
     return '';
 }
 
-function getFullDescriptor(crs_list, id) {
+function getFullDescriptor(crs_list, id, return_id) {
     const [auth, code] = (id ?? '').split(':');
     const found = crs_list.find((e) => e.auth === auth && e.code === code);
     if (found) {
         return `${found.auth}:${found.code} - ${found.name}`;
     }
-    return '';
+    return return_id ? id : undefined;
 }
 
 function updateAfterLoadUrl(crs_list) {
@@ -757,32 +792,31 @@ function setupEventListeners(proj_worker, proj, crs_list) {
         });
     });
     document.querySelectorAll('[data-swap]').forEach((btn) => {
-        btn.addEventListener('click', () => swapSourceTarget(crs_list));
+        btn.addEventListener('click', async () => swapSourceTarget(crs_list));
     });
 
     // 6. Main Action Buttons
     document.getElementById('points-in-map').addEventListener('click', () => showPointsInMap(proj));
     document.getElementById('btn-transform').addEventListener('click', () => handleTransform(proj_worker));
 
-    setupAdvancedOptions(proj, proj_worker, async () => {
+    setupAdvancedOptions(proj, proj_worker, () => {
         updateComboboxes(get_crs_list());
-        await proj_worker.log_level(3);
-        const r = await proj_worker.projinfo({
-            params: [
-                '--aux-db-path',
-                '/nsrs_proj.db',
-                'NSRS:NATRF2022_2D+NAPGD2022',
-                'NSRS:NATRF2022_3D',
-                '-o',
-                '-proj',
-            ],
-        });
-        console.log(r.msg);
     });
+}
+
+/**
+ * "Backdoor" to enable PROJ debug messages (as errors) in the console
+ * @param {number} level
+ * @returns
+ */
+async function _proj_set_log_level(level) {
+    console.log(proj.log_level(level), await g_proj_worker.log_level(level));
+    return true;
 }
 
 let proj;
 let g_crs_list;
+let g_proj_worker; // just for debug function proj_set_log_level
 
 function get_crs_list() {
     const crs_list = proj.crs_list().filter((e, i, list) => {
@@ -812,12 +846,12 @@ async function load() {
         /////////////////////////
         const bridge = new WorkerBridge();
         proj_worker = bridge.create_main_proxy();
+        g_proj_worker = proj_worker;
         await proj_worker.init();
 
         setupComboboxes(crs_list);
 
-        run = loadFromURLParams(crs_list);
-
+        run = await loadFromURLParams(crs_list);
         updateAfterLoadUrl(crs_list);
 
         setupEventListeners(proj_worker, proj, crs_list);
